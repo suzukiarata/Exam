@@ -10,21 +10,26 @@
 		<p>学生情報の管理が行えます。</p>
 		<p>検索キーワードを入力してください。</p>
 		<form action="StudentInfomation.action" method="post">
-			クラス<select name="class_num">
+			入学年度<select name="f1">
+			<option value="2021">2021</option>
+			<option value="2022">2022</option></select>
+			クラス<select name="f2">
 			<option value="201">201</option>
 			<option value="202">202</option></select>
+			在学中<input type="checkbox" name="f3" value="true">
 			<input type="submit" value="絞込み">
 		</form>
 	</div>
 	<div id="element">
 		<h1>学生情報一覧</h1>
-		<table border="1">
+		<table>
 			<tr>
 				<th>入学年度</th>
 				<th>学生番号</th>
 				<th>氏名</th>
 				<th>クラス</th>
 				<th>在学中</th>
+				<th></th>
 			</tr>
 			<c:forEach items="${list}" var="s">
 				<tr>
@@ -36,6 +41,7 @@
 						<c:when test="${s.is_attend==true}"><td>○</td></c:when>
 						<c:when test="${s.is_attend==false}"><td>✕</td></c:when>
 					</c:choose>
+					<td><a href="StudentInfomationChange.action?no=${s.no}">変更</a></td>
 				</tr>
 			</c:forEach>
 		</table>

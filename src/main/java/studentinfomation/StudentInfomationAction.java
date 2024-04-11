@@ -16,11 +16,13 @@ public class StudentInfomationAction extends Action{
 		
 		HttpSession session=request.getSession();
 		
-		String keyword=request.getParameter("keyword");
-		if (keyword==null) keyword="";
+		String class_num=request.getParameter("class_num");
+		if (class_num==null) {
+			class_num="";
+		}
 		
 		StudentDAO dao=new StudentDAO();
-		List<Student> list=dao.search(keyword);
+		List<Student> list=dao.search(class_num);
 		
 		session.setAttribute("list", list);
 		

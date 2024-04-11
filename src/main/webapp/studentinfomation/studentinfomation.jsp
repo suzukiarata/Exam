@@ -2,13 +2,19 @@
 <%@include file="../header.html"  %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
-
 <%@include file="../home/menu.jsp" %>
 
 <div id="contents">
 	<div id="element">
 		<h1>学生情報管理機能</h1>
 		<p>学生情報の管理が行えます。</p>
+		<p>検索キーワードを入力してください。</p>
+		<form action="StudentInfomation.action" method="post">
+			クラス<select name="class_num">
+			<option value="201">201</option>
+			<option value="202">202</option></select>
+			<input type="submit" value="絞込み">
+		</form>
 	</div>
 	<div id="element">
 		<h1>学生情報一覧</h1>
@@ -20,18 +26,16 @@
 				<th>クラス</th>
 				<th>在学中</th>
 			</tr>
-			<c:forEach var="student" items="${list}">
+			<c:forEach items="${list}" var="s">
 				<tr>
-					<td>${student.ent_year}</td>
-					<td>${student.no}</td>
-					<td>${student.name}</td>
-					<td>${student.num_class}</td>
-					<c:if test="${student.is_attend==True}">
-						○
-					</c:if>
-					<c:if test="${student.is_attend==False}">
-						✕
-					</c:if>
+					<td>${s.ent_year}</td>
+					<td>${s.no}</td>
+					<td>${s.name}</td>
+					<td>${s.class_num}</td>
+					<c:choose>
+						<c:when test="${s.is_attend==true}"><td>○</td></c:when>
+						<c:when test="${s.is_attend==false}"><td>✕</td></c:when>
+					</c:choose>
 				</tr>
 			</c:forEach>
 		</table>

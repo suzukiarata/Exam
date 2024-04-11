@@ -10,31 +10,33 @@ import bean.Student;
 
 public class StudentDAO extends DAO {
 
-	public List<Student> search(String keyword) throws Exception {
+	public List<Student> search(String class_num) throws Exception {
 		List<Student> list=new ArrayList<>();
 
 		Connection con=getConnection();
-
+		
+		
 		PreparedStatement st=con.prepareStatement(
-			"select * from student where name like ?");
-		st.setString(1, "%"+keyword+"%");
+			"select * from student where class_num like ?");
+		st.setString(1, "%"+class_num+"%");
 		ResultSet rs=st.executeQuery();
-
 		while (rs.next()) {
 			Student p=new Student();
 			p.setNo(rs.getString("no"));
 			p.setName(rs.getString("name"));
-			p.setEnt_Year(rs.getInt("ent_year"));
-			p.setClass_Num(rs.getString("class_num"));
-			p.setIs_Attend(rs.getBoolean("is_attend"));
-			p.setSchool_Cd(rs.getString("school_cd"));
+			p.setEnt_year(rs.getInt("ent_year"));
+			p.setClass_num(rs.getString("class_num"));
+			p.setIs_attend(rs.getBoolean("is_attend"));
+			p.setSchool_cd(rs.getString("school_cd"));
 			list.add(p);
 		}
 		st.close();
 		con.close();
 
 		return list;
-	}
+}		
+		
+
 
 	public int insert(Student student) throws Exception {
 		Connection con=getConnection();
@@ -43,10 +45,10 @@ public class StudentDAO extends DAO {
 			"insert into student values(?, ?, ?, ?, ?, ?)");
 		st.setString(1, student.getNo());
 		st.setString(2, student.getName());
-		st.setInt(3, student.getEnt_Year());
-		st.setString(4, student.getClass_Num());
-		st.setBoolean(5, student.getIs_Attend());
-		st.setString(6, student.getSchool_Cd());
+		st.setInt(3, student.getEnt_year());
+		st.setString(4, student.getClass_num());
+		st.setBoolean(5, student.getIs_attend());
+		st.setString(6, student.getSchool_cd());
 		int line=st.executeUpdate();
 
 		st.close();

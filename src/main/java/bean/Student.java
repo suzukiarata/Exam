@@ -5,7 +5,7 @@ public class Student implements java.io.Serializable {
 	// Beanで使用する変数（フィールド名）を宣言
 	private String no;
 	private String name;
-	private int ent_year;
+	private int ent_year=0;
 	private String class_num;
 	private boolean is_attend;
 	private String school_cd;
@@ -17,16 +17,16 @@ public class Student implements java.io.Serializable {
 	public String getName() {
 		return name;
 	}
-	public int getEnt_Year() {
+	public int getEnt_year() {
 		return ent_year;
 	}
-	public String getClass_Num() {
+	public String getClass_num() {
 		return class_num;
 	}
-	public boolean getIs_Attend() {
+	public boolean getIs_attend() {
 		return is_attend;
 	}
-	public String getSchool_Cd() {
+	public String getSchool_cd() {
 		return school_cd;
 	}
 	
@@ -38,16 +38,16 @@ public class Student implements java.io.Serializable {
 	public void setName(String name) {
 		this.name=name;
 	}
-	public void setEnt_Year(int ent_year) {
+	public void setEnt_year(int ent_year) {
 		this.ent_year=ent_year;
 	}
-	public void setClass_Num(String class_num) {
+	public void setClass_num(String class_num) {
 		this.class_num=class_num;
 	}
-	public void setIs_Attend(boolean is_attend) {
+	public void setIs_attend(boolean is_attend) {
 		this.is_attend=is_attend;
 	}
-	public void setSchool_Cd(String school_cd) {
+	public void setSchool_cd(String school_cd) {
 		this.school_cd=school_cd;
 	}
 	

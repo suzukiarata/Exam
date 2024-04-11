@@ -1,0 +1,235 @@
+@charset "UTF-8";
+
+body {
+    margin: 0;
+    padding: 0;
+    /* 色は#333333の短縮コード */
+    color: #4f645c;
+    clear: both;
+}
+
+/* リンクの基本色 */
+a {
+    color: #c0e2f3;
+    text-decoration: none;
+}
+
+/* 一度訪問住みリンクの色 */
+a:visited {color: #739da1; }
+
+/* カーソルを合わせたときの装飾色　:hoverという疑似クラス*/
+a:hover {
+    color: #a5def8;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* opacityを使うことで半透明にすることができる */
+a:hover img { opacity: 0.7; }
+
+/* 行間の調整 */
+h1, h2, h3, h4, h5, h6 { margin-top: 0; }
+
+p {
+    margin-top: 0;
+    line-height: 1.6;
+}
+
+/* 画像の配置位置を設定する */
+img { vertical-align: bottom; }
+
+
+/* ヘッダーの幅を設定する */
+/* marginを記述通りに設定すると中央揃えに設定される */
+header {
+    width: 980px;
+    margin: 0 auto;
+}
+
+header h1 {
+    float: left;
+    margin: 5px 0 10px;
+}
+
+
+
+/* グローバルナビゲーションの設定 */
+/* clearプロパティでフロートを解除して下に配置するようにする */
+#navi {
+    width: 980px;
+    clear: both;
+    overflow: hidden;
+    margin: 16px auto;
+}
+
+/* ul要素の行頭を消す */
+#navi ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* リストを横並びにする */
+#navi ul li {
+    width: 195px;
+    float: left;
+    margin-right: 1px;
+    text-align: center;
+}
+
+/* ナビゲーションのデザインの設定 */
+/* display: block;でナビをブロック単位にできる */
+/* 196P transitionプロパティで色の変化を加えることができる */
+#navi ul li a {
+    display: block;
+    padding: 16px;
+    background-color: #1e90ff;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.2s linear;
+}
+
+
+/* カーソルを合わせたときの色の設定 */
+#navi ul li a:hover {
+    background-color: #87ceeb;
+}
+
+#contents {
+    width: 980px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+#element {
+    width: 728px;
+    float: left;
+    border: 1px solid #254f51;
+    margin-bottom:10px;
+}
+
+#element h1 {
+    background-color: #254f51;
+    padding: 10px,10px,20px,20px;
+    font-size: 26px;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+#element h3 {
+    text-align: center;
+}
+
+#element p {
+    text-align: center;
+}
+
+
+#side {
+    width: 218px;
+    float: right;
+    border: 1px solid #254f51;
+    margin-bottom: 10px;
+    
+}
+
+#side ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#side h4{
+    background-color: #254f51;
+    margin: 0%;
+    padding: 0;
+    font-size: 14px;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+#side p {
+    width: 200px;
+    margin: 10px auto;
+    text-align: center;
+}
+
+
+
+
+footer {
+	position: absolute;
+    background-color: #352b23;
+    text-align: center;
+    clear: both;
+    overflow: auto;
+}
+
+#footer_navi ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    background-color: #27354b;
+    text-align: center;
+}
+
+footer #footer_navi {
+    background-color: #254f51;
+    padding: 5px 0;
+}
+
+footer #footer_navi li {
+    display: inline;
+    border-left: solid 1px #537745;
+    margin-left: 8px;
+    padding-left: 8px;
+    font-size: smaller;
+}
+
+footer small {
+    display: block;
+    padding: 4px 0;
+    color: #fff;
+}
+
+
+
+/*これはお試し*/
+
+#menu-item:hover #drop-menu-list {
+  visibility: visible; /* 下層メニューを表示 */
+}
+
+#menu-item a {
+  align-items: center;
+  color: #fff; /* メニューアイテム内のリンクテキストの色 */
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  text-decoration: none; /* リンクの下線を非表示 */
+  width: 120px;
+}
+
+/* ドロップダウンメニュー */
+#drop-menu {
+  position: relative;
+}
+#drop-menu-list {
+  background-color: #696969; /* ドロップダウンメニューの背景色 */
+  left: 0;
+  position: absolute;
+  top: 100%;
+  visibility: hidden; /* 下層メニューを非表示 */
+  width: max-content;
+  z-index: 1;
+}
+
+
+
+
+

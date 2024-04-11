@@ -12,28 +12,28 @@
 	</div>
 	<div id="element">
 		<h1>学生情報一覧</h1>
-		<table>
-		<tr>
-			<th>入学年度</th>
-			<th>学生番号</th>
-			<th>氏名</th>
-			<th>クラス</th>
-			<th>在学中</th>
-		</tr>
-		<c:forEach var="student" items="${list}">
+		<table border="1">
 			<tr>
-				<td>${student.ent_year}</td>
-				<td>${student.no}</td>
-				<td>${student.name}</td>
-				<td>${student.num_class}</td>
-				<c:if test="${student.is_attend==True}">
-					○
-				</c:if>
-				<c:if test="${student.is_attend==False}">
-					✕
-				</c:if>
+				<th>入学年度</th>
+				<th>学生番号</th>
+				<th>氏名</th>
+				<th>クラス</th>
+				<th>在学中</th>
 			</tr>
-		</c:forEach>
+			<c:forEach var="student" items="${list}">
+				<tr>
+					<td>${student.ent_year}</td>
+					<td>${student.no}</td>
+					<td>${student.name}</td>
+					<td>${student.num_class}</td>
+					<c:if test="${student.is_attend==True}">
+						○
+					</c:if>
+					<c:if test="${student.is_attend==False}">
+						✕
+					</c:if>
+				</tr>
+			</c:forEach>
 		</table>
 	</div>
 	

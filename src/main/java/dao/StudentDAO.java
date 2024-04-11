@@ -30,7 +30,6 @@ public class StudentDAO extends DAO {
 			p.setSchool_Cd(rs.getString("school_cd"));
 			list.add(p);
 		}
-
 		st.close();
 		con.close();
 

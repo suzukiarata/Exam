@@ -16,15 +16,25 @@ public class StudentInfomationAction extends Action{
 		
 		HttpSession session=request.getSession();
 		
-		int ent_year=Integer.parseInt(request.getParameter("f1")); 
+		String num=request.getParameter("f1");
+		int ent_year;
+		
+		if (num==null) {
+			ent_year = 0;
+		} else {
+			ent_year=Integer.parseInt(num); 
+		}
+		
 		String class_num=request.getParameter("f2");
+		String authenticity=request.getParameter("f3");
 		boolean is_attend = true;
 		
-		
-		
+		if (authenticity == null) {
+			is_attend = false;
+		}
 		
 		StudentDAO dao=new StudentDAO();
-		List<Student> list=dao.listsearch(ent_year, class_num,is_attend);
+		List<Student> list=dao.listsearch(ent_year, class_num, is_attend);
 		
 		session.setAttribute("list", list);
 		

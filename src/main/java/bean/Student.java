@@ -29,6 +29,7 @@ public class Student implements java.io.Serializable {
 	public String getSchool_cd() {
 		return school_cd;
 	}
+
 	
 
 	// データを設定するメソッドを定義
@@ -50,6 +51,5 @@ public class Student implements java.io.Serializable {
 	public void setSchool_cd(String school_cd) {
 		this.school_cd=school_cd;
 	}
-	
 	
 }

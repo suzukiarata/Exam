@@ -15,7 +15,7 @@ public class StudentDAO extends DAO {
 
 		Connection con=getConnection();
 		
-		if(ent_year == 0) {
+		if(class_num == "") {
 			PreparedStatement st=con.prepareStatement(
 				"select * from student");
 			ResultSet rs=st.executeQuery();
@@ -29,6 +29,7 @@ public class StudentDAO extends DAO {
 				p.setSchool_cd(rs.getString("school_cd"));
 				list.add(p);
 			}
+			
 			st.close();
 			con.close();
 
@@ -38,7 +39,7 @@ public class StudentDAO extends DAO {
 			PreparedStatement st=con.prepareStatement(
 				"select * from student where ent_year like ? and class_num like ? and is_attend = ? ");
 			st.setInt(1, ent_year);
-			st.setString(2, "%" + class_num +"%" );
+			st.setString(2, class_num);
 			st.setBoolean(3, is_attend);
 			ResultSet rs=st.executeQuery();
 			while (rs.next()) {

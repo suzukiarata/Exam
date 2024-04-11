@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import tool.Action;
 
-public class StudentInfomationChangeAction extends Action{
+public class ChangeAction extends Action{
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response	
 	) throws Exception {
@@ -24,6 +24,6 @@ public class StudentInfomationChangeAction extends Action{
 		
 		session.setAttribute("list", list);
 		
-		return "studentinfomationchange.jsp";
+		return "change.jsp";
 	}
 }

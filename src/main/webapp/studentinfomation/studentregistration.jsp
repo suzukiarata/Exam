@@ -6,9 +6,10 @@
 <%@include file="../home/menu.jsp" %>
 
 <div id="contents">
-	<div id="theme">
+	<div id="element">
 		<h1>学生情報管理機能</h1>
 		<p>学生情報の管理が行えます。</p>
+		<p>検索キーワードを入力してください。</p>
 		<form action="StudentInfomation.action" method="post">
 			入学年度<select name="f1">
 			<option value="0">--------</option>

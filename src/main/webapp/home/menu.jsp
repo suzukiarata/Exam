@@ -10,5 +10,6 @@
 			<li><a href="../home/Home.action">ホームへ</a>
 		</ul>
 	</div>
+	
 	<hr>
 </header>

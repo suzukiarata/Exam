@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration>
+
 <Context reloadable="true">
 	<Resource
-		name="jdbc/book"
+		name="jdbc/sample"
 		auth="Container"
 		type="javax.sql.DataSource"
 		driverClassName="org.h2.Driver"

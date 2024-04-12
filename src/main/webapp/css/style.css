@@ -197,6 +197,10 @@ footer small {
     color: #fff;
 }
 
+.studentinfomation {
+    border-collapse: separate;  /* 表の線と線の間を空ける */
+    border-spacing: 20px;       /* 表の線と線の間の幅 */
+}
 
 
 /*これはお試し*/

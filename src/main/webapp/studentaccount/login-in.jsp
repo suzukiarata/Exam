@@ -2,7 +2,7 @@
 <%@include file="../header.html" %>
 
 <form action="Login.action" method="post">
-<p>ログイン名<input type="text" name="loginname"></p>
+<p>ID<input type="text" name="id"></p>
 <p>パスワード<input type="text" name="password"></p>
 <p><input type="submit" value="ログイン"></p>
 </form>

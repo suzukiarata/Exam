@@ -101,6 +101,29 @@ header h1 {
     overflow: hidden;
 }
 
+#theme {
+	width: 978px;
+	border: 1px solid #254f51;
+	margin: 10px auto;
+}
+
+#theme h1 {
+    background-color: #254f51;
+    padding: 10px,10px,20px,20px;
+    font-size: 26px;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+#theme h3 {
+    text-align: center;
+}
+
+#theme p {
+    text-align: center;
+}
+
 #element {
     width: 728px;
     float: left;

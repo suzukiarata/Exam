@@ -4,7 +4,7 @@
 	<div id="navi">
 		<ul>
 			<li><a href="../home/Home.action">ホームへ</a>
-			<li><a href="../studentinfomation/StudentInfomation.action">学生情報</a>
+			<li><a href="../studentinfomation/StudentInfomation.action?school_cd">学生情報</a>
 			<li><a href="../home/Home.action">ホームへ</a>
 			<li><a href="../home/Home.action">ホームへ</a>
 			<li><a href="../home/Home.action">ホームへ</a>

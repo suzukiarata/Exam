@@ -11,12 +11,12 @@
 		<p>学生情報の管理が行えます。</p>
 		<form action="StudentInfomation.action" method="post">
 			入学年度<select name="f1">
-			<option value="0">--------</option>
+			<option value="" selected disabled>---------</option>
 			<option value="2021">2021</option>
 			<option value="2022">2022</option></select>
 			
 			クラス<select name="f2">
-			<option value="">--------</option>
+			<option value="" selected disabled>---------</option>
 			<option value="201">201</option>
 			<option value="202">202</option></select>
 			

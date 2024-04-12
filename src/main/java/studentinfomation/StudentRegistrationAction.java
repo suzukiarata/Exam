@@ -1,7 +1,5 @@
 package studentinfomation;
 
-import java.util.List;
-
 import bean.Student;
 import dao.StudentDAO;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,28 +14,31 @@ public class StudentRegistrationAction extends Action{
 		
 		HttpSession session=request.getSession();
 		
-		String num=request.getParameter("f1");
-		int ent_year;
 		
-		if (num==null) {
-			ent_year = 0;
-		} else {
-			ent_year=Integer.parseInt(num); 
-		}
-		
-		String class_num=request.getParameter("f2");
-		String authenticity=request.getParameter("f3");
+		String name=request.getParameter("name");
+		String no=request.getParameter("no");
+		int ent_year=Integer.parseInt(request.getParameter("ent_year"));		
+		String class_num=request.getParameter("class_num");
 		boolean is_attend = true;
+		String school_cd=request.getParameter("schoo_cd");
 		
-		if (authenticity == null) {
-			is_attend = false;
-		}
+		Student student=new Student();
+		student.setName(name);
+		student.setNo(no);
+		student.setEnt_year(ent_year);
+		student.setClass_num(class_num);
+		student.setIs_attend(is_attend);
+		student.setSchool_cd(school_cd);
+		
 		
 		StudentDAO dao=new StudentDAO();
-		List<Student> list=dao.listsearch(ent_year, class_num, is_attend);
+		int line=dao.insert(student);
 		
-		session.setAttribute("list", list);
+		if (line>0) {
+			return "studentregistrationsuccess.jsp";
+		}
 		
-		return "studentinfomation.jsp";
-	}
+		return "registrationerror.jsp";
+		
+	}	
 }

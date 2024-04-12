@@ -8,7 +8,7 @@ import bean.Account;
 
 public class AccountDAO extends DAO {
 
-	public Account serch(String loginname,String password)
+	public Account search(String loginname,String password)
 	throws Exception {
 		Account account=null;
 

@@ -1,5 +1,7 @@
 package studentinfomation;
 
+import java.util.List;
+
 import bean.Student;
 import dao.StudentDAO;
 import jakarta.servlet.http.HttpServletRequest;
@@ -23,6 +25,7 @@ public class StudentRegistrationAction extends Action{
 			boolean is_attend = true;
 			String school_cd=request.getParameter("school_cd");
 			
+			
 			Student student=new Student();
 			student.setName(name);
 			student.setNo(no);
@@ -33,6 +36,13 @@ public class StudentRegistrationAction extends Action{
 			
 			
 			StudentDAO dao=new StudentDAO();
+			List<Student> s=dao.searchno(no);
+			
+			if (s != null) {
+				request.setAttribute("error", "学生番号が重複しています");
+				return "studentregistration.jsp";
+			}
+			
 			int line=dao.insert(student);
 			
 			if (line>0) {

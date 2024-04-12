@@ -86,7 +86,7 @@ public class StudentDAO extends DAO {
 		con.close();
 
 		return list;
-}		
+	}		
 	
 		
 
@@ -107,5 +107,28 @@ public class StudentDAO extends DAO {
 		st.close();
 		con.close();
 		return line;
+	}
+	
+	public List<Student> searchno(String no) throws Exception {
+		List<Student> list=new ArrayList<>();
+
+		Connection con=getConnection();
+		
+		
+		PreparedStatement st=con.prepareStatement(
+			"select no from student where no=?");
+		st.setString(1, no);
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			Student p=new Student();
+			p.setNo(rs.getString("no"));
+			list.add(p);
+		}
+		
+		
+		st.close();
+		con.close();
+
+		return list;
 	}
 }

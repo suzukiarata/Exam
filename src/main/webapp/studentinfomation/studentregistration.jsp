@@ -9,7 +9,7 @@
 	<div id="theme">
 		<h1>学生情報登録</h1>
 		<p>学生情報の登録が行えます。</p>
-		<form action="StudentInfomation.action?school_cd" method="post">
+		<form action="StudentInfomation.action" method="post">
 			入学年度<select name="ent_year" required="required">
 			<option value="" selected disabled>-----------</option>
 			<option value="2021">2021</option>

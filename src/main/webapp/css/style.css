@@ -180,6 +180,23 @@ header h1 {
 }
 
 
+/*ログインボタン*/
+.login_button {
+    display: inline-block;
+    background: #e1ffff;
+    background: linear-gradient(to bottom,  #ffffff 0%,#e1ffff 100%);
+    color: #254f51;
+    padding: 10px;
+    border: 1px solid #254f51;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.login_button:hover{
+    background: #77bac1;
+    background: linear-gradient(to bottom,  #77bac1 0%,#87cdcd 100%);
+    color: #254f51;
+}
 
 
 footer {

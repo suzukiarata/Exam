@@ -15,7 +15,7 @@
 	<aside id="side">
 	<section>
 		<h4>サイドバー</h4>
-		<a hraf="studentaccount/login-in.jsp">ログイン</a>
+		<p>サイドのサンプル</p>
 	</section>
 	</aside>
 	<aside id="side">

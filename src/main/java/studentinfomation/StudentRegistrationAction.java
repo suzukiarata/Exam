@@ -20,7 +20,7 @@ public class StudentRegistrationAction extends Action{
 		int ent_year=Integer.parseInt(request.getParameter("ent_year"));		
 		String class_num=request.getParameter("class_num");
 		boolean is_attend = true;
-		String school_cd=request.getParameter("schoo_cd");
+		String school_cd=request.getParameter("school_cd");
 		
 		Student student=new Student();
 		student.setName(name);

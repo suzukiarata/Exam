@@ -9,7 +9,7 @@
 	<div id="theme">
 		<h1>学生情報登録</h1>
 		<p>学生情報の登録が行えます。</p>
-		<form action="StudentInfomation.action" method="post">
+		<form action="StudentRegistration.action" method="post">
 			入学年度<select name="ent_year" required="required">
 			<option value="" selected disabled>-----------</option>
 			<option value="2021">2021</option>
@@ -25,10 +25,13 @@
 			<option value="101">101</option>
 			<option value="201">201</option></select>
 			
+			<input type="hidden" name="school_cd" value="${account.school_cd}">
+			
 			
 			
 			<input type="submit" value="登録して終了">
 		</form>
+		<p><a href="studentinfomation.jsp">戻る</a></p>
 	</div>
 
 

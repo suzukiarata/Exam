@@ -24,6 +24,7 @@
 			
 			<input type="submit" value="絞込み">
 		</form>
+		<p><a href="studentregistration.jsp">新規登録</a></p>
 	</div>
 	<div id="element">
 		<h1>学生情報一覧</h1>
@@ -56,7 +57,6 @@
 					</c:forEach>
 				</c:when>
 			</c:choose>
-			
 		</table>
 	</div>
 	

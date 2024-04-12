@@ -2,28 +2,28 @@ package bean;
 
 public class Account implements java.io.Serializable {
 	
-	private int id;
-	private String loginname;
+	private String id;
 	private String password;
+	private String name;
 	private String school_cd;
 	
-	public int getId() {
+	public String getId() {
 		return id;
-	}
-	public String getLoginname() {
-		return loginname;
 	}
 	public String getPassword() {
 		return password;
 	}
+	public String getName() {
+		return name;
+	}
 	public String getSchool_cd() {
 		return school_cd;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id=id;
 	}
-	public void setLoginname(String loginname) {
-		this.loginname=loginname;
+	public void setLoginname(String name) {
+		this.name=name;
 	}
 	public void setPassword(String password) {
 		this.password=password;

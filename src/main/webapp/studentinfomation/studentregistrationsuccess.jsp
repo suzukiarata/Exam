@@ -1,20 +1,15 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html"  %>
+<%@include file="../header.jsp"  %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<link rel="stylesheet" type="text/css" href="../css/style.css">
-<%@include file="../home/menu.jsp" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@include file="../home/menu.jsp"%>
 
 <div id="contents">
 	<h2 class="successtag">登録が完了しました</h2>
 	<p><a href="studentregistration.jsp">戻る</a></p>
-	<p><a hraf="../studentinfomation/StudentInfomation.action">学生一覧</a></p>
+	<p><%@include file="../home/infomation.jsp"%></p>
 </div>
 
 
 
-
-
-
-
-<%@include file="../footer.html"  %>
+<%@include file="../footer.jsp"  %>

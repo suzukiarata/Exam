@@ -26,6 +26,15 @@ public class StudentRegistrationAction extends Action{
 			String school_cd=request.getParameter("school_cd");
 			
 			
+			if (ent_year == 0) {
+				request.setAttribute("ent_year_none_error", "入学年度を選択してください");
+				request.setAttribute("entered_name", name);
+				request.setAttribute("entered_no", no);
+				request.setAttribute("entered_class_num", class_num);
+				return "studentregistration.jsp";
+			}
+			
+			
 			Student student=new Student();
 			student.setName(name);
 			student.setNo(no);
@@ -38,8 +47,8 @@ public class StudentRegistrationAction extends Action{
 			StudentDAO dao=new StudentDAO();
 			List<Student> s=dao.searchno(no);
 			
-			if (s != null) {
-				request.setAttribute("error", "学生番号が重複しています");
+			if (s.size() != 0) {
+				request.setAttribute("no_duplication_error", "学生番号が重複しています");
 				return "studentregistration.jsp";
 			}
 			

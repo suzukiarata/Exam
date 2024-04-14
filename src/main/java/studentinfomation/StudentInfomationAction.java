@@ -1,8 +1,11 @@
 package studentinfomation;
 
+import java.util.Calendar;
 import java.util.List;
 
+import bean.Class_num;
 import bean.Student;
+import dao.Class_numDAO;
 import dao.StudentDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -33,10 +36,22 @@ public class StudentInfomationAction extends Action{
 			is_attend = false;
 		}
 		
-		StudentDAO dao=new StudentDAO();
-		List<Student> list=dao.listsearch(ent_year, class_num, is_attend);
+		String scd=request.getParameter("scd");
 		
-		session.setAttribute("list", list);
+		StudentDAO studentdao=new StudentDAO();
+		List<Student> student=studentdao.listsearch(ent_year, class_num, is_attend, scd);
+		List<Student> ent=studentdao.searchent();
+		
+		Class_numDAO classdao=new Class_numDAO();
+		List<Class_num> classnumber=classdao.search(scd);
+		
+		Calendar calendar = Calendar.getInstance();
+	    int year = calendar.get(Calendar.YEAR);
+		
+		session.setAttribute("student", student);
+		session.setAttribute("ent", ent);
+		session.setAttribute("classnumber", classnumber);
+		session.setAttribute("year", year);
 		
 		return "studentinfomation.jsp";
 	}

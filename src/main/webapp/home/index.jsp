@@ -1,8 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html"  %>
-<link rel="stylesheet" type="text/css" href="../css/style.css">
-
-
+<%@include file="../header.jsp"  %>
 <%@include file="menu.jsp" %>
 
 <div id="contents">
@@ -32,4 +29,4 @@
 
 
 
-<%@include file="../footer.html"  %>
+<%@include file="../footer.jsp"  %>

@@ -6,8 +6,8 @@
 	<div id="navi">
 		<ul>
 			<li><a href="../home/Home.action">ホームへ</a>
-			<li><a href="../studentinfomation/StudentInfomation.action?scd=${account.school_cd}">学生情報</a>
-			<li><a href="../home/Home.action">ホームへ</a>
+			<li><a href="../studentinfomation/StudentInfomation.action?scd=${account.school_cd}">学生管理</a>
+			<li><a href="../subjectinfomation/SubjectInfomation.action?scd=${account.school_cd}">科目管理</a>
 			<li><a href="../home/Home.action">ホームへ</a>
 			<li><a href="../home/Home.action">ホームへ</a>
 		</ul>

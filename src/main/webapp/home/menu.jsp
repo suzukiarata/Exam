@@ -2,7 +2,7 @@
 <header>
 	<h1>サンプル用サイト</h1>
 	<p>${account.name}様</p>
-	<p><a href="../studentaccount/logout-in.jsp">ログアウト</a></p>
+	<p><a href="../studentaccount/Logout.action">ログアウト</a></p>
 	<div id="navi">
 		<ul>
 			<li><a href="../home/Home.action">ホームへ</a>

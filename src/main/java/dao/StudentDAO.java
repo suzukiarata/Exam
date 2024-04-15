@@ -10,14 +10,15 @@ import bean.Student;
 
 public class StudentDAO extends DAO {
 
-	public List<Student> listsearch(int ent_year, String class_num, boolean is_attend) throws Exception {
-		List<Student> list=new ArrayList<>();
+	public List<Student> listsearch(int ent_year, String class_num, boolean is_attend, String scd) throws Exception {
+		List<Student> student=new ArrayList<>();
 
 		Connection con=getConnection();
 		
-		if(class_num == "") {
+		if(class_num == "" || ent_year == 0) {
 			PreparedStatement st=con.prepareStatement(
-				"select * from student");
+				"select * from student where school_cd = ?");
+			st.setString(1, scd);
 			ResultSet rs=st.executeQuery();
 			while (rs.next()) {
 				Student p=new Student();
@@ -27,20 +28,21 @@ public class StudentDAO extends DAO {
 				p.setClass_num(rs.getString("class_num"));
 				p.setIs_attend(rs.getBoolean("is_attend"));
 				p.setSchool_cd(rs.getString("school_cd"));
-				list.add(p);
+				student.add(p);
 			}
 			
 			st.close();
 			con.close();
 
-			return list;
+			return student;
 			
 		} else {
 			PreparedStatement st=con.prepareStatement(
-				"select * from student where ent_year like ? and class_num like ? and is_attend = ? ");
+				"select * from student where ent_year like ? and class_num like ? and is_attend = ? and school_cd = ?");
 			st.setInt(1, ent_year);
 			st.setString(2, class_num);
 			st.setBoolean(3, is_attend);
+			st.setString(4, scd);
 			ResultSet rs=st.executeQuery();
 			while (rs.next()) {
 				Student p=new Student();
@@ -50,12 +52,12 @@ public class StudentDAO extends DAO {
 				p.setClass_num(rs.getString("class_num"));
 				p.setIs_attend(rs.getBoolean("is_attend"));
 				p.setSchool_cd(rs.getString("school_cd"));
-				list.add(p);
+				student.add(p);
 			}
 			st.close();
 			con.close();
 
-			return list;
+			return student;
 		}
 		
 		
@@ -63,7 +65,7 @@ public class StudentDAO extends DAO {
 	
 	
 	public List<Student> changesearch(String class_num) throws Exception {
-		List<Student> list=new ArrayList<>();
+		List<Student> student=new ArrayList<>();
 
 		Connection con=getConnection();
 		
@@ -80,13 +82,13 @@ public class StudentDAO extends DAO {
 			p.setClass_num(rs.getString("class_num"));
 			p.setIs_attend(rs.getBoolean("is_attend"));
 			p.setSchool_cd(rs.getString("school_cd"));
-			list.add(p);
+			student.add(p);
 		}
 		st.close();
 		con.close();
 
-		return list;
-}		
+		return student;
+	}		
 	
 		
 
@@ -107,5 +109,50 @@ public class StudentDAO extends DAO {
 		st.close();
 		con.close();
 		return line;
+	}
+	
+	public List<Student> searchno(String no) throws Exception {
+		List<Student> student=new ArrayList<>();
+
+		Connection con=getConnection();
+		
+		
+		PreparedStatement st=con.prepareStatement(
+			"select no from student where no = ?");
+		st.setString(1, no);
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			Student p=new Student();
+			p.setNo(rs.getString("no"));
+			student.add(p);
+		}
+		
+		
+		st.close();
+		con.close();
+
+		return student;
+	}
+	
+	public List<Student> searchent() throws Exception {
+		List<Student> student=new ArrayList<>();
+
+		Connection con=getConnection();
+		
+		
+		PreparedStatement st=con.prepareStatement(
+			"select distinct ent_year from student order by ent_year asc");
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			Student p=new Student();
+			p.setEnt_year(rs.getInt("ent_year"));
+			student.add(p);
+		}
+		
+		
+		st.close();
+		con.close();
+
+		return student;
 	}
 }

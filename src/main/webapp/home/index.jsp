@@ -1,8 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html"  %>
-<link rel="stylesheet" type="text/css" href="../css/style.css">
-
-
+<%@include file="../header.jsp"  %>
 <%@include file="menu.jsp" %>
 
 <div id="contents">
@@ -15,7 +12,7 @@
 	<aside id="side">
 	<section>
 		<h4>サイドバー</h4>
-		<a hraf="studentaccount/login-in.jsp">ログイン</a>
+		<p>サイドのサンプル</p>
 	</section>
 	</aside>
 	<aside id="side">
@@ -32,4 +29,4 @@
 
 
 
-<%@include file="../footer.html"  %>
+<%@include file="../footer.jsp"  %>

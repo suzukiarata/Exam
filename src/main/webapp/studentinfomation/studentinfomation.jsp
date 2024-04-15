@@ -1,8 +1,7 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.html"  %>
+<%@include file="../header.jsp"  %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<link rel="stylesheet" type="text/css" href="../css/style.css">
 <%@include file="../home/menu.jsp" %>
 
 <div id="contents">
@@ -12,27 +11,31 @@
 		<form action="StudentInfomation.action" method="post">
 			入学年度<select name="f1">
 			<option value="" selected disabled>---------</option>
-			<option value="2021">2021</option>
-			<option value="2022">2022</option></select>
+			<c:forEach items="${ent}" var="ent">
+				<option value="${ent.ent_year}">${ent.ent_year}</option>
+			</c:forEach></select>
 			
 			クラス<select name="f2">
 			<option value="" selected disabled>---------</option>
-			<option value="201">201</option>
-			<option value="202">202</option></select>
+			<c:forEach items="${classnumber}" var="classnumber">
+				<option value="${classnumber.class_num}">${classnumber.class_num}</option>
+			</c:forEach></select>
 			
 			在学中<input type="checkbox" name="f3" value="enrollment" checked>
 			
 			<input type="submit" value="絞込み">
 		</form>
+		<p><a href="studentregistration.jsp?${year}">新規登録</a></p>
 	</div>
 	<div id="element">
 		<h1>学生情報一覧</h1>
 		<table>
 			<c:choose>
-				<c:when test="${fn:length(list) == 0 }">
+				<c:when test="${fn:length(student) == 0 }">
 					<p>学生情報が存在しません</p>
 				</c:when>
-				<c:when test="${fn:length(list) != 0 }">
+				<c:when test="${fn:length(student) != 0 }">
+					<p>検索結果：${fn:length(student)}件</p>
 					<tr>
 						<th>入学年度</th>
 						<th>学生番号</th>
@@ -41,22 +44,21 @@
 						<th>在学中</th>
 						<th></th>
 					</tr>
-					<c:forEach items="${list}" var="s">
+					<c:forEach items="${student}" var="student">
 						<tr>
-							<td>${s.ent_year}</td>
-							<td>${s.no}</td>
-							<td>${s.name}</td>
-							<td>${s.class_num}</td>
+							<td>${student.ent_year}</td>
+							<td>${student.no}</td>
+							<td>${student.name}</td>
+							<td>${student.class_num}</td>
 							<c:choose>
-								<c:when test="${s.is_attend==true}"><td>○</td></c:when>
-								<c:when test="${s.is_attend==false}"><td>✕</td></c:when>
+								<c:when test="${student.is_attend==true}"><td>○</td></c:when>
+								<c:when test="${student.is_attend==false}"><td>✕</td></c:when>
 							</c:choose>
-							<td><a href="StudentInfomationChange.action?no=${s.no}">変更</a></td>
+							<td><a href="StudentInfomationChange.action?no=${student.no}">変更</a></td>
 						</tr>
 					</c:forEach>
 				</c:when>
 			</c:choose>
-			
 		</table>
 	</div>
 	
@@ -76,9 +78,4 @@
 </div>
 
 
-
-
-
-
-
-<%@include file="../footer.html"  %>
+<%@include file="../footer.jsp"  %>

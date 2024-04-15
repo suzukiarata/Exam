@@ -14,7 +14,7 @@ public class LogoutAction extends Action {
 
 		if (session.getAttribute("account")!=null) {
 			session.removeAttribute("account");
-			return "logout-out.jsp";
+			return "logout-in.jsp";
 		}
 		
 		return "logout-error.jsp";

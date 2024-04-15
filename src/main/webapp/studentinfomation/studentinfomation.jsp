@@ -54,7 +54,7 @@
 								<c:when test="${student.is_attend==true}"><td>○</td></c:when>
 								<c:when test="${student.is_attend==false}"><td>✕</td></c:when>
 							</c:choose>
-							<td><a href="StudentInfomationChange.action?no=${student.no}">変更</a></td>
+							<td><a href="Change.action?no=${student.no}">変更</a></td>
 						</tr>
 					</c:forEach>
 				</c:when>

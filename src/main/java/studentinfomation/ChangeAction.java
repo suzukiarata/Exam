@@ -1,7 +1,5 @@
 package studentinfomation;
 
-import java.util.List;
-
 import bean.Student;
 import dao.StudentDAO;
 import jakarta.servlet.http.HttpServletRequest;
@@ -20,10 +18,10 @@ public class ChangeAction extends Action{
 		
 		
 		StudentDAO dao=new StudentDAO();
-		List<Student> list=dao.changesearch(no);
+		Student changestudent=dao.changesearch(no);
 		
-		session.setAttribute("list", list);
+		session.setAttribute("changelist", changestudent);
 		
-		return "change.jsp";
+		return "studentinfomationchange.jsp";
 	}
 }

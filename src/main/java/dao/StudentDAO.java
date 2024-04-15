@@ -64,25 +64,24 @@ public class StudentDAO extends DAO {
 	}	
 	
 	
-	public List<Student> changesearch(String class_num) throws Exception {
-		List<Student> student=new ArrayList<>();
+	public Student changesearch(String no) throws Exception {
+		Student student=null;
 
 		Connection con=getConnection();
 		
 		
 		PreparedStatement st=con.prepareStatement(
-			"select * from student where class_num like ?");
-		st.setString(1, "%"+class_num+"%");
+			"select * from student where no =  ?");
+		st.setString(1, no);
 		ResultSet rs=st.executeQuery();
 		while (rs.next()) {
-			Student p=new Student();
-			p.setNo(rs.getString("no"));
-			p.setName(rs.getString("name"));
-			p.setEnt_year(rs.getInt("ent_year"));
-			p.setClass_num(rs.getString("class_num"));
-			p.setIs_attend(rs.getBoolean("is_attend"));
-			p.setSchool_cd(rs.getString("school_cd"));
-			student.add(p);
+			student=new Student();
+			student.setNo(rs.getString("no"));
+			student.setName(rs.getString("name"));
+			student.setEnt_year(rs.getInt("ent_year"));
+			student.setClass_num(rs.getString("class_num"));
+			student.setIs_attend(rs.getBoolean("is_attend"));
+			student.setSchool_cd(rs.getString("school_cd"));
 		}
 		st.close();
 		con.close();
@@ -155,4 +154,25 @@ public class StudentDAO extends DAO {
 
 		return student;
 	}
+	
+	public int changestudent(Student student) throws Exception {
+
+		Connection con=getConnection();
+		
+		
+		PreparedStatement st=con.prepareStatement(
+			"update student set no=?,name=?,ent_year=?,class_num=?,is_attend=?,school_cd=? where no=?");
+		st.setString(1, student.getNo());
+		st.setString(2, student.getName());
+		st.setInt(3, student.getEnt_year());
+		st.setString(4, student.getClass_num());
+		st.setBoolean(5, student.getIs_attend());
+		st.setString(6, student.getSchool_cd());
+		st.setString(7, student.getNo());
+		int line=st.executeUpdate();
+		st.close();
+		con.close();
+
+		return line;
+	}		
 }

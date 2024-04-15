@@ -6,7 +6,7 @@
 
 <div id="contents">
 	<h1 class="function_title">学生情報管理機能</h1>
-	<a href="studentregistration.jsp?${year}" class="registration_link">新規登録</a>
+	<a href="studentregistration.jsp" class="registration_link">新規登録</a>
 	
 	<div class="studentform">
 		<form action="StudentInfomation.action" method="post">

@@ -19,13 +19,12 @@
 				<td></td>
 				<td></td>
 			</tr>
-			<c:forEach items="${student}" var="student">
+			<c:forEach items="${subject}" var="subject">
 				<tr>
-					<td>${student.ent_year}</td>
-					<td>${student.no}</td>
-					<td>${student.name}</td>
-					<td>${student.class_num}</td>
-					<td><a href="StudentInfomationChange.action?no=${student.no}">変更</a></td>
+					<td>${subject.cd}</td>
+					<td>${subject.name}</td>
+					<td><a href="SubjectInfomationChange.action?no=${subject.cd}">変更</a></td>
+					<td><a href="SubjectInfomationDalete.action?no=${subject.cd}">削除</a></td>
 				</tr>
 			</c:forEach>
 		</table>

@@ -5,37 +5,49 @@
 <%@include file="../home/menu.jsp" %>
 
 <div id="contents">
-	<div id="theme">
-		<h1>学生情報管理機能</h1>
-		<p>学生情報の管理が行えます。</p>
+	<h1 class="function_title">学生情報管理機能</h1>
+	<a href="studentregistration.jsp?${year}" class="registration_link">新規登録</a>
+	
+	<div class="studentform">
 		<form action="StudentInfomation.action" method="post">
-			入学年度<select name="f1">
-			<option value="" selected disabled>---------</option>
-			<c:forEach items="${ent}" var="ent">
-				<option value="${ent.ent_year}">${ent.ent_year}</option>
-			</c:forEach></select>
 			
-			クラス<select name="f2">
-			<option value="" selected disabled>---------</option>
-			<c:forEach items="${classnumber}" var="classnumber">
-				<option value="${classnumber.class_num}">${classnumber.class_num}</option>
-			</c:forEach></select>
+			<div class="studentform_elements">
+				<label>入学年度</label><br>
+				<select name="f1">
+				<option value="" selected disabled>---------</option>
+				<c:forEach items="${ent}" var="ent">
+					<option value="${ent.ent_year}">${ent.ent_year}</option>
+				</c:forEach></select>
+			</div>
 			
-			在学中<input type="checkbox" name="f3" value="enrollment" checked>
+			<div class="studentform_elements">
+				<label>クラス</label><br>
+				<select name="f2">
+				<option value="" selected disabled>---------</option>
+				<c:forEach items="${classnumber}" var="classnumber">
+					<option value="${classnumber.class_num}">${classnumber.class_num}</option>
+				</c:forEach></select>
+			</div>
 			
-			<input type="submit" value="絞込み">
-		</form>
-		<p><a href="studentregistration.jsp?${year}">新規登録</a></p>
+			<div class="studentform_elements1">
+				<input type="checkbox" name="f3" value="enrollment" checked>
+				<label>在学中</label>
+			</div>
+			
+			<div class="studentform_elements1">
+				<input type="submit" value="絞込み" class="narrowdown_buttom">
+			</div>
+			
+		</form>	
 	</div>
-	<div id="element">
-		<h1>学生情報一覧</h1>
-		<table>
+	<div>
+		<table class="student_list">
 			<c:choose>
 				<c:when test="${fn:length(student) == 0 }">
-					<p>学生情報が存在しません</p>
+					<p class="none_message">学生情報が存在しません</p>
 				</c:when>
 				<c:when test="${fn:length(student) != 0 }">
-					<p>検索結果：${fn:length(student)}件</p>
+					<p class="number_of_data">検索結果：${fn:length(student)}件</p>
 					<tr>
 						<th>入学年度</th>
 						<th>学生番号</th>
@@ -61,20 +73,6 @@
 			</c:choose>
 		</table>
 	</div>
-	
-
-	<aside id="side">
-	<section>
-		<h4>サイドバー</h4>
-		<p>サイドバーの内容</p>
-	</section>
-	</aside>
-	<aside id="side">
-	<section>
-		<h4>サイドバー</h4>
-		<p>複数配置可能</p>
-	</section>
-	</aside>
 </div>
 
 

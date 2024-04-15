@@ -24,7 +24,7 @@ public class LoginAction extends Action {
 			session.setAttribute("account", account);
 			return "../home/Home.action";
 		}
-		
-		return "login-error.jsp";
+		request.setAttribute("login_error", "IDまたはパスワードが確認できませんでした");
+		return "login-in.jsp";
 	}
 }

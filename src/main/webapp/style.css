@@ -269,7 +269,8 @@ header h1 {
 
 .student_list {
     border-collapse:  collapse; /* セルの線を重ねる */
-    width: 100%;
+    width: 960px;
+    margin:0 auto;
     text-align: center;
     border: solid 1px; 
 }

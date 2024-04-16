@@ -53,8 +53,7 @@
 		</form>	
 	</div>
 	<div>
-		<table>
-		</table>
+		
 	</div>
 </div>
 

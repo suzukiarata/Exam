@@ -155,6 +155,27 @@ public class StudentDAO extends DAO {
 		return student;
 	}
 	
+	public List<Student> searchtestent() throws Exception {
+		List<Student> student=new ArrayList<>();
+
+		Connection con=getConnection();
+		
+		PreparedStatement st=con.prepareStatement(
+			"select distinct ent_year from student where ent_year in(select ent_year from test inner join student on test.student_no = student.no) order by ent_year asc");
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			Student p=new Student();
+			p.setEnt_year(rs.getInt("ent_year"));
+			student.add(p);
+		}
+		
+		
+		st.close();
+		con.close();
+
+		return student;
+	}
+	
 	public int changestudent(Student student) throws Exception {
 
 		Connection con=getConnection();

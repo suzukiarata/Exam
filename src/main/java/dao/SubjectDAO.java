@@ -10,7 +10,7 @@ import bean.Subject;
 
 public class SubjectDAO extends DAO {
 
-	public List<Subject> search(String scd)
+	public List<Subject> search(String school_cd)
 	throws Exception {
 		List<Subject> subject=new ArrayList<>();
 
@@ -19,7 +19,7 @@ public class SubjectDAO extends DAO {
 		PreparedStatement st;
 		st=con.prepareStatement(
 				"select * from subject where school_cd = ?");
-		st.setString(1, scd);
+		st.setString(1, school_cd);
 		ResultSet rs=st.executeQuery();
 		
 		while (rs.next()) {

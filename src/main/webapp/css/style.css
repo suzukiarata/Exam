@@ -30,10 +30,10 @@ a:hover img { opacity: 0.7; }
 /* 行間の調整 */
 h1, h2, h3, h4, h5, h6 { margin-top: 0; }
 
-p {
-    margin-top: 0;
-    line-height: 1.6;
-}
+/*p {*/
+/*    margin-top: 0;*/
+/*    line-height: 1.6;*/
+/*}*/
 
 /* 画像の配置位置を設定する */
 img { vertical-align: bottom; }
@@ -338,7 +338,7 @@ header h1 {
   margin-bottom: 15px;
 }
 
-label {
+.login-label {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
@@ -360,6 +360,9 @@ button[type="submit"] {
   border: none;
   border-radius: 3px;
   cursor: pointer;
+}
+.login-p{
+	text-align: center;
 }
 
 

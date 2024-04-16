@@ -356,7 +356,7 @@ button[type="submit"] {
   width: 100%;
   padding: 10px;
   background-color: #007bff;
-  color: #fff;
+  color: rgb(128, 128, 128);
   border: none;
   border-radius: 3px;
   cursor: pointer;
@@ -365,5 +365,27 @@ button[type="submit"] {
 	text-align: center;
 }
 
+/*ログアウト画面*/
+.logout-active{
+	font-size: 35px;
+	width: 980pxpx;
+	height: 50px;
+	background: rgb(239, 239, 239);
+}
+.logout-ok {
+	text-align: center;
+	font-size: 20px;
+	width: 980pxpx;
+	height: 29px;
+	background: rgb(0, 168, 43);
+}
+
+.logout-title{
+	font-size: 48px;
+	width: 980pxpx;
+	background: rgb(217, 236, 255);
+	color:#000;
+	padding: 10px 0 10px 10px;
+}
 
 

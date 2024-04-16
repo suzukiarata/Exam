@@ -5,44 +5,37 @@
 <%@include file="../home/menu.jsp" %>
 
 <div id="contents">
-	<div id="theme">
-		<h1>科目管理</h1>
-		<p>科目情報の管理が行えます</p>
-		<p><a href="subjectregistration.jsp">新規登録</a></p>
-	</div>
-	<div id="element">
-		<h1>学生情報一覧</h1>
-		<table>
-			<tr>
-				<td>科目コード</td>
-				<td>科目名</td>
-				<td></td>
-				<td></td>
-			</tr>
-			<c:forEach items="${subject}" var="subject">
-				<tr>
-					<td>${subject.cd}</td>
-					<td>${subject.name}</td>
-					<td><a href="SubjectInfomationChange.action?no=${subject.cd}">変更</a></td>
-					<td><a href="SubjectInfomationDalete.action?no=${subject.cd}">削除</a></td>
-				</tr>
-			</c:forEach>
-		</table>
-	</div>
 	
-
-	<aside id="side">
-	<section>
-		<h4>サイドバー</h4>
-		<p>サイドバーの内容</p>
-	</section>
-	</aside>
-	<aside id="side">
-	<section>
-		<h4>サイドバー</h4>
-		<p>複数配置可能</p>
-	</section>
-	</aside>
+	<h1 class="function_title">科目管理</h1>
+	
+	<!-- subjectregistration.jspは登録用のjspファイル　同じ階層に作ってね -->
+	<p><a href="subjectregistration.jsp">新規登録</a></p>
+	
+	
+	<table>
+		<tr>
+			<td>科目コード</td>
+			<td>科目名</td>
+			<td></td>
+			<td></td>
+		</tr>
+		
+		<!-- javaのsubjectinfomationファルダの中のSubjectInfomationAction.javaで、
+		     subjectっていうリストがセッション情報として与えられている(分からなかったら聞いて) -->
+		<c:forEach items="${subject}" var="subject">
+			<tr>
+				<td>${subject.cd}</td>
+				<td>${subject.name}</td>
+				
+				<!-- javaのsubjectinfomationファルダの中に下記のファイルを作成してね
+				     ?no=${subject.cd}"は該当する行の科目コードをnoっていう名前で渡しているよ -->
+				<td><a href="SubjectInfomationChange.action?no=${subject.cd}">変更</a></td>
+				<td><a href="SubjectInfomationDalete.action?no=${subject.cd}">削除</a></td>
+			</tr>
+		</c:forEach>
+	</table>
+	
+	
 </div>
 
 

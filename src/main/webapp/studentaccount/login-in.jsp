@@ -1,5 +1,4 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.jsp"  %>
 
 <div id="contents">
 	<form action="Login.action" method="post">
@@ -64,14 +63,15 @@
     } 
 
   </script> 
-
+  <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
 </head> 
 
 <body> 
 
   <form onsubmit="submitForm(); return false;"> 
     <label for="id">ID:</label>
-    <input type="text"required="required" name="id" placeholder="Loginid"> 
+    <input type="text"required="required" name="id"> 
 
     <br> 
     <label for="Password">Password:</label> 

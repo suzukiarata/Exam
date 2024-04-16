@@ -9,7 +9,7 @@
 	<a href="studentregistration.jsp" class="registration_link">新規登録</a>
 	
 	<div class="studentform">
-		<form action="StudentInfomation.action" method="post">
+		<form action="StudentInfomation.action?scd=${account.school_cd}" method="post">
 			
 			<div class="studentform_elements">
 				<label>入学年度</label><br>

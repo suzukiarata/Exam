@@ -17,7 +17,8 @@ public class TestDAO extends DAO {
 		Connection con=getConnection();
 		PreparedStatement st;
 		st=con.prepareStatement(
-				"select * from test inner join student on test.student_no = student.no and test.class_num = student.class_num where ent_year = ? and test.class_num = ? and subject_cd = ? and test.no = ?");
+				"select * from test inner join student on test.student_no = student.no and test.class_num = student.class_num "
+				+ "where student.ent_year = ? and test.class_num = ? and subject_cd = ? and test.no = ?");
 		st.setInt(1, score.getEnt_year());
 		st.setString(2, score.getClass_num());
 		st.setString(3, score.getSubject_cd());
@@ -26,12 +27,12 @@ public class TestDAO extends DAO {
 		
 		while (rs.next()) {
 			Test t = new Test();
-			t.setEnt_year(rs.getInt("ent_year"));
+			t.setEnt_year(rs.getInt("student.ent_year"));
 			t.setName(rs.getString("name"));
-			t.setStudent_no(rs.getString("student_no"));
-			t.setSchool_cd(rs.getString("school_cd"));
+			t.setStudent_no(rs.getString("test.student_no"));
+			t.setSchool_cd(rs.getString("test.school_cd"));
 			t.setSubject_cd(rs.getString("subject_cd"));
-			t.setNo(rs.getInt("no"));
+			t.setNo(rs.getInt("test.no"));
 			t.setPoint(rs.getInt("point"));
 			t.setClass_num(rs.getString("test.class_num"));
 			test.add(t);

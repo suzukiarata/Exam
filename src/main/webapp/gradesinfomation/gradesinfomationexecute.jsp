@@ -47,6 +47,7 @@
 			</div>
 			
 			<p>${none_error}</p>
+			<p>${ent_year}</p>
 			
 			<div class="studentform_elements1">
 				<input type="submit" value="検索" class="narrowdown_buttom">
@@ -57,7 +58,11 @@
 	<div>
 		<form action="GradesRegistration.action?scd=${account.school_cd}" method="post">
 			<c:choose>
+				<c:when test="${fn:length(student) == 0 }">
+					<p class="none_message">学生情報が存在しません</p>
+				</c:when>
 				<c:when test="${fn:length(test) != 0 }">
+					<p class="number_of_data">科目:${subject.name}（${test.no}回）</p>
 					<table>
 						<tr>
 							<th>入学年度</th>
@@ -79,10 +84,13 @@
 				</c:when>
 			</c:choose>	
 			
+			 
 			<input type="hidden" name="ent_year" value="${test.ent_year}">
 			<input type="hidden" name="class_numr" value="${test.class_num}">
 			<input type="hidden" name="subject_cd" value="${test.subject_cd}">
-			<input type="hidden" name="no" value="${test.no}">
+			<input type="hidden" name="no" value="${test.no}"> 
+			
+			
 			<input type="submit" value="登録して終了" class="narrowdown_buttom">
 		</form>
 	</div>

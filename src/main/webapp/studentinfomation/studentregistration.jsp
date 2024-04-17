@@ -5,26 +5,29 @@
 <%@include file="../home/menu.jsp" %>
 
 <div id="contents">
-	<div id="theme">
-		<h1>学生情報登録</h1>
+		<h1 class="function_title">学生情報登録</h1>
 		<p>学生情報の登録が行えます。</p>
 		<form action="StudentRegistration.action" method="post">
-			入学年度<select name="ent_year">
+		    <br>
+			<label>入学年度</label>
+			<select name="ent_year"class="select_ent_year">
 			<option value="0">---------</option>
 			<c:forEach begin="${year - 10}" end="${year + 10}" step="1" var="foryear">
 			<option value="${foryear}">${foryear}</option>
 			</c:forEach></select>
 			<p>${ent_year_none_error}</p>
 			
+			<br>
 			学生番号
-			<input type="text" name="no" maxlength="10" required="required" value="${entered_no}">
+			<input type="text" name="no" maxlength="10" required="required" placeholder="学生番号を入力してください" value="${entered_no}">
 			<p>${no_duplication_error}</p>
 	
-			
+			<br>
 			氏名
-			<input type="text" name="name" maxlength="30" required="required" value="${entered_name}">
+			<input type="text" name="name" maxlength="30" required="required"placeholder="氏名を入力してください" value="${entered_name}">
 			
-			クラス<select name="class_num">
+			<br><br>
+			クラス<select name="class_num" class="select_ent_year">
 			<c:forEach items="${classnumber}" var="classnumber">
 				<c:choose>
 					<c:when test="${entered_class_num == classnumber.class_num}">
@@ -36,16 +39,15 @@
 				</c:choose>
 			</c:forEach></select>
 			
+			<br><br><br>
 			<input type="hidden" name="school_cd" value="${account.school_cd}">
 			
 			
-			
-			<input type="submit" value="登録して終了">
+			<input class="select_button_gtj" type="submit" value="登録して終了">
 		</form>
 		
 		
 		<p><a href="studentinfomation.jsp">戻る</a></p>
-	</div>
 
 
 

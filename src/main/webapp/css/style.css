@@ -411,4 +411,24 @@ button[type="submit"] {
 	padding: 10px 0 10px 10px;
 }
 
+/*科目登録情報*/
+.select_ent_year{
+	width:952px;
+	height:38px;
+}
+
+.select_button_gtj{
+  width: 10%;
+  padding: 10px;
+  background-color: rgb(206, 206, 206);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 3px;
+}
+
+
+
+
+
+
 

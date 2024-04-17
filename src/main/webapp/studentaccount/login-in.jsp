@@ -66,12 +66,14 @@
 	
 	<body>
 	<div id="contents">
-		<h2>得点管理システム</h2>
+		<h2 class="login-title">得点管理システム</h2>
 		<form action="Login.action" method="post">
 		
 		<p>${login_error}<p>
 		<div class="login-container">
-		<h1>ログイン</h1>
+	
+				<h1 class="login-main">ログイン</h1>
+			
 		  <form onsubmit="submitForm(); return false;">
 		  <div class="form-group"> 
 			    <label for="id" class="login-label">ID:</label>
@@ -85,11 +87,11 @@
 		   
 		   <div class="form-group">
 			   <div class="login-p">
-				    <input type="checkbox" id="showPassword" onchange="togglePasswordVisibility()"> 
-				    <label for="showPassword" class="login-label">パスワードを表示</label> 
+				    <input type="checkbox" id="showPassword" onchange="togglePasswordVisibility()" >
+				    <label  for="showPassword">パスワードを表示</label> 
 			   </div> 
 		   </div>
-		    <button type="submit">ログイン</button> 
+		    	<button type="submit">ログイン</button> 
 		
 		  </form> 
 		</div>

@@ -328,6 +328,7 @@ header h1 {
 
 /*ログイン画面*/
 .login-container {
+  
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
@@ -348,24 +349,44 @@ header h1 {
 
 input[type="text"],
 input[type="password"] {
-  width: 100%;
+  width: 95%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
 button[type="submit"] {
-  width: 100%;
+  text-align: center;
+  width: 95%;
   padding: 10px;
   background-color: #007bff;
-  color: rgb(128, 128, 128);
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 3px;
   cursor: pointer;
 }
 .login-p{
 	text-align: center;
+	color:#000
 }
+
+.login-title{
+	font-size: 48px;
+	width: 980pxpx;
+	background: rgb(217, 236, 255);
+	color:#000;
+	padding: 10px 0 10px 10px;
+}
+
+.login-main{
+	text-align: center;
+	font-size: 35px;
+	width: 980pxpx;
+	height: 50px;
+	background: rgb(239, 239, 239);
+	color:#000
+}
+
 
 /*ログアウト画面*/
 .logout-active{

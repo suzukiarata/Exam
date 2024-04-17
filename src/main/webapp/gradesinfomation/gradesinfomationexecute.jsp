@@ -8,7 +8,7 @@
 	<h1 class="function_title">成績管理機能</h1>
 	
 	<div class="studentform">
-		<form action="GradesReferenceExecute.action?scd=${account.school_cd}" method="post">
+		<form action="GradesInfomationExecute.action?scd=${account.school_cd}" method="post">
 			
 			<div class="studentform_elements">
 				<label>入学年度</label><br>
@@ -53,7 +53,36 @@
 		</form>	
 	</div>
 	<div>
-		
+		<form action="GradesRegistration.action?scd=${account.school_cd}" method="post">
+			<c:choose>
+				<c:when test="${fn:length(test) != 0 }">
+					<table>
+						<tr>
+							<th>入学年度</th>
+							<th>クラス</th>
+							<th>学生番号</th>
+							<th>氏名</th>
+							<th>点数</th>
+						</tr>
+						<c:forEach items="${test}" var="test">
+							<tr>
+								<td>${test.ent_year}</td>
+								<td>${test.class_num}</td>
+								<td>${test.student_no}</td>
+								<td>${test.name}</td>
+								<td><input type="text" name="int_${test.student_no}" value="${test.point}"></td>
+							</tr>
+						</c:forEach>
+					</table>
+				</c:when>
+			</c:choose>	
+			
+			<input type="hidden" name="ent_year" value="${test.ent_year}">
+			<input type="hidden" name="class_numr" value="${test.class_num}">
+			<input type="hidden" name="subject_cd" value="${test.subject_cd}">
+			<input type="hidden" name="no" value="${test.no}">
+			<input type="submit" value="登録して終了" class="narrowdown_buttom">
+		</form>
 	</div>
 </div>
 

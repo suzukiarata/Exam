@@ -2,13 +2,7 @@ package gradesinfomation;
 
 import java.util.List;
 
-import bean.Class_num;
-import bean.Student;
-import bean.Subject;
 import bean.Test;
-import dao.Class_numDAO;
-import dao.StudentDAO;
-import dao.SubjectDAO;
 import dao.TestDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -22,28 +16,12 @@ public class GradesRegistrationAction extends Action{
 		
 		HttpSession session=request.getSession();
 		
-		String num=request.getParameter("f1");
-		int ent_year;
+		int ent_year=Integer.parseInt(request.getParameter("ent_year")); 
+		String class_num=request.getParameter("class_num");
+		String subject_cd=request.getParameter("subject_cd");
+		int no=Integer.parseInt(request.getParameter("no")); 
 		
-		if (num==null) {
-			ent_year = 0;
-		} else {
-			ent_year=Integer.parseInt(num); 
-		}
-		
-		String class_num=request.getParameter("f2");
-		String subject_cd=request.getParameter("f3");
-		
-		num=request.getParameter("f4");
-		int no;
-		if (num==null) {
-			no = 0;
-		} else {
-			no=Integer.parseInt(num); 
-		}
-		
-		
-		String scd=request.getParameter("scd");
+		int line=0;
 		
 		Test test=new Test();
 		test.setEnt_year(ent_year);
@@ -54,22 +32,15 @@ public class GradesRegistrationAction extends Action{
 		TestDAO testdao=new TestDAO();
 		List<Test> t=testdao.search(test);
 		
-		StudentDAO studentdao=new StudentDAO();
-		List<Student> ent=studentdao.searchtestent();
+		for(Test i:t) {
+			int point=Integer.parseInt(request.getParameter("int_" + i.getStudent_no())); 
+			line=testdao.registrationpoint(i, point);
+		}
 		
-		Class_numDAO classdao=new Class_numDAO();
-		List<Class_num> classnumber=classdao.search(scd);
+		if (line>0) {
+			return "gradesinfomationexecutesuccess.jsp";
+		}
 		
-		SubjectDAO subjectdao=new SubjectDAO();
-		List<Subject> subject=subjectdao.search(scd);
-		
-
-		session.setAttribute("classnumber", classnumber);
-		session.setAttribute("ent", ent);
-		session.setAttribute("subject", subject);
-		session.setAttribute("test", t);
-		
-		return "gradesregistration.jsp";
+		return "gradesinfomationexecuteerror.jsp";
 	}
 }
-

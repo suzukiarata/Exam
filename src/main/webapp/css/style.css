@@ -405,13 +405,13 @@ button[type="submit"] {
 
 .logout-title{
 	font-size: 48px;
-	width: 980pxpx;
+	width: 980px;
 	background: rgb(217, 236, 255);
 	color:#000;
 	padding: 10px 0 10px 10px;
 }
 
-/*科目登録情報*/
+/*学生登録情報*/
 .select_ent_year{
 	width:952px;
 	height:38px;
@@ -426,7 +426,18 @@ button[type="submit"] {
   border-radius: 3px;
 }
 
-
+/*学生登録変更*/
+.student-change-wk{
+	width:952px;
+	height:38px;
+}
+.student-change-button{
+	padding: 10px;
+  background-color: rgb(0, 128, 255);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 3px;
+}
 
 
 

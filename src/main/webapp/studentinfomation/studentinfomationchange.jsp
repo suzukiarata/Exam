@@ -5,12 +5,11 @@
 <%@include file="../home/menu.jsp" %>
 
 <div id="contents">
-	<div id="theme">
-		<h1>学生情報変更</h1>
+		<h1 class="function_title">学生情報変更</h1>
 		<form action="StudentInfomationChange.action" method="post">
 		
 			入学年度
-			<input type="text" name="ent_year" value="${changelist.ent_year}" readonly><br>
+			<input class="student-change-mm" type="text" name="ent_year" value="${changelist.ent_year}" readonly><br>
 			
 			学生番号
 			<input type="text" name="no" value="${changelist.no}" readonly><br>
@@ -18,16 +17,16 @@
 			氏名
 			<input type="text" name="name" maxlength="30" required="required"><br>
 			
-			クラス<select name="class_num">
+			クラス<select class="student-change-wk"name="class_num">
 			<c:forEach items="${classnumber}" var="classnumber">
 				<option value="${classnumber.class_num}">${classnumber.class_num}</option>
-			</c:forEach></select><br>
+			</c:forEach></select><br><br>
 			
 			在学中<input type="checkbox" name="is_attend" value="enrollment" checked><br>
 			
-			<input type="hidden" name="school_cd" value="${changelist.school_cd}">
+			<input type="hidden" name="school_cd" value="${changelist.school_cd}"><br>
 			
-			<input type="submit" value="変更">
+			<input class="student-change-button" type="submit" value="変更">
 		</form>
 		
 		

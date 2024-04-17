@@ -23,7 +23,7 @@ public class GradesInfomationExecuteAction extends Action{
 		HttpSession session=request.getSession();
 		
 		
-		int ent_year=Integer.parseInt(request.getParameter("f1")); 
+		int ent_year=Integer.parseInt(request.getParameter("f1"));  
 		String class_num=request.getParameter("f2");
 		String subject_cd=request.getParameter("f3");
 		int no=Integer.parseInt(request.getParameter("f4")); 
@@ -37,16 +37,16 @@ public class GradesInfomationExecuteAction extends Action{
 		String scd=request.getParameter("scd");
 		
 		//ここは恐らくOK
-		Test test=new Test();
-		test.setEnt_year(ent_year);
-		test.setClass_num(class_num);
-		test.setSubject_cd(subject_cd);
-		test.setNo(no);
+		Test testx=new Test();
+		testx.setEnt_year(ent_year);
+		testx.setClass_num(class_num);
+		testx.setSubject_cd(subject_cd);
+		testx.setNo(no);
 		
 		
 		//検索条件に一致するテスト情報の取得
 		TestDAO testdao=new TestDAO();
-		List<Test> t=testdao.search(test);
+		List<Test> t=testdao.search(testx);
 		
 		if (ent_year != 0) {
 			session.setAttribute("test", t);

@@ -30,28 +30,15 @@ public class GradesInfomationExecuteAction extends Action{
 		
 		if (ent_year == 0 || class_num == null || subject_cd == null || no == 0) {
 			request.setAttribute("none_error", "入学年度とクラスと科目と回数を選択してください");
-			return "gradesinfomationexecute.jsp";
+			return "gradesinfomation.jsp";
 		}
 		
 		
 		String scd=request.getParameter("scd");
 		
-		//ここは恐らくOK
-		Test testx=new Test();
-		testx.setEnt_year(ent_year);
-		testx.setClass_num(class_num);
-		testx.setSubject_cd(subject_cd);
-		testx.setNo(no);
-		
-		
 		//検索条件に一致するテスト情報の取得
 		TestDAO testdao=new TestDAO();
-		List<Test> t=testdao.search(testx);
-		
-		if (ent_year != 0) {
-			session.setAttribute("test", t);
-			return "gradesinfomationexecute.jsp";
-		}
+		List<Test> t=testdao.search(ent_year, class_num, subject_cd, no);
 		
 		
 		//テストテーブルに存在する学生の入学年度の取得
@@ -70,6 +57,10 @@ public class GradesInfomationExecuteAction extends Action{
 		session.setAttribute("classnumber", classnumber);
 		session.setAttribute("ent", ent);
 		session.setAttribute("subject", subject);
+		session.setAttribute("no", no);
+		session.setAttribute("subject_cd", subject_cd);
+		session.setAttribute("ent_year", ent_year);
+		session.setAttribute("class_num", class_num);
 		session.setAttribute("test", t);
 		
 		return "gradesinfomationexecute.jsp";

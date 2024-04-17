@@ -23,14 +23,8 @@ public class GradesRegistrationAction extends Action{
 		
 		int line=0;
 		
-		Test test=new Test();
-		test.setEnt_year(ent_year);
-		test.setClass_num(class_num);
-		test.setSubject_cd(subject_cd);
-		test.setNo(no);
-		
 		TestDAO testdao=new TestDAO();
-		List<Test> t=testdao.search(test);
+		List<Test> t=testdao.search(ent_year, class_num, subject_cd, no);
 		
 		for(Test i:t) {
 			int point=Integer.parseInt(request.getParameter("int_" + i.getStudent_no())); 

@@ -36,7 +36,6 @@ public class Test implements java.io.Serializable {
 		return ent_year;
 	}
 	
-	
 	public void setStudent_no(String student_no) {
 		this.student_no=student_no;
 	}
@@ -61,4 +60,5 @@ public class Test implements java.io.Serializable {
 	public void setEnt_year(int ent_year) {
 		this.ent_year=ent_year;
 	}
+
 }

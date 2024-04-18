@@ -412,7 +412,7 @@ button[type="submit"] {
 
 /*学生登録情報*/
 .select_ent_year{
-	width:952px;
+	width:950px;
 	height:38px;
 }
 
@@ -424,11 +424,15 @@ button[type="submit"] {
   border: none;
   border-radius: 3px;
 }
+.select_label_line{
+	width:960px;
+	height:43px;
+}
 
 /*学生登録変更*/
 .student-change-wk{
-	width:952px;
-	height:38px;
+	width:950px;
+	height:30px;
 }
 .student-change-button{
 	padding: 10px;
@@ -439,8 +443,13 @@ button[type="submit"] {
 }
 .student-change-line{
 	border:none;
+	width:940px;
+	height:35px;
 }
-
+.student-change-label{
+	width:960px;
+	height:40px;
+}
 
 
 

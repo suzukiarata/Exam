@@ -12,12 +12,12 @@
 			<input class="student-change-line" type="text" name="ent_year" value="${changelist.ent_year}" readonly><br>
 			
 			学生番号
-			<input type="text" name="no" value="${changelist.no}" readonly><br>
+			<input class="student-change-line" type="text" name="no" value="${changelist.no}" readonly><br>
 			
 			氏名
-			<input type="text" name="name" maxlength="30" required="required"><br>
+			<input class="student-change-wk" type="text" name="name" maxlength="30" required="required"><br>
 			
-			クラス<select class="student-change-wk"name="class_num">
+			クラス<select class="student-change-label"name="class_num">
 			<c:forEach items="${classnumber}" var="classnumber">
 				<option value="${classnumber.class_num}">${classnumber.class_num}</option>
 			</c:forEach></select><br><br>

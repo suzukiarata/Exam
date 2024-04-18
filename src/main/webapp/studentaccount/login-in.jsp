@@ -7,7 +7,7 @@
 
 	<head> 
 	
-	  <title>Password Input and Submission Example</title> 
+	  <title>ログイン</title> 
 	
 	  <script> 
 	

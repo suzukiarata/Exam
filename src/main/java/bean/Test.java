@@ -6,7 +6,9 @@ public class Test implements java.io.Serializable {
 	private String subject_cd;
 	private String school_cd;
 	private int no;
+	private String[] nos;
 	private int point;
+	private String[] points;
 	private String class_num;
 	private String name;
 	private int ent_year;
@@ -23,8 +25,14 @@ public class Test implements java.io.Serializable {
 	public int getNo() {
 		return no;
 	}
+	public String[] getNos() {
+		return nos;
+	}
 	public int getPoint() {
 		return point;
+	}
+	public String[] getPoints() {
+		return points;
 	}
 	public String getClass_num() {
 		return class_num;
@@ -48,8 +56,14 @@ public class Test implements java.io.Serializable {
 	public void setNo(int no) {
 		this.no=no;
 	}
+	public void setNos(String[] nos) {
+		this.nos=nos;
+	}
 	public void setPoint(int point) {
 		this.point=point;
+	}
+	public void setPoints(String[] points) {
+		this.points=points;
 	}
 	public void setClass_num(String class_num) {
 		this.class_num=class_num;

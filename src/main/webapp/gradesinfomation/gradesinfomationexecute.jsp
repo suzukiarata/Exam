@@ -85,8 +85,7 @@
 										<td>${test.class_num}</td>
 										<td>${test.student_no}</td>
 										<td>${test.name}</td>
-										
-										<td><input type="text" name="int_${test.student_no}" value="${test.point}"></td>
+										<td><input type="text" name="int_${test.student_no}" value="${test.point}" min="0" max="100"></td>
 									</tr>
 								</c:when>
 							</c:choose>

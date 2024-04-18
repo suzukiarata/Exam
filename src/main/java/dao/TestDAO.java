@@ -17,7 +17,7 @@ public class TestDAO extends DAO {
 		Connection con=getConnection();
 		PreparedStatement st;
 		st=con.prepareStatement(
-				"select * from student left outer join test on student.no =  test.student_no where student.ent_year = ? and student.class_num = ?");
+				"select * from student right outer join test on student.no = test.student_no inner join subject on test.subject_cd = subject_cd where student.ent_year = ? and student.class_num = ?");
 		st.setInt(1, ent_year);
 		st.setString(2, class_num);
 		ResultSet rs=st.executeQuery();
@@ -25,27 +25,31 @@ public class TestDAO extends DAO {
 		while (rs.next()) {
 			Test t = new Test();
 			t.setSubject_cd(rs.getString("subject_cd"));
+			t.setEnt_year(rs.getInt("ent_year"));
+			t.setName(rs.getString("name"));
+			t.setStudent_no(rs.getString("student.no"));
+			t.setSchool_cd(rs.getString("student.school_cd"));
+			t.setClass_num(rs.getString("student.class_num"));
+			t.setPoint(rs.getInt("point"));
+			t.setNo(rs.getInt("test.no"));
 			if (t.getSubject_cd() == null) {
-				t.setEnt_year(rs.getInt("ent_year"));
-				t.setName(rs.getString("student.name"));
-				t.setStudent_no(rs.getString("student.no"));
-				t.setSchool_cd(rs.getString("school_cd"));
 				t.setSubject_cd(subject_cd);
 				t.setNo(no);
-				t.setClass_num(rs.getString("class_num"));
 				test.add(t);
-			} else {
-				t.setNo(rs.getInt("test.no"));
-				
-				if (t.getNo() == no) {
-						t.setEnt_year(rs.getInt("ent_year"));
-						t.setName(rs.getString("student.name"));
-						t.setStudent_no(rs.getString("student_no"));
-						t.setSchool_cd(rs.getString("school_cd"));
-						t.setPoint(rs.getInt("point"));
-						t.setClass_num(rs.getString("class_num"));
-						test.add(t);
-				}
+			}
+			else if (t.getNo() == no) {
+				t.setFlag(true);
+				test.add(t);
+			}
+			else if (t.getSubject_cd() != subject_cd) {
+				continue;
+			}
+			else if(t.getNo() != no) {
+				t.setSubject_cd(subject_cd);
+				t.setNo(no);
+				t.setPoint(0);
+				test.add(t);
+			
 			}
 		}
 		
@@ -59,7 +63,7 @@ public class TestDAO extends DAO {
 
 		Connection con=getConnection();
 		
-		if (test.getPoint() != 0) {
+		if (test.getFlag() == true) {
 			PreparedStatement st=con.prepareStatement(
 				"update test set point = ? where student_no = ? and subject_cd = ? and no = ?");
 			st.setInt(1, point);

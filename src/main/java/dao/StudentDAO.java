@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.Student;
+import bean.Test;
 
 public class StudentDAO extends DAO {
 
@@ -195,5 +196,33 @@ public class StudentDAO extends DAO {
 		con.close();
 
 		return line;
-	}		
+	}	
+	public List<Test> searchtest(int ent_year, String class_num, String subject_cd, int no) throws Exception {
+		List<Test> test=new ArrayList<>();
+
+		Connection con=getConnection();
+		
+		PreparedStatement st=con.prepareStatement(
+			"select * from student where ent_year = ? and class_num = ?");
+		st.setInt(1, ent_year);
+		st.setString(2, class_num);
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			Test p=new Test();
+			p.setEnt_year(ent_year);
+			p.setClass_num(class_num);
+			p.setSubject_cd(subject_cd);
+			p.setName(rs.getString("name"));
+			p.setNo(no);
+			p.setPoint(0);
+			p.setSchool_cd(rs.getString("school_cd"));
+			test.add(p);
+		}
+		
+		
+		st.close();
+		con.close();
+
+		return test;
+	}
 }

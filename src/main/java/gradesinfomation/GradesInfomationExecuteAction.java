@@ -40,9 +40,16 @@ public class GradesInfomationExecuteAction extends Action{
 		TestDAO testdao=new TestDAO();
 		List<Test> t=testdao.search(ent_year, class_num, subject_cd, no);
 		
+		
 		//テストテーブルに存在する学生の入学年度の取得
 		StudentDAO studentdao=new StudentDAO();
 		List<Student> ent=studentdao.searchtestent();
+		
+		
+		if(t == null) {
+			t = studentdao.searchtest(ent_year, class_num, subject_cd, no);
+		}
+		
 		
 		//学校コードに対応するクラスの情報
 		Class_numDAO classdao=new Class_numDAO();

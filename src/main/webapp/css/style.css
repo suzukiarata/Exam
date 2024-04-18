@@ -424,18 +424,30 @@ button[type="submit"] {
 }
 
 /*メニュー*/
-.menu-title{
+.menu-title-label{
 	width: 980px;
 	background: rgb(217, 236, 255);
 }
 
-.menu-title h1{
+.menu-title-label h1{
 	font-size: 48px;
 }
 
-.title-contents{
-	width:400px;
-	float:right;
+.menu-title-log {
+	display: inline-block;
+	width:600px;
+	vertical-align: middle;
 }
+
+.menu-title-contents{
+	display: inline-block;
+	width:200px;
+}
+
+.menu-title-contents2{
+	display: inline-block;
+	width:100px;
+}
+
 
 

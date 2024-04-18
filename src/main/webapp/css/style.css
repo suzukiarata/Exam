@@ -423,4 +423,19 @@ button[type="submit"] {
 	height:40px;
 }
 
+/*メニュー*/
+.menu-title{
+	width: 980px;
+	background: rgb(217, 236, 255);
+}
+
+.menu-title h1{
+	font-size: 48px;
+}
+
+.title-contents{
+	width:400px;
+	float:right;
+}
+
 

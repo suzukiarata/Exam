@@ -77,12 +77,12 @@
 		  <form onsubmit="submitForm(); return false;">
 		  <div class="form-group"> 
 			    <label for="id" class="login-label">ID:</label>
-			    <input type="text"required="required" name="id"> 
+			    <input type="text"required="required" name="id" class="login-input"> 
 		  </div>
 		
 		   <div class="form-group">
 			    <label for="Password" class="login-label">Password:</label> 
-			    <input type="password" id="password" oninput="maskPassword()" name="password" required> 
+			    <input  class="login-input" type="password" id="password" oninput="maskPassword()" name="password" required> 
 		   </div>
 		   
 		   <div class="form-group">

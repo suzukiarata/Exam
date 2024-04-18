@@ -347,8 +347,7 @@ header h1 {
   margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="password"] {
+.login-input{
   width: 95%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -437,6 +436,9 @@ button[type="submit"] {
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 3px;
+}
+.student-change-line{
+	border:none;
 }
 
 

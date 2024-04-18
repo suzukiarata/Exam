@@ -9,7 +9,7 @@
 		<form action="StudentInfomationChange.action" method="post">
 		
 			入学年度
-			<input class="student-change-mm" type="text" name="ent_year" value="${changelist.ent_year}" readonly><br>
+			<input class="student-change-line" type="text" name="ent_year" value="${changelist.ent_year}" readonly><br>
 			
 			学生番号
 			<input type="text" name="no" value="${changelist.no}" readonly><br>

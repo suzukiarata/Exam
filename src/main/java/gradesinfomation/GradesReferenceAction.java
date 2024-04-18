@@ -40,6 +40,6 @@ public class GradesReferenceAction extends Action{
 		session.setAttribute("ent", ent);
 		session.setAttribute("subject", subject);
 		
-		return "gradesinfomation.jsp";
+		return "gradesreference.jsp";
 	}
 }

@@ -52,8 +52,8 @@
 		<form action="GradesInfomationStudentExecute.action?scd=${account.school_cd}" method="post">
 			
 			<div class="studentform_elements">
-				<label>学生氏名</label><br>
-				<input type="text"name="f4">
+				<label>学生番号</label><br>
+				<input type="text"name="f4" required="required">
 			</div>
 			
 			<p>${none_error}</p>

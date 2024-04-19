@@ -52,7 +52,7 @@
 		<form action="GradesInfomationStudentExecute.action?scd=${account.school_cd}" method="post">
 			
 			<div class="studentform_elements">
-				<label>学生番号</label><br>
+				<label>学生氏名</label><br>
 				<input type="text"name="f4" required="required">
 			</div>
 			
@@ -80,48 +80,18 @@
 				</c:forEach>
 				<table>
 					<tr>
-						<th>入学年度</th>
-						<th>クラス</th>
-						<th>学生番号</th>
-						<th>氏名</th>
-						<th>1回</th>
-						<th>2回</th>
+						<th>科目名</th>
+						<th>科目コード</th>
+						<th>回数</th>
+						<th>点数</th>
 					</tr>
 					<c:forEach items="${test}" var="test">
 						<tr>
-							<td>${test.ent_year}</td>
-							<td>${test.class_num}</td>
-							<td>${test.student_no}</td>
-							<td>${test.name}</td>
-							<c:choose>
-								<c:when test="${fn:length(test.points) == 0 }">
-									<td>-</td>
-									<td>-</td>
-								</c:when>
-								<c:when test="${fn:length(test.points) == 1 }">
-									<c:forEach items="${test.nos}" var="no">
-										<c:choose>
-											<c:when test="${no == 1}">
-												<c:forEach items="${test.points}" var="point">
-													<td>${point}</td>
-												</c:forEach>
-												<td>-</td>
-											</c:when>
-											<c:when test="${no == 2}">
-												<td>-</td>
-												<c:forEach items="${test.points}" var="point">
-													<td>${point}</td>
-												</c:forEach>
-											</c:when>
-										</c:choose>
-									</c:forEach>
-								</c:when>
-								<c:otherwise>
-									<c:forEach items="${test.points}" var="point">
-										<td>${point}</td>
-									</c:forEach>
-								</c:otherwise>
-							</c:choose>
+							<td>${test.subject_name}</td>
+							<td>${test.subject_cd}</td>
+							<td>${test.no}</td>
+							<td>${test.point}</td>
+							
 						</tr>	
 					</c:forEach>
 				</table>

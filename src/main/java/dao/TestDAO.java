@@ -107,5 +107,33 @@ public class TestDAO extends DAO {
 				st.close();
 				con.close();
 				return test;
+	}
+	public List<Test> studentsearch(String student_cd)
+			throws Exception {
+				List<Test> test=new ArrayList<>();
+
+				Connection con=getConnection();
+				PreparedStatement st;
+				st=con.prepareStatement(
+						"select s.no,s.name,s.ent_year,s.class_num,s.school_cd,t.subject_cd,sub.name,t.no,t.point from student s inner join test t on s.no =  t.student_no inner join subject sub on t.subject_cd = sub.cd where s.no = ?");
+				st.setString(1, student_cd);
+				ResultSet rs=st.executeQuery();
+				
+				while (rs.next()) {
+					Test t = new Test();
+					t.setEnt_year(rs.getInt("ent_year"));
+					t.setName(rs.getString("student.name"));
+					t.setStudent_no(rs.getString("student.no"));
+					t.setSchool_cd(rs.getString("school_cd"));
+					t.setSubject_cd(rs.getString("subject_cd"));
+					t.setNo(rs.getInt("no"));
+					t.setSubject_name(rs.getString("subject.name"));
+					t.setClass_num(rs.getString("class_num"));
+					t.setPoint(rs.getInt("point"));
+					test.add(t);
+				}
+				st.close();
+				con.close();
+				return test;
 			}
 }

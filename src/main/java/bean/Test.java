@@ -13,6 +13,7 @@ public class Test implements java.io.Serializable {
 	private String name;
 	private int ent_year;
 	private boolean flag=false;
+	private String subject_name;
 	
 	public String getStudent_no() {
 		return student_no;
@@ -47,6 +48,9 @@ public class Test implements java.io.Serializable {
 	public boolean getFlag() {
 		return flag;
 	}
+	public String getSubject_name() {
+		return subject_name;
+	}
 	
 	public void setStudent_no(String student_no) {
 		this.student_no=student_no;
@@ -80,6 +84,9 @@ public class Test implements java.io.Serializable {
 	}
 	public void setFlag(boolean flag) {
 		this.flag=flag;
+	}
+	public void setSubject_name(String subject_name) {
+		this.subject_name=subject_name;
 	}
 
 }

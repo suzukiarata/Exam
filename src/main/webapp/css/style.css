@@ -442,11 +442,16 @@ button[type="submit"] {
 .menu-title-contents{
 	display: inline-block;
 	width:200px;
+	margin: 0 0 0 auto;
 }
 
 .menu-title-contents2{
 	display: inline-block;
 	width:100px;
+	margin: 0 0 0 auto;
+}
+.menu-title-right{
+	text-align: right;
 }
 
 

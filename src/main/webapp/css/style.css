@@ -426,33 +426,42 @@ button[type="submit"] {
 /*メニュー*/
 .menu-title-label{
 	width: 980px;
+	height: 78px;
+	margin-top: 10px;
 	background: rgb(217, 236, 255);
 }
 
 .menu-title-label h1{
 	font-size: 48px;
+	padding: 0 0 0 10px;
 }
 
 .menu-title-log {
-	display: inline-block;
-	width:600px;
+	position: relative;
+	width:980px;
 	vertical-align: middle;
 }
 
 .menu-title-contents{
-	display: inline-block;
 	width:200px;
-	margin: 0 0 0 auto;
+	float:right;
 }
 
-.menu-title-contents2{
-	display: inline-block;
+.menu-title-contents .accountlogout{
 	width:100px;
-	margin: 0 0 0 auto;
-}
-.menu-title-right{
-	text-align: right;
+	float:right;
+	margin:50px 0 0 0;
 }
 
+.accountlogout p {
+	margin:0;
+}
 
+.menu-title-contents .accountname {
+	float:left;
+	margin:50px 0 0 0;
+}
+.accountname p {
+	margin:0;
+}
 

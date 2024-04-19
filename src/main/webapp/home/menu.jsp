@@ -1,16 +1,17 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <header>
 	<div class="menu-title-label">
-		<div class="menu-title-log">
-			<h1>得点管理システム</h1>
-		</div>
+		
+		<h1>得点管理システム</h1>
 		
 		<div class="menu-title-contents">
-			<p>${account.name}様</p>
-		</div>
+			<div class="accountname">
+				<p>${account.name}様</p>
+			</div>
+			<div class="accountlogout">
+				<p><a href="../studentaccount/Logout.action">ログアウト</a></p>
+			</div>
 		
-		<div class="menu-title-contents2">
-			<p><a href="../studentaccount/Logout.action">ログアウト</a></p>
 		</div>
 		
 	</div>

@@ -212,6 +212,7 @@ public class StudentDAO extends DAO {
 			p.setEnt_year(ent_year);
 			p.setClass_num(class_num);
 			p.setSubject_cd(subject_cd);
+			p.setStudent_no(rs.getString("no"));
 			p.setName(rs.getString("name"));
 			p.setNo(no);
 			p.setPoint(0);

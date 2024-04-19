@@ -78,17 +78,13 @@
 							<th>点数</th>
 						</tr>
 						<c:forEach items="${test}" var="test">
-							<c:choose>
-								<c:when test="${test.subject_cd == subject_cd}">
-									<tr>
-										<td>${test.ent_year}</td>
-										<td>${test.class_num}</td>
-										<td>${test.student_no}</td>
-										<td>${test.name}</td>
-										<td><input type="text" name="int_${test.student_no}" value="${test.point}" min="0" max="100"></td>
-									</tr>
-								</c:when>
-							</c:choose>
+							<tr>
+								<td>${test.ent_year}</td>
+								<td>${test.class_num}</td>
+								<td>${test.student_no}</td>
+								<td>${test.name}</td>
+								<td><input type="text" name="int_${test.student_no}" value="${test.point}" min="0" max="100"></td>
+							</tr>
 						</c:forEach>
 					</table>
 				</c:when>

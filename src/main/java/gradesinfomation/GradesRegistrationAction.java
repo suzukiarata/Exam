@@ -3,6 +3,7 @@ package gradesinfomation;
 import java.util.List;
 
 import bean.Test;
+import dao.StudentDAO;
 import dao.TestDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -26,6 +27,11 @@ public class GradesRegistrationAction extends Action{
 			
 			TestDAO testdao=new TestDAO();
 			List<Test> t=testdao.search(ent_year, class_num, subject_cd, no);
+			
+			StudentDAO studentdao=new StudentDAO();
+			if (t.size() == 0) {
+				t = studentdao.searchtest(ent_year, class_num, subject_cd, no);
+			}
 			
 			for(Test i:t) {
 				int point=Integer.parseInt(request.getParameter("int_" + i.getStudent_no())); 

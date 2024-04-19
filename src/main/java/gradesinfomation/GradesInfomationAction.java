@@ -27,7 +27,7 @@ public class GradesInfomationAction extends Action{
 		
 		
 		StudentDAO studentdao=new StudentDAO();
-		List<Student> ent=studentdao.searchtestent();
+		List<Student> ent=studentdao.searchent();
 		
 		Class_numDAO classdao=new Class_numDAO();
 		List<Class_num> classnumber=classdao.search(scd);

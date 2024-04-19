@@ -17,42 +17,28 @@ public class TestDAO extends DAO {
 		Connection con=getConnection();
 		PreparedStatement st;
 		st=con.prepareStatement(
-				"select * from student right outer join test on student.no = test.student_no inner join subject on test.subject_cd = subject_cd where student.ent_year = ? and student.class_num = ?");
+				"select * from student right outer join test on student.no = test.student_no right join subject on test.subject_cd = subject_cd where student.ent_year = ? and student.class_num = ? and cd = ? and test.no = ?");
 		st.setInt(1, ent_year);
 		st.setString(2, class_num);
+		st.setString(3, subject_cd);
+		st.setInt(4, no);
 		ResultSet rs=st.executeQuery();
 		
 		while (rs.next()) {
 			Test t = new Test();
 			t.setSubject_cd(rs.getString("subject_cd"));
 			t.setEnt_year(rs.getInt("ent_year"));
-			t.setName(rs.getString("name"));
+			t.setName(rs.getString("student.name"));
 			t.setStudent_no(rs.getString("student.no"));
 			t.setSchool_cd(rs.getString("student.school_cd"));
 			t.setClass_num(rs.getString("student.class_num"));
 			t.setPoint(rs.getInt("point"));
 			t.setNo(rs.getInt("test.no"));
-			if (t.getSubject_cd() == null) {
-				t.setSubject_cd(subject_cd);
-				t.setNo(no);
-				test.add(t);
-			}
-			else if (t.getNo() == no) {
+			if (t.getSubject_cd() == rs.getString("cd")) {
 				t.setFlag(true);
 				test.add(t);
 			}
-			else if (t.getSubject_cd() != subject_cd) {
-				continue;
-			}
-			else if(t.getNo() != no) {
-				t.setSubject_cd(subject_cd);
-				t.setNo(no);
-				t.setPoint(0);
-				test.add(t);
-			
-			}
 		}
-		
 		st.close();
 		con.close();
 		return test;
@@ -75,6 +61,7 @@ public class TestDAO extends DAO {
 			con.close();
 	
 			return line;
+			
 		} else {
 			PreparedStatement st=con.prepareStatement(
 					"insert into test values(?,?,?,?,?,?)");

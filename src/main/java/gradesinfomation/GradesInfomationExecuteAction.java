@@ -1,5 +1,6 @@
 package gradesinfomation;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import bean.Class_num;
@@ -45,9 +46,41 @@ public class GradesInfomationExecuteAction extends Action{
 		StudentDAO studentdao=new StudentDAO();
 		List<Student> ent=studentdao.searchent();
 		
+		List<Test> s = studentdao.searchtest(ent_year, class_num, subject_cd, no);
 		
-		if (t.size() == 0) {
-			t = studentdao.searchtest(ent_year, class_num, subject_cd, no);
+		
+		
+		if (t.size() != s.size()) {
+			List<Test> tas = new ArrayList<>();
+			for(Test i:s) {
+				for(Test j:t) {
+					if(i.getStudent_no() == j.getStudent_no()) {
+						tas.add(j);
+						break;
+					}
+					tas.add(i);
+				}
+			}
+			
+			//学校コードに対応するクラスの情報
+			Class_numDAO classdao=new Class_numDAO();
+			List<Class_num> classnumber=classdao.search(scd);
+			
+			//学校コードに対応する科目の情報
+			SubjectDAO subjectdao=new SubjectDAO();
+			List<Subject> subject=subjectdao.search(scd);
+			
+
+			session.setAttribute("classnumber", classnumber);
+			session.setAttribute("ent", ent);
+			session.setAttribute("subject", subject);
+			session.setAttribute("no", no);
+			session.setAttribute("subject_cd", subject_cd);
+			session.setAttribute("ent_year", ent_year);
+			session.setAttribute("class_num", class_num);
+			session.setAttribute("test", tas);
+			
+			return "gradesinfomationexecute.jsp";
 		}
 		
 		

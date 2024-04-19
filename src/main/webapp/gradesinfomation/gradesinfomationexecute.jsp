@@ -83,7 +83,14 @@
 								<td>${test.class_num}</td>
 								<td>${test.student_no}</td>
 								<td>${test.name}</td>
-								<td><input type="text" name="int_${test.student_no}" value="${test.point}" min="0" max="100"></td>
+								<c:choose>
+									<c:when test="${test.flag == false}">
+										<td><input type="number" name="int_${test.student_no}" min="0" max="100"></td>
+									</c:when>
+									<c:when test="${test.flag == true}">
+										<td><input type="number" name="int_${test.student_no}" value="${test.point}" min="0" max="100"></td>
+									</c:when>	
+								</c:choose>
 							</tr>
 						</c:forEach>
 					</table>

@@ -215,7 +215,6 @@ public class StudentDAO extends DAO {
 			p.setStudent_no(rs.getString("no"));
 			p.setName(rs.getString("name"));
 			p.setNo(no);
-			p.setPoint(0);
 			p.setSchool_cd(rs.getString("school_cd"));
 			test.add(p);
 		}

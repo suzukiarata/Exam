@@ -34,13 +34,15 @@ public class GradesRegistrationAction extends Action{
 			}
 			
 			for(Test i:t) {
-				int point=Integer.parseInt(request.getParameter("int_" + i.getStudent_no())); 
-				line=testdao.registrationpoint(i, point);
+				String num = request.getParameter("int_" + i.getStudent_no());
+				if (num == "") {
+					continue;
+				} else {
+					int point=Integer.parseInt(num);
+					line=testdao.registrationpoint(i, point);
+				}
 			}
 			
-			if (line>0) {
-				return "gradesinfomationexecutesuccess.jsp";
-			}
-			return "error.jsp";
+			return "gradesinfomationexecutesuccess.jsp";
 	}
 }

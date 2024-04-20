@@ -43,6 +43,7 @@ public class GradesInfomationSubjectExecuteAction extends Action{
 		StudentDAO studentdao=new StudentDAO();
 		List<Student> ent=studentdao.searchtestent();
 		
+		
 		//学校コードに対応するクラスの情報
 		Class_numDAO classdao=new Class_numDAO();
 		List<Class_num> classnumber=classdao.search(scd);
@@ -55,6 +56,7 @@ public class GradesInfomationSubjectExecuteAction extends Action{
 		session.setAttribute("classnumber", classnumber);
 		session.setAttribute("ent", ent);
 		session.setAttribute("subject", subject);
+		session.setAttribute("subject_cd", subject_cd);
 		session.setAttribute("test", t);
 		
 		return "gradesinfomationsubjectexecute.jsp";

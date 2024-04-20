@@ -1,5 +1,6 @@
 package gradesinfomation;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import bean.Test;
@@ -29,8 +30,37 @@ public class GradesRegistrationAction extends Action{
 			List<Test> t=testdao.search(ent_year, class_num, subject_cd, no);
 			
 			StudentDAO studentdao=new StudentDAO();
-			if (t.size() == 0) {
-				t = studentdao.searchtest(ent_year, class_num, subject_cd, no);
+			List<Test> s = studentdao.searchtest(ent_year, class_num, subject_cd, no);
+			
+			if (t.size() != s.size()) {
+				List<Test> tas = new ArrayList<>();
+				if (t.size() != 0) {
+					iflabel:for(Test i:s) {
+						for(Test j:t) {
+							if(i.getStudent_no() == j.getStudent_no()) {
+								tas.add(j);
+								continue iflabel;
+							}
+						}
+						tas.add(i);
+					}
+				} else {
+					for(Test i:s) {
+						tas.add(i);
+					}
+				}
+				
+				for(Test i:tas) {
+					String num = request.getParameter("int_" + i.getStudent_no());
+					if (num == "") {
+						continue;
+					} else {
+						int point=Integer.parseInt(num);
+						line=testdao.registrationpoint(i, point);
+					}
+				}
+				
+				return "gradesinfomationexecutesuccess.jsp";
 			}
 			
 			for(Test i:t) {
@@ -44,5 +74,5 @@ public class GradesRegistrationAction extends Action{
 			}
 			
 			return "gradesinfomationexecutesuccess.jsp";
-	}
-}
+		}
+	}	

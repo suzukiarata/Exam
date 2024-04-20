@@ -295,6 +295,87 @@ header h1 {
 	margin-bottom: 5px;
 }
 
+/*成績参照用のCSS*/
+/*学生検索や参照テーブル用*/
+.grades_infomation {
+	border-collapse:  collapse; /* セルの線を重ねる */
+    width: 960px;
+    margin:0 auto 10px auto;
+    text-align: left;
+    border: solid 1px; 
+}
+
+.grades_infomation td {
+    padding: 7px 15px;         /* 余白指定 */
+    border-bottom: solid 1px; 
+}
+
+.point_text {
+	width: 200px;
+}
+.table_normal_tag{
+	background-color:  #DDE8EE;    /* 背景色指定 */
+    padding: 5px 10px;          /* 余白指定 */
+    border-bottom: solid 1px; 
+    width:100px;
+}
+
+.table_subject_title {
+	background-color:  #DDE8EE;    /* 背景色指定 */
+    padding: 5px 10px;          /* 余白指定 */
+    border-bottom: solid 1px; 
+	width: 200px;
+}
+
+/*成績情報のフォーム用*/
+.gradesform_elements {
+	display: inline-block;
+	width: 150px;
+	height: 60px;
+	margin: 0 5px;
+}
+.gradesform_elements label {
+	float: left;
+	margin-left: 10px;
+}
+.gradesform_elements select {
+	width: 150px;
+	height: 30px;
+	padding: 5px;
+	border: 2px solid #d3d3d3;
+	border-radius: 5px;
+}
+.gradesform_elements2 {
+	display: inline-block;
+	width: 300px;
+	height: 60px;
+	margin: 0 5px;
+}
+.gradesform_elements2 label {
+	float: left;
+	margin-left: 10px;
+}
+.gradesform_elements2 select {
+	width: 300px;
+	height: 30px;
+	padding: 5px;
+	border: 2px solid #d3d3d3;
+	border-radius: 5px;
+}
+.gradesform_elements2 .reference_no {
+	width: 300px;
+	height: 30px;
+	padding: 5px;
+	border: 2px solid #d3d3d3;
+	border-radius: 5px;
+}
+.gradesform_elements1 {
+	display: inline-block;
+	width: 80px;
+	height: 60px;
+	margin: 0 5px;
+}
+
 
 
 /*ログイン画面*/
@@ -379,6 +460,7 @@ button[type="submit"] {
 	background: rgb(217, 236, 255);
 	color:#000;
 	padding: 10px 0 10px 10px;
+	margin:10px auto 0 auto;
 }
 
 /*学生登録情報*/
@@ -443,26 +525,22 @@ button[type="submit"] {
 }
 
 .menu-title-contents{
-	width:200px;
+	width:400px;
 	float:right;
 }
 
 .menu-title-contents .accountlogout{
-	width:100px;
+	width:90px;
 	float:right;
-	margin:50px 0 0 0;
+	margin:35px 10px 0 0;
 }
 
-.accountlogout p {
-	margin:0;
-}
 
 .menu-title-contents .accountname {
-	float:left;
-	margin:50px 0 0 0;
-}
-.accountname p {
-	margin:0;
+	width:290px;
+	float: left;
+	margin:35px 10px 0 0;
+	text-align: right;
 }
 
 /*ドロップダウンメニュー*/

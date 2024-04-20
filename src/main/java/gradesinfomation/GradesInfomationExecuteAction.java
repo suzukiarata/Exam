@@ -52,15 +52,22 @@ public class GradesInfomationExecuteAction extends Action{
 		
 		if (t.size() != s.size()) {
 			List<Test> tas = new ArrayList<>();
-			for(Test i:s) {
-				for(Test j:t) {
-					if(i.getStudent_no() == j.getStudent_no()) {
-						tas.add(j);
-						break;
+			if (t.size() != 0) {
+				iflabel:for(Test i:s) {
+					for(Test j:t) {
+						if(i.getStudent_no() == j.getStudent_no()) {
+							tas.add(j);
+							continue iflabel;
+						}
 					}
 					tas.add(i);
 				}
+			} else {
+				for(Test i:s) {
+					tas.add(i);
+				}
 			}
+			
 			
 			//学校コードに対応するクラスの情報
 			Class_numDAO classdao=new Class_numDAO();

@@ -10,7 +10,7 @@
 	<div class="studentform">
 		<form action="GradesInfomationExecute.action?scd=${account.school_cd}" method="post">
 			
-			<div class="studentform_elements">
+			<div class="gradesform_elements">
 				<label>入学年度</label><br>
 				<select name="f1">
 					<option value="0" selected>---------</option>
@@ -20,7 +20,7 @@
 				</select>
 			</div>
 			
-			<div class="studentform_elements">
+			<div class="gradesform_elements">
 				<label>クラス</label><br>
 				<select name="f2">
 					<option value="" selected>---------</option>
@@ -30,7 +30,7 @@
 				</select>
 			</div>
 
-			<div class="studentform_elements">
+			<div class="gradesform_elements2">
 				<label>科目</label><br>
 				<select name="f3">
 				<option value="" selected>---------</option>
@@ -39,7 +39,7 @@
 				</c:forEach></select>
 			</div>
 			
-			<div class="studentform_elements">
+			<div class="gradesform_elements">
 				<label>回数</label><br>
 				<select name="f4">
 				<option value="0" selected>---------</option>
@@ -48,12 +48,11 @@
 				</select>
 			</div>
 			
-			<p>${none_error}</p>
-			
-			
-			<div class="studentform_elements1">
+			<div class="gradesform_elements1">
 				<input type="submit" value="検索" class="narrowdown_buttom">
 			</div>
+			
+			<p>${none_error}</p>
 			
 		</form>	
 	</div>

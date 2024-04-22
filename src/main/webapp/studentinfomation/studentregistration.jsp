@@ -43,7 +43,7 @@
 			<input type="hidden" name="school_cd" value="${account.school_cd}">
 			
 			
-			<input type="submit" value="登録して終了" class="select_button_gtj">
+			<input type="submit" value="登録して終了" class="narrowdown_buttom">
 		</form>
 		
 		

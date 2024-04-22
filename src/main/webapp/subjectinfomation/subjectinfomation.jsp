@@ -30,7 +30,7 @@
 				<!-- javaのsubjectinfomationファルダの中に下記のファイルを作成してね
 				     ?no=${subject.cd}"は該当する行の科目コードをsubject_cdっていう名前で渡しているよ -->
 				<td><a href="SubjectInfomationChange.action?subject_cd=${subject.cd}">変更</a></td>
-				<td><a href="SubjectInfomationDalete.action?subject_cd=${subject.cd}">削除</a></td>
+				<td><a href="SubjectInfomationDelete.action?subject_cd=${subject.cd}">削除</a></td>
 			</tr>
 		</c:forEach>
 	</table>

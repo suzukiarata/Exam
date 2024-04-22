@@ -5,17 +5,16 @@
 <%@include file="../home/menu.jsp" %>
 
 <div id="contents">
-		<h1 class="function_title">科目情報登録</h1>
-		<form action="SubjectDeleteExecute.action?subject_cd=${subject.cd}" method="post">
-			<p>「${subject.name}(${subject.cd})」を削除してもよろしいでしょうか</p>
-			
-			<input type="submit" value="削除" class="narrowdown_buttom">
-		</form>
+	<h1 class="function_title">科目情報登録</h1>
+	<form action="SubjectInfomationDeleteExecute.action?subject_cd=${subject[0].cd}" method="post">
+		<p>「${subject[0].name}(${subject[0].cd})」を削除してもよろしいでしょうか</p>
 		
-		
-		<p><a href="subjectinfomation.jsp">戻る</a></p>
-
-
+		<input type="submit" value="削除" class="narrowdown_buttom">
+	</form>
+	
+	
+	<p><a href="subjectinfomation.jsp">戻る</a></p>
+</div>
 
 
 

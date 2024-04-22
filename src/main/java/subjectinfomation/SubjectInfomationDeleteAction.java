@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import tool.Action;
 
-public class SubjectInfomationDeleteAction extends Action{
+public class SubjectInfomationDaleteAction extends Action{
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response	
 	) throws Exception {

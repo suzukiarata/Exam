@@ -9,15 +9,15 @@
 	<h1 class="function_title">科目管理</h1>
 	
 	<!-- subjectregistration.jspは登録用のjspファイル　同じ階層に作ってね -->
-	<p><a href="subjectregistration.jsp">新規登録</a></p>
+	<p><a href="subjectregistration.jsp" class="registration_link">新規登録</a></p>
 	
 	
-	<table>
+	<table class="grades_infomation">
 		<tr>
-			<td>科目コード</td>
-			<td>科目名</td>
-			<td></td>
-			<td></td>
+			<th class="table_normal_tag">科目コード</th>
+			<th class="table_subject_title">科目名</th>
+			<th class="table_normal_tag"></th>
+			<th class="table_normal_tag"></th>
 		</tr>
 		
 		<!-- javaのsubjectinfomationファルダの中のSubjectInfomationAction.javaで、
@@ -29,7 +29,7 @@
 				
 				<!-- javaのsubjectinfomationファルダの中に下記のファイルを作成してね
 				     ?no=${subject.cd}"は該当する行の科目コードをsubject_cdっていう名前で渡しているよ -->
-				<td><a href="SubjectInfomationChange.action?subject_cd=${subject.cd}">変更</a></td>
+				<td><a href="SubjectChange.action?subject_cd=${subject.cd}">変更</a></td>
 				<td><a href="SubjectInfomationDelete.action?subject_cd=${subject.cd}">削除</a></td>
 			</tr>
 		</c:forEach>

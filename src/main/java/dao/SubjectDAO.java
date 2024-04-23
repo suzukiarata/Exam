@@ -87,4 +87,42 @@ public class SubjectDAO extends DAO {
 		return line;
 	}
 	
+	public Subject changeserch(String cd) throws Exception {
+		Subject subject=null;
+
+		Connection con=getConnection();
+		
+		
+		PreparedStatement st=con.prepareStatement(
+			"select * from subject where cd =  ?");
+		st.setString(1, cd);
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			subject=new Subject();
+			subject.setSchool_cd(rs.getString("school_cd"));
+			subject.setCd(rs.getString("cd"));
+			subject.setName(rs.getString("name"));
+		}
+		st.close();
+		con.close();
+
+		return subject;
+	}	
+	
+	public int update(String cd,String name) throws Exception {
+		Connection con=getConnection();
+
+		PreparedStatement st=con.prepareStatement(
+			"update subject set name=? where cd=?");
+		st.setString(1,name);
+		st.setString(2,cd);
+		int line=st.executeUpdate();
+
+		st.close();
+		con.close();
+		return line;
+	}
+	
+
+
 }

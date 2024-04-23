@@ -45,7 +45,7 @@
 			<div class="gradesform_elements1">
 				<input type="submit" value="検索" class="narrowdown_buttom">
 			</div>
-			<p>${none_error}</p>
+			<p class="exception_message">${subject_none_error}</p>
 			
 		</form>	
 		
@@ -68,11 +68,42 @@
 			</div>
 			<div class="gradesform_elements">
 			</div>
+		</form>
+		
+		<hr>
+		
+		<form action="GradesInfomationStatisticsExecute.action?scd=${account.school_cd}" method="post">
 			
-			<p>${none_error}</p>
+			
+			<div class="gradesform_elements">
+				<p>統計情報</p>
+			</div>
+			<div class="gradesform_elements2">
+				<label>科目</label><br>
+				<select name="f3">
+				<option value="" selected>---------</option>
+				<c:forEach items="${subject}" var="subject">
+					<option value="${subject.cd}">${subject.name}</option>
+				</c:forEach></select>
+			</div>
+			<div class="gradesform_elements">
+				<label>回数</label><br>
+				<select name="f4">
+				<option value="0" selected>---------</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				</select>
+			</div>
+			<div class="gradesform_elements1">
+				<input type="submit" value="検索" class="narrowdown_buttom">
+			</div>
+			<div class="gradesform_elements">
+			</div>
+			<p class="exception_message">${none_statistics}</p>
 		</form>
 	</div>
 	<div>
+		<p><font color="#00ffff">科目情報を選択または学生情報を入力または統計情報を入力して検索ボタンをクリックしてください</font></p>
 		
 	</div>
 </div>

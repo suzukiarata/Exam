@@ -6,7 +6,6 @@
 
 <div id="contents">
 		<h1 class="function_title">学生情報登録</h1>
-		<p>学生情報の登録が行えます。</p>
 		<form action="StudentRegistration.action" method="post">
 		    <br>
 			<label>入学年度</label>
@@ -15,12 +14,12 @@
 			<c:forEach begin="${year - 10}" end="${year + 10}" step="1" var="foryear">
 			<option value="${foryear}">${foryear}</option>
 			</c:forEach></select>
-			<p>${ent_year_none_error}</p>
+			<p class="exception_message">${ent_year_none_error}</p>
 			
 			<br>
 			学生番号
 			<input class="select_ent_year" type="text" name="no" maxlength="10" required="required" placeholder="学生番号を入力してください" value="${entered_no}">
-			<p>${no_duplication_error}</p>
+			<p class="exception_message">${no_duplication_error}</p>
 	
 			<br>
 			氏名

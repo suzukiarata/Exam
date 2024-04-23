@@ -5,7 +5,7 @@
 <%@include file="../home/menu.jsp" %>
 
 <div id="contents">
-	<h1 class="function_title">成績一覧（科目）</h1>
+	<h1 class="function_title">成績一覧（統計）</h1>
 	
 	<div class="studentform">
 		<form action="GradesInfomationSubjectExecute.action?scd=${account.school_cd}" method="post">
@@ -68,6 +68,7 @@
 			</div>
 			<div class="gradesform_elements">
 			</div>
+			<p class="exception_message">${none_statistics}</p>
 		</form>
 		
 		<hr>
@@ -99,68 +100,65 @@
 			</div>
 			<div class="gradesform_elements">
 			</div>
-			<p class="exception_message">${none_statistics}</p>
 		</form>
 	</div>
 	<div>
 		<c:choose>
-			<c:when test="${fn:length(test) == 0 }">
-				<p class="none_message">学生情報が存在しません</p>
+			<c:when test="${test == null}">
+				<p class="number_of_data">成績情報が存在しません</p>
 			</c:when>
-			<c:when test="${fn:length(test) != 0 }">
-			
+			<c:when test="${test != null}">	
 				<c:forEach items="${subject}" var="subject">
 					<c:choose>
-						<c:when test="${subject.cd == subject_cd}">
-							<p class="number_of_data">科目:${subject.name}</p>
+						<c:when test="${subject.cd == test.subject_cd}">
+							<p class="number_of_data">科目:${subject.name}(${no}回目)</p>
 						</c:when>
 					</c:choose>
 				</c:forEach>
 				<table class="grades_infomation">
 					<tr>
-						<th class="table_normal_tag">入学年度</th>
-						<th class="table_normal_tag">クラス</th>
-						<th class="table_normal_tag">学生番号</th>
-						<th class="table_normal_tag">氏名</th>
-						<th class="table_normal_tag">1回</th>
-						<th class="table_normal_tag">2回</th>
+						<th colspan="2" class="table_normal_tag">最高得点</th>
+						<th colspan="2" class="table_normal_tag">最低得点</th>
+						<th colspan="2" class="table_normal_tag">平均点</th>
 					</tr>
-					<c:forEach items="${test}" var="test">
+					<tr>
+						<td colspan="2">${test.maxpoint}</td>
+						<td colspan="2">${test.minpoint}</td>
+						<td colspan="2">${test.avgpoint}</td>
+					</tr>
+					<tr>
+						<th colspan="6" class="table_normal_tag">最高得点者</th>
+					</tr>
+					<tr>
+						<td colspan="2">学生番号</td>
+						<td colspan="2">氏名</td>
+						<td>入学年度</td>
+						<td>クラス</td>
+					</tr>
+					<c:forEach  items="${tmax}" var="max">
 						<tr>
-							<td>${test.ent_year}</td>
-							<td>${test.class_num}</td>
-							<td>${test.student_no}</td>
-							<td>${test.name}</td>
-							<c:choose>
-								<c:when test="${fn:length(test.points) == 0 }">
-									<td>-</td>
-									<td>-</td>
-								</c:when>
-								<c:when test="${fn:length(test.points) == 1 }">
-									<c:forEach items="${test.nos}" var="no">
-										<c:choose>
-											<c:when test="${no == 1}">
-												<c:forEach items="${test.points}" var="point">
-													<td>${point}</td>
-												</c:forEach>
-												<td>-</td>
-											</c:when>
-											<c:when test="${no == 2}">
-												<td>-</td>
-												<c:forEach items="${test.points}" var="point">
-													<td>${point}</td>
-												</c:forEach>
-											</c:when>
-										</c:choose>
-									</c:forEach>
-								</c:when>
-								<c:otherwise>
-									<c:forEach items="${test.points}" var="point">
-										<td>${point}</td>
-									</c:forEach>
-								</c:otherwise>
-							</c:choose>
-						</tr>	
+							<td colspan="2">${max.student_no}</td>
+							<td colspan="2">${max.name}</td>
+							<td>${max.ent_year}</td>
+							<td>${max.class_num}</td>
+						</tr>
+					</c:forEach>
+					<tr>
+						<th colspan="6" class="table_normal_tag">最低得点者</th>
+					</tr>
+					<tr>
+						<td colspan="2">学生番号</td>
+						<td colspan="2">氏名</td>
+						<td>入学年度</td>
+						<td>クラス</td>
+					</tr>
+					<c:forEach items="${tmin}" var="min">
+						<tr>
+							<td colspan="2">${min.student_no}</td>
+							<td colspan="2">${min.name}</td>
+							<td>${min.ent_year}</td>
+							<td>${min.class_num}</td>
+						</tr>
 					</c:forEach>
 				</table>
 			</c:when>

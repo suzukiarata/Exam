@@ -52,7 +52,7 @@
 				<input type="submit" value="検索" class="narrowdown_buttom">
 			</div>
 			
-			<p>${none_error}</p>
+			<p class="exception_message">${none_error}</p>
 			
 		</form>	
 	</div>

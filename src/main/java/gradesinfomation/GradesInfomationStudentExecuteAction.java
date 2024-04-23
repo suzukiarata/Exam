@@ -34,6 +34,7 @@ public class GradesInfomationStudentExecuteAction extends Action{
 		//テストテーブルに存在する学生の入学年度の取得
 		StudentDAO studentdao=new StudentDAO();
 		List<Student> ent=studentdao.searchtestent();
+		Student studentdata=studentdao.changesearch(student_no);
 		
 		//学校コードに対応するクラスの情報
 		Class_numDAO classdao=new Class_numDAO();
@@ -48,6 +49,7 @@ public class GradesInfomationStudentExecuteAction extends Action{
 		session.setAttribute("ent", ent);
 		session.setAttribute("subject", subject);
 		session.setAttribute("test", t);
+		session.setAttribute("studentdata", studentdata);
 		
 		return "gradesinfomationstudentexecute.jsp";
 	}

@@ -214,6 +214,12 @@ header h1 {
 	 padding: 10px 0 10px 10px;
 }
 
+
+/*ほぼ全画面で使用できるエラーメッセージ*/
+.exception_message {
+	 color:#ffa500;
+}
+
 /*学生一覧用のCSS*/
 /*学生一覧テーブル用(studentinfomation.jsp)*/
 .registration_link {

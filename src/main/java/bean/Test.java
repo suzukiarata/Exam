@@ -15,6 +15,10 @@ public class Test implements java.io.Serializable {
 	private boolean flag=false;
 	private String subject_name;
 	
+	private int maxpoint;
+	private int minpoint;
+	private int avgpoint;
+	
 	public String getStudent_no() {
 		return student_no;
 	}
@@ -52,6 +56,16 @@ public class Test implements java.io.Serializable {
 		return subject_name;
 	}
 	
+	public int getMaxpoint() {
+		return maxpoint;
+	}
+	public int getMinpoint() {
+		return minpoint;
+	}
+	public int getAvgpoint() {
+		return avgpoint;
+	}
+	
 	public void setStudent_no(String student_no) {
 		this.student_no=student_no;
 	}
@@ -87,6 +101,16 @@ public class Test implements java.io.Serializable {
 	}
 	public void setSubject_name(String subject_name) {
 		this.subject_name=subject_name;
+	}
+	
+	public void setMaxpoint(int point) {
+		this.maxpoint=point;
+	}
+	public void setMinpoint(int point) {
+		this.minpoint=point;
+	}
+	public void setAvgpoint(int point) {
+		this.avgpoint=point;
 	}
 
 }

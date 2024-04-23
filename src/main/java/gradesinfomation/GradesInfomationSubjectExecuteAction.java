@@ -28,7 +28,7 @@ public class GradesInfomationSubjectExecuteAction extends Action{
 		String subject_cd=request.getParameter("f3");
 		
 		if (ent_year == 0 || class_num == null || subject_cd == null) {
-			request.setAttribute("none_error", "入学年度とクラスと科目を選択してください");
+			request.setAttribute("subject_none_error", "入学年度とクラスと科目を選択してください");
 			return "gradesreference.jsp";
 		}
 		
@@ -42,6 +42,7 @@ public class GradesInfomationSubjectExecuteAction extends Action{
 		//テストテーブルに存在する学生の入学年度の取得
 		StudentDAO studentdao=new StudentDAO();
 		List<Student> ent=studentdao.searchtestent();
+		
 		
 		
 		//学校コードに対応するクラスの情報

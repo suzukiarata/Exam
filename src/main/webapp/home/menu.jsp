@@ -19,12 +19,12 @@
 		<ul>
 			<li><a href="../home/Home.action">ホームへ</a>
 			<li><a href="../studentinfomation/StudentInfomation.action?scd=${account.school_cd}">学生管理</a>
-			<li><a href="../subjectinfomation/SubjectInfomation.action?scd=${account.school_cd}">科目管理</a>	
-	        <li><a href="../gradesinfomation/GradesInfomation.action?scd=${account.school_cd}">成績登録</a>
-	        <li><a href="../gradesinfomation/GradesReference.action?scd=${account.school_cd}">成績参照</a>
+			<li><a href="../subjectinfomation/SubjectInfomation.action?scd=${account.school_cd}">科目管理</a>
+	        <li class="dropdown__list"><a href="../gradesinfomation/GradesInfomation.action?scd=${account.school_cd}">成績登録</a>
+	        <li class="dropdown__list"><a href="../gradesinfomation/GradesReference.action?scd=${account.school_cd}">成績参照</a>
 		</ul>
 	</div>
-	
+
 	
 	
 	<hr>

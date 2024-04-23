@@ -11,8 +11,8 @@
 			<br>
 			クラス
 			<input class="select_ent_year" type="text" name="class_num" required="required"placeholder="クラスを入力してください">
-			<p>${no_duplication_error}</p>
-			<p>${length_error}</p>
+			<p class="exception_message">${no_duplication_error}</p>
+			<p class="exception_message">${length_error}</p>
 			
 			
 			<br>

@@ -200,7 +200,7 @@ public class TestDAO extends DAO {
 						);
 				st.setString(1, data.getSubject_cd());
 				st.setInt(2, data.getNo());
-				st.setInt(3, data.getMaxpoint());
+				st.setInt(3, data.getMinpoint());
 				ResultSet rs=st.executeQuery();
 				
 				while (rs.next()) {

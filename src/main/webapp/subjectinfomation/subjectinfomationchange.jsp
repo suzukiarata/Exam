@@ -10,6 +10,7 @@
 		
 			科目コード
 			<input class="student-change-line" type="text" name="cd" value="${changeaction.cd}" readonly><br>
+			<p>${no_subject_text}</p>
 			
 			科目名
 			<input class="student-change-wk" type="text" name="name" maxlength="30"value="${changeaction.name}" required="required"><br><br><br>

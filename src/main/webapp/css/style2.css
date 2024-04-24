@@ -1,4 +1,12 @@
 @charset "UTF-8";
+
+
+@font-face {
+	font-family:"コーポレートロゴ";
+	src: url("../font/Corporate-Logo-Bold-ver3.otf");
+}
+
+
 /*========= ローディング画面のためのCSS ===============*/
 #splash {
 	position: fixed;
@@ -11,11 +19,20 @@
 }
 
 #splash-logo {
-	font-size: 80px;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+
+}
+
+#welcome_mes {
+	font-size: 50px;
+	font-family:"コーポレートロゴ";
+}
+
+#Loading_mes {
+	font-size: 80px;
 }
 
 /*========= 画面遷移のためのCSS ===============*/

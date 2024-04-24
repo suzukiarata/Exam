@@ -1,9 +1,8 @@
 $(window).on('load',function(){
 $("#splash-logo").delay(1500).fadeOut('slow');//ロゴを1.2秒でフェードアウトする記述
-	const message1 = document.getElementById('splash-logo');
+	const message1 = document.getElementById('Loading_mes');
 	
 	const messages = [
-	  'Loading',
 	  'Loading.',
 	  'Loading..',
 	  'Loading...',

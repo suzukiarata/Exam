@@ -30,10 +30,6 @@ a:hover img { opacity: 0.7; }
 /* 行間の調整 */
 h1, h2, h3, h4, h5, h6 { margin-top: 0; }
 
-/*p {*/
-/*    margin-top: 0;*/
-/*    line-height: 1.6;*/
-/*}*/
 
 /* 画像の配置位置を設定する */
 img { vertical-align: bottom; }
@@ -49,50 +45,6 @@ header {
 header h1 {
     float: left;
     margin: 5px 0 10px;
-}
-
-
-
-/* グローバルナビゲーションの設定 */
-/* clearプロパティでフロートを解除して下に配置するようにする */
-#navi {
-    width: 980px;
-    clear: both;
-    overflow: hidden;
-    margin: 16px auto;
-}
-
-/* ul要素の行頭を消す */
-#navi ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-/* リストを横並びにする */
-#navi ul li {
-    width: 195px;
-    float: left;
-    margin-right: 1px;
-    text-align: center;
-}
-
-/* ナビゲーションのデザインの設定 */
-/* display: block;でナビをブロック単位にできる */
-/* 196P transitionプロパティで色の変化を加えることができる */
-#navi ul li a {
-    display: block;
-    padding: 16px;
-    background-color: #1e90ff;
-    color: #fff;
-    text-decoration: none;
-    transition: background-color 0.2s linear;
-}
-
-
-/* カーソルを合わせたときの色の設定 */
-#navi ul li a:hover {
-    background-color: #87ceeb;
 }
 
 
@@ -604,10 +556,11 @@ button[type="submit"] {
 }
 .gnavi__wrap {
     width: 980px;
-    margin: 0 auto;
+    
 }
 .gnavi__lists {
     display: flex;
+    padding-inline-start: 0%;
 }
 .gnavi__list {
     width: 20%;
@@ -617,6 +570,7 @@ button[type="submit"] {
     transition: all .3s;
     list-style:none;
     text-align: center;
+    margin: 0 auto;
 }
 .gnavi__list:hover {
     background-color: #0071BB;

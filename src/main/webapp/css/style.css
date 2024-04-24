@@ -603,14 +603,14 @@ button[type="submit"] {
     top: calc(50% - 5px);
 }
 .gnavi__wrap {
-    width: 1200px;
+    width: 980px;
     margin: 0 auto;
 }
 .gnavi__lists {
     display: flex;
 }
 .gnavi__list {
-    width: 16%;
+    width: 20%;
     height: 60px;
     background-color: #E5F0F8;
     position: relative;

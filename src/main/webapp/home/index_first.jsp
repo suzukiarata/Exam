@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@include file="../header.jsp"  %>
+<%@include file="../header_animation.jsp"  %>
 <%@include file="menu.jsp" %>
 
 
@@ -33,4 +33,4 @@
 
 
 
-<%@include file="../footer.jsp"  %>
+<%@include file="../footer_animation.jsp"  %>

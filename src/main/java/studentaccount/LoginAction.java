@@ -22,7 +22,7 @@ public class LoginAction extends Action {
 		
 		if (account!=null) {
 			session.setAttribute("account", account);
-			return "../home/Home.action";
+			return "../home/HomeFirst.action";
 		}
 		request.setAttribute("login_error", "IDまたはパスワードが確認できませんでした");
 		return "login-in.jsp";

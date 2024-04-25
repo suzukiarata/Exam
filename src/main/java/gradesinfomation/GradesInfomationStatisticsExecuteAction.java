@@ -34,7 +34,7 @@ public class GradesInfomationStatisticsExecuteAction extends Action{
 			
 			//検索条件に一致するテスト情報の取得
 			TestDAO testdao=new TestDAO();
-			Test t=testdao.statisticssearch(subject_cd,no);
+			Test t=testdao.statisticssearch(subject_cd,no,scd);
 			
 			if(t != null) {
 				List<Test> tmax=testdao.maxpointsearch(t);

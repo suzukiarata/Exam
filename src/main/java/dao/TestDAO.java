@@ -138,20 +138,22 @@ public class TestDAO extends DAO {
 	}
 	
 	
-	public Test statisticssearch(String subject_cd,int no)
+	public Test statisticssearch(String subject_cd,int no,String school_cd)
 			throws Exception {
 				Test test=new Test();
 
 				Connection con=getConnection();
 				PreparedStatement st;
 				st=con.prepareStatement(
-						"SELECT subject_cd, max(point)最大値,min(point)最低値,avg(point)平均値 FROM TEST where subject_cd=? and no = ?");
+						"SELECT subject_cd,school_cd,max(point)最大値,min(point)最低値,avg(point)平均値 FROM TEST where subject_cd=? and no = ? and school_cd = ?");
 				st.setString(1, subject_cd);
 				st.setInt(2, no);
+				st.setString(3, school_cd);
 				ResultSet rs=st.executeQuery();
 				
 				while (rs.next()) {
 					test.setSubject_cd(rs.getString("subject_cd"));
+					test.setSchool_cd(rs.getString("school_cd"));
 					test.setNo(no);
 					test.setMaxpoint(rs.getInt("最大値"));
 					test.setMinpoint(rs.getInt("最低値"));
@@ -169,11 +171,12 @@ public class TestDAO extends DAO {
 				Connection con=getConnection();
 				PreparedStatement st;
 				st=con.prepareStatement(
-						"select s.no,s.name,s.ent_year,s.class_num,s.school_cd,t.subject_cd,sub.name,t.no,t.point from student s inner join test t on s.no =  t.student_no inner join subject sub on t.subject_cd = sub.cd where t.subject_cd = ? and t.no = ? and t.point = ?"
+						"select s.no,s.name,s.ent_year,s.class_num,s.school_cd,t.subject_cd,sub.name,t.no,t.point from student s inner join test t on s.no =  t.student_no inner join subject sub on t.subject_cd = sub.cd where t.subject_cd = ? and t.no = ? and t.point = ? and s.school_cd = ?"
 						);
 				st.setString(1, data.getSubject_cd());
 				st.setInt(2, data.getNo());
 				st.setInt(3, data.getMaxpoint());
+				st.setString(4, data.getSchool_cd());
 				ResultSet rs=st.executeQuery();
 				
 				while (rs.next()) {
@@ -196,11 +199,12 @@ public class TestDAO extends DAO {
 				Connection con=getConnection();
 				PreparedStatement st;
 				st=con.prepareStatement(
-						"select s.no,s.name,s.ent_year,s.class_num,s.school_cd,t.subject_cd,sub.name,t.no,t.point from student s inner join test t on s.no =  t.student_no inner join subject sub on t.subject_cd = sub.cd where t.subject_cd = ? and t.no = ? and t.point = ?"
+						"select s.no,s.name,s.ent_year,s.class_num,s.school_cd,t.subject_cd,sub.name,t.no,t.point from student s inner join test t on s.no =  t.student_no inner join subject sub on t.subject_cd = sub.cd where t.subject_cd = ? and t.no = ? and t.point = ? and s.school_cd = ?"
 						);
 				st.setString(1, data.getSubject_cd());
 				st.setInt(2, data.getNo());
 				st.setInt(3, data.getMinpoint());
+				st.setString(4, data.getSchool_cd());
 				ResultSet rs=st.executeQuery();
 				
 				while (rs.next()) {

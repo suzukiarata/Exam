@@ -31,7 +31,7 @@
                 <li class="dropdown__list"><a href="../gradesinfomation/GradesReference.action?scd=${account.school_cd}">成績参照</a></li>
             </ul>
             <li class="gnavi__list">
-            <a href="">マイページへ</a>
+            <a href="#">マイページへ</a>
         </li>
     </ul>
 </div>

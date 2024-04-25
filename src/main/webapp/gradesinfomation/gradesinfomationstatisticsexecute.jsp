@@ -111,56 +111,58 @@
 				<c:forEach items="${subject}" var="subject">
 					<c:choose>
 						<c:when test="${subject.cd == test.subject_cd}">
-							<p class="number_of_data">科目:${subject.name}(${no}回目)</p>
+							<p class="statistics_subject">科目:${subject.name}(${no}回目)</p>
 						</c:when>
 					</c:choose>
 				</c:forEach>
-				<table class="grades_infomation">
-					<tr>
-						<th colspan="2" class="table_normal_tag">最高得点</th>
-						<th colspan="2" class="table_normal_tag">最低得点</th>
-						<th colspan="2" class="table_normal_tag">平均点</th>
-					</tr>
-					<tr>
-						<td colspan="2">${test.maxpoint}</td>
-						<td colspan="2">${test.minpoint}</td>
-						<td colspan="2">${test.avgpoint}</td>
-					</tr>
-					<tr>
-						<th colspan="6" class="table_normal_tag">最高得点者</th>
-					</tr>
-					<tr>
-						<td colspan="2">学生番号</td>
-						<td colspan="2">氏名</td>
-						<td>入学年度</td>
-						<td>クラス</td>
-					</tr>
+				
+				
+				<div class="statistics_area">
+					<div class="point_contests">
+						<h1>最高得点</h1>
+						<p class="statistics_points">${test.maxpoint}点</p>
+					</div>
+					<div class="point_contests">
+						<h1>最低得点</h1>
+						<p class="statistics_points">${test.minpoint}点</p>
+					</div>
+					<div class="point_contests">
+						<h1>平均点</h1>
+						<p class="statistics_points">${test.avgpoint}点</p>
+					</div>
+				</div>
+				
+				<div class="statistics_area">
+					<h1 class="excellent_grades_list">最高得点者</h1>
 					<c:forEach  items="${tmax}" var="max">
-						<tr>
-							<td colspan="2">${max.student_no}</td>
-							<td colspan="2">${max.name}</td>
-							<td>${max.ent_year}</td>
-							<td>${max.class_num}</td>
-						</tr>
+						<div class="excellent_grades">
+							<p class="excellent_grades_tags">学生番号</p>
+							<p class="excellent_grades_data">${max.student_no}</p>
+							<p class="excellent_grades_tags">氏名</p>
+							<p class="excellent_grades_data">${max.name}</p>
+							<p class="excellent_grades_tags">入学年度</p>
+							<p class="excellent_grades_data">${max.ent_year}</p>
+							<p class="excellent_grades_tags">クラス</p>
+							<p class="excellent_grades_data">${max.class_num}</p>
+						</div>
 					</c:forEach>
-					<tr>
-						<th colspan="6" class="table_normal_tag">最低得点者</th>
-					</tr>
-					<tr>
-						<td colspan="2">学生番号</td>
-						<td colspan="2">氏名</td>
-						<td>入学年度</td>
-						<td>クラス</td>
-					</tr>
+				</div>
+				
+				<div class="statistics_area">
+					<h1 class="excellent_grades_list">最低得点者</h1>
 					<c:forEach items="${tmin}" var="min">
-						<tr>
-							<td colspan="2">${min.student_no}</td>
-							<td colspan="2">${min.name}</td>
-							<td>${min.ent_year}</td>
-							<td>${min.class_num}</td>
-						</tr>
+						<div class="excellent_grades">
+							<p class="excellent_grades_tags">学生番号</p>
+							<p class="excellent_grades_data">${min.student_no}</p>
+							<p class="excellent_grades_tags">氏名</p>
+							<p class="excellent_grades_data">${min.name}</p>
+							<p class="excellent_grades_tags">入学年度</p>
+							<p class="excellent_grades_data">${min.ent_year}</p>
+							<p class="excellent_grades_tags">クラス</p>
+							<p class="excellent_grades_data">${min.class_num}</p>
+						</div>
 					</c:forEach>
-				</table>
+				</div>
 			</c:when>
 		</c:choose>	
 	</div>

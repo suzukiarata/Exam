@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="splash">
-<div id="splash-logo"><p id="welcome_mes">ようこそ<br>${account.name}様</p><p id="Loading_mes">Loading</p></div>
+<div id="splash-logo"><p id="welcome_mes">ようこそ<br>${account.name} 様</p><p id="Loading_mes">Loading</p></div>
 <!--/splash--></div>
 <div class="splashbg"></div><!---画面遷移用-->
 

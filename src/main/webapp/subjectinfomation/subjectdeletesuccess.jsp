@@ -5,7 +5,7 @@
 <%@include file="../home/menu.jsp"%>
 
 <div id="contents">
-	<h2 class="successtag">削除が完了しました</h2>
+	<h2 class="succsess_mes">削除が完了しました</h2>
 	<p><%@include file="../home/subjectinfomation.jsp"%></p>
 </div>
 

@@ -5,7 +5,7 @@
 <%@include file="../home/menu.jsp"%>
 
 <div id="contents">
-	<h2 class="successtag">登録が完了しました</h2>
+	<h2 class="succsess_mes">登録が完了しました</h2>
 	<p><a href="subjectregistration.jsp">戻る</a></p>
 	<p><%@include file="../home/subjectinfomation.jsp"%></p>
 </div>

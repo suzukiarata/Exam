@@ -6,6 +6,14 @@
 	src: url("../font/Corporate-Logo-Bold-ver3.otf");
 }
 
+/*変更完了メッセージ用*/
+.succsess_mes{
+	text-align: center;
+	margin:0 auto;
+	background-color: #3cb371;
+	color: #000;
+}
+
 /*統計情報のぺ―ジのCSS*/
 .statistics_subject {
 	font-size: 50px;

@@ -4,22 +4,22 @@ body {
     margin: 0;
     padding: 0;
     /* 色は#333333の短縮コード */
-    color: #4f645c;
+    color: #333;
     clear: both;
 }
 
 /* リンクの基本色 */
 a {
-    color: #c0e2f3;
+    color: #4169e1;
     text-decoration: none;
 }
 
 /* 一度訪問住みリンクの色 */
-a:visited {color: #739da1; }
+a:visited {color: #4b0082; }
 
 /* カーソルを合わせたときの装飾色　:hoverという疑似クラス*/
 a:hover {
-    color: #a5def8;
+    color: #191970;
     font-weight: bold;
     text-decoration: none;
 }

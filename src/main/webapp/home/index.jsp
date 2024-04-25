@@ -13,7 +13,7 @@
 	<aside id="side">
 	<section>
 		<h4>サイドバー</h4>
-		<p><a href="../studentinfomation/Class_numInsert.action?scd=${account.school_cd}">新規学生クラス追加</a></p>
+		<p>サイドバーのサンプル</p>
 	</section>
 	</aside>
 	<aside id="side">

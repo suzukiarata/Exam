@@ -6,7 +6,7 @@
 
 <div id="contents">
 	<h2 class="succsess_mes">登録が完了しました</h2>
-	<p><%@include file="../home/subjectinfomation.jsp"%></p>
+	<p><a href="../mypage/Mypage.action?scd=${account.school_cd}">マイページへ</a></p>
 </div>
 
 

@@ -23,7 +23,7 @@
 		</form>
 		
 		
-		<p><a href="studentinfomation.jsp">戻る</a></p>
+		<p><a href="../mypage/Mypage.action?scd=${account.school_cd}">戻る</a></p>
 
 
 

@@ -73,6 +73,107 @@
 	font-size: 20px;
 }
 
+/*マイぺ―ジのCSS*/
+.mypage_main {
+	width:350px;
+	float:left;
+	border-right: solid 1px #333;
+}
+
+.mypage_main_contents {
+	text-align: left;
+	width:350px;
+}
+
+.mypage_main_contents .mypage_tags {
+	width:120px;
+	margin:0 0 0 5px;
+	border-bottom:solid 1px #000;
+}
+
+.mypage_main_contents .mypage_name {
+	font-size: 30px;
+	margin: 10px auto 10px 20px;
+}
+.mypage_main_contents .school_name {
+	font-size: 30px;
+	margin: 10px auto 10px 20px;
+}
+
+.mypage_main_contents .account_id {
+	font-size: 15px;
+	margin: 15px auto 10px 20px;
+}
+
+.mypage_main_contents .account_pass {
+	font-size: 15px;
+	margin: 5px auto 10px 20px;
+}
+
+.mypage_function {
+	width: 610px;
+	float: right;
+	margin: 0 0 0 10px;
+}
+
+.mypage_function_contests_title {
+	width:148px;
+	padding-left: 5px;
+	border-bottom:solid 1px #000;
+}
+
+.mypage_function_contests_top {
+	margin:10px auto;
+}
+.mypage_function_contests_top .mypage_function_explanation {
+	margin:5px auto 5px 10px;
+	font-size: 20px;
+}
+
+.mypage_function_contests_top .handling_explanation {
+	margin:5px auto 5px 20px;
+	font-size: 12px;
+}
+
+.mypage_function_contests_top .function_urls{
+	text-align: right;
+	font-size: 14px;
+	color: #dc143c;
+	margin: 5px 20px 5px 0;
+}
+.mypage_function_contests_top .function_urls a {
+	margin: 0 0 0 10px;
+	font-size: 19px;
+}
+
+.mypage_function_contests {
+	width: 590px;
+	margin:30px auto;
+}
+
+
+.mypage_function_contests .mypage_function_explanation {
+	margin:5px auto 5px 10px;
+	font-size: 20px;
+}
+
+.mypage_function_contests .handling_explanation {
+	margin:5px auto 5px 20px;
+	font-size: 12px;
+}
+
+.mypage_function_contests .function_urls{
+	text-align: right;
+	font-size: 14px;
+	color: #dc143c;
+	margin: 5px 20px 5px 0;
+}
+.mypage_function_contests .function_urls a {
+	margin: 0 0 0 10px;
+	font-size: 19px;
+}
+
+/*ログイン時のアニメーション用のCSS達*/
 /*========= ローディング画面のためのCSS ===============*/
 #splash {
 	position: fixed;

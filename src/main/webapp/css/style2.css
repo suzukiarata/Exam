@@ -11,12 +11,12 @@
 	text-align: center;
 	margin:0 auto;
 	background-color: #3cb371;
-	color: #000;
+	color: #333;
 }
 
 /*統計情報のぺ―ジのCSS*/
 .statistics_subject {
-	font-size: 50px;
+	font-size: 35px;
 	text-align: center;
 	margin:20px auto 30px auto;
 	font-family: serif;

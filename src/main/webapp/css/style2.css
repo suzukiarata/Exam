@@ -174,6 +174,17 @@
 	font-size: 19px;
 }
 
+/*ホーム画面のCSS*/
+.box {
+  width: 300px;
+  height: 185px;
+  background-image: url("https://www.bing.com/images/search?view=detailV2&ccid=nfMqABNN&id=2A68BAF4A61ED8EF8F299F9B56E23BB2050220D5&thid=OIP.nfMqABNNtEjpKs2HSbvIDgAAAA&mediaurl=https%3a%2f%2f1.bp.blogspot.com%2f-23ye7Zu2zCw%2fV1z81BHbTeI%2fAAAAAAAA7Mk%2fbC2stOuNICozcNoaMo1jhPu4LDvNS_PaACLcB%2fs800%2fcharacter_kaitou_dorobou.png&exph=575&expw=474&q=%e3%81%84%e3%82%89%e3%81%99%e3%81%a8%e3%82%84%e3%80%80%e6%80%aa%e7%9b%97&simid=608030064063027443&FORM=IRPRST&ck=F681CE936219D34B85BB458D062EDB0B&selectedIndex=0&itb=1");
+  background-size: 300px;
+}
+
+/*サンプル*/
+
+
 /*ログイン時のアニメーション用のCSS達*/
 /*========= ローディング画面のためのCSS ===============*/
 #splash {

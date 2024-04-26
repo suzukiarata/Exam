@@ -15,7 +15,9 @@
 			<select name="ent_year"class="select_label_line">
 			<option value="0">---------</option>
 			<c:forEach begin="${year - 10}" end="${year + 10}" step="1" var="foryear">
-			<option value="${foryear}">${foryear}</option>
+			
+				<option value="${foryear}">${foryear}</option>
+				
 			</c:forEach></select>
 			<p class="exception_message">${ent_year_none_error}</p>
 			

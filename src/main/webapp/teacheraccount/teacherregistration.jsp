@@ -16,7 +16,7 @@
 			<br>
 			パスワード
 			<input class="select_ent_year" type="text" name="password" maxlength="30" required="required"placeholder="パスワードを入力してください"><br>
-			
+			<br><br>
 			名前
 			<input class="select_ent_year" type="text" name="name" maxlength="30" required="required"placeholder="名前を入力してください">
 			

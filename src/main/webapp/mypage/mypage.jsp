@@ -40,7 +40,7 @@
 		<div class="mypage_function_contests">
 			<p class="mypage_function_explanation">新規学校登録機能</p>
 			<p class="handling_explanation">新規の学校を登録できます。</p>
-			<p class="function_urls">新規学校の登録はこちらから<a href="#">新規学校登録</a></p> 
+			<p class="function_urls">新規学校の登録はこちらから<a href="../schoolinfomation/schoolregistration.jsp">新規学校登録</a></p> 
 		</div>
 	</div>
 </div>

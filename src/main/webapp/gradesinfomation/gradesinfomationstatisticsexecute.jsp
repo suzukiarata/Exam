@@ -4,6 +4,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@include file="../home/menu.jsp" %>
 
+
+<!-- 成績の統計ページ(最高・最低。平均の得点) -->
 <div id="contents">
 	<h1 class="function_title">成績一覧（統計）</h1>
 	
@@ -102,6 +104,8 @@
 			</div>
 		</form>
 	</div>
+	
+	<!-- ここからが統計の表示(CSSは若干遊んでいます) -->
 	<div>
 		<c:choose>
 			<c:when test="${test == null}">

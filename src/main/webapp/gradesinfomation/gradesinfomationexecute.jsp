@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@include file="../home/menu.jsp" %>
 
+<!-- 成績の変更・登録用のページ -->
 <div id="contents">
 	<h1 class="function_title">成績管理機能</h1>
 	
@@ -63,7 +64,8 @@
 					<p class="none_message">学生情報が存在しません</p>
 				</c:when>
 				<c:when test="${fn:length(test) != 0 }">
-				
+					
+					<!-- subjectテーブルとの結合が面倒だったので…無理やり解決 -->
 					<c:forEach items="${subject}" var="subject">
 						<c:choose>
 							<c:when test="${subject.cd == subject_cd}">
@@ -85,6 +87,8 @@
 								<td>${test.class_num}</td>
 								<td>${test.student_no}</td>
 								<td>${test.name}</td>
+								
+								<!-- testテーブルに存在する場合は、初期値アリ。ない場合は初期値無し、(flagで判断している) -->
 								<c:choose>
 									<c:when test="${test.flag == false}">
 										<td><input type="number" name="int_${test.student_no}" min="0" max="100" class="point_text"></td>

@@ -6,6 +6,8 @@
 
 <div id="contents">
 	<h2 class="succsess_mes">変更が完了しました</h2>
+	
+	<!-- 何故かActionのURLを張れないので無理やり解決 -->
 	<p><%@include file="../home/infomation.jsp"%></p>
 </div>
 

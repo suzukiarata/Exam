@@ -4,9 +4,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@include file="../home/menu.jsp" %>
 
+<!-- 学生情報新規登録ページ -->
 <div id="contents">
 		<h1 class="function_title">学生情報登録</h1>
 		<form action="StudentRegistration.action" method="post">
+		
+			<!-- 入学年度はCalenderを使用して今年の年度を取得している -->
 		    <br>
 			<label>入学年度</label>
 			<select name="ent_year"class="select_label_line">
@@ -16,15 +19,19 @@
 			</c:forEach></select>
 			<p class="exception_message">${ent_year_none_error}</p>
 			
+			<!-- 学生番号は重複時にリクエストパラメータでメッセージを表示(入力済みは初期値アリ) -->
 			<br>
 			学生番号
 			<input class="select_ent_year" type="text" name="no" maxlength="10" required="required" placeholder="学生番号を入力してください" value="${entered_no}">
 			<p class="exception_message">${no_duplication_error}</p>
-	
+		
+			
+			<!-- 入力済みの場合初期値アリ -->
 			<br>
 			氏名
 			<input class="select_ent_year" type="text" name="name" maxlength="30" required="required"placeholder="氏名を入力してください" value="${entered_name}">
 			
+			<!-- 入力済みの処理のためにこんなことしている -->
 			<br><br>
 			クラス<select name="class_num" class="select_label_line">
 			<c:forEach items="${classnumber}" var="classnumber">

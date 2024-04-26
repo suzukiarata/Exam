@@ -4,10 +4,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@include file="../home/menu.jsp" %>
 
+
+<!-- 追加機能のクラスの新規登録ページ -->
 <div id="contents">
 		<h1 class="function_title">新規クラス登録</h1>
 		<form action="Class_numInsertExecute.action" method="post">
-	
+		
+			
+			<!-- クラスは文字数制限と重複エラーに対応している -->
 			<br>
 			クラス
 			<input class="select_ent_year" type="text" name="class_num" required="required"placeholder="クラスを入力してください">

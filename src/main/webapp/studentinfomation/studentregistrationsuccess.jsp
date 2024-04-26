@@ -7,6 +7,8 @@
 <div id="contents">
 	<h2 class="succsess_mes">登録が完了しました</h2>
 	<p><a href="studentregistration.jsp">戻る</a></p>
+	
+	<!-- これも無理やりリンク張っている -->
 	<p><%@include file="../home/infomation.jsp"%></p>
 </div>
 

@@ -4,13 +4,19 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@include file="../home/menu.jsp" %>
 
+
+<!-- 学生管理ページ -->
 <div id="contents">
 	<h1 class="function_title">学生情報管理機能</h1>
 	<a href="studentregistration.jsp" class="registration_link">新規登録</a>
 	
+	
 	<div class="studentform">
+		
+		<!-- フォーム送信時に学校コードを追加で渡している -->
 		<form action="StudentInfomation.action?scd=${account.school_cd}" method="post">
 			
+			<!-- 入学年度は学生テーブルに存在する入学年度のみ表示している -->
 			<div class="studentform_elements">
 				<label>入学年度</label><br>
 				<select name="f1">
@@ -20,6 +26,7 @@
 				</c:forEach></select>
 			</div>
 			
+			<!-- クラスは学校コードに対応しているクラスのみ表示している -->
 			<div class="studentform_elements">
 				<label>クラス</label><br>
 				<select name="f2">
@@ -29,6 +36,7 @@
 				</c:forEach></select>
 			</div>
 			
+			<!-- 真偽値の送り方知らないので文字送るようにしました -->
 			<div class="studentform_elements1">
 				<input type="checkbox" name="f3" value="enrollment" checked>
 				<label>在学中</label>
@@ -41,7 +49,11 @@
 		</form>	
 	</div>
 	<div>
+	
+		<!-- 検索結果一覧の表示 -->
 		<table class="student_list">
+			
+			<!-- Functionタグを使用して、セッションに保存している配列(student)の長さを取得している -->
 			<c:choose>
 				<c:when test="${fn:length(student) == 0 }">
 					<p class="none_message">学生情報が存在しません</p>

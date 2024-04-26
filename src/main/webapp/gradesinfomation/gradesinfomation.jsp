@@ -4,12 +4,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@include file="../home/menu.jsp" %>
 
+
+<!-- 成績管理のページ -->
 <div id="contents">
 	<h1 class="function_title">成績管理機能</h1>
 	
 	<div class="studentform">
 		<form action="GradesInfomationExecute.action?scd=${account.school_cd}" method="post">
 			
+			<!-- 特にコメントすることは無い -->
 			<div class="gradesform_elements">
 				<label>入学年度</label><br>
 				<select name="f1">

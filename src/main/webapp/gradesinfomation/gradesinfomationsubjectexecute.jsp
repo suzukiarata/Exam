@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@include file="../home/menu.jsp" %>
 
+<!-- 科目の成績一覧のページ -->
 <div id="contents">
 	<h1 class="function_title">成績一覧（科目）</h1>
 	

@@ -33,7 +33,7 @@
 		<div class="mypage_function_contests">
 			<p class="mypage_function_explanation">新規アカウント登録機能</p>
 			<p class="handling_explanation">新規の教職員用アカウントを登録できます。</p>
-			<p class="function_urls">新規登録はこちらから<a href="#">新規アカウント登録</a></p> 
+			<p class="function_urls">新規登録はこちらから<a href="../teacheraccount/teacherregistration.jsp">新規アカウント登録</a></p> 
 		</div>
 	</div>
 </div>

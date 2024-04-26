@@ -1,3 +1,5 @@
+
+//基本とあるサイトの奴をそのままコピペして、細かい所のみ変更している。
 $(window).on('load',function(){
 $("#splash-logo").delay(1500).fadeOut('slow');//ロゴをフェードアウトする記述
 	const message1 = document.getElementById('Loading_mes');
@@ -21,6 +23,7 @@ $("#splash-logo").delay(1500).fadeOut('slow');//ロゴをフェードアウト�
 	  i++;
 	}
 	
+	//0.3秒間隔で表示内容の変更をしている。
 	setInterval(showMessage_1, 300);
 
 //=====ここからローディングエリア（splashエリア）をフェードアウトした後に動かしたいJSをまとめる

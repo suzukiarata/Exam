@@ -12,6 +12,7 @@
 			学校コード
 			<input class="select_ent_year" type="text" name="cd" maxlength="10" required="required" placeholder="学校コードを入力してください">
 			<p class="exception_message">${no_duplication_error}</p>
+			<p class="exception_message">${length_error}</p>
 
 			名前
 			<input class="select_ent_year" type="text" name="name" maxlength="30" required="required"placeholder="名前を入力してください">

@@ -20,6 +20,11 @@ public class SchoolRegistrationAction extends Action{
 		String name=request.getParameter("name");
 		String cd=request.getParameter("cd");
 		
+		if(cd.length() >= 4) {
+			request.setAttribute("length_error", "学校コードは3文字以内で入力してください");
+			return "schoolregistration.jsp";
+		}
+		
 		
 		School school=new School();
 		school.setSchool_cd(cd);

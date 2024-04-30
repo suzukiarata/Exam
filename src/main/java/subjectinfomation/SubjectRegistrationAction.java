@@ -24,6 +24,8 @@ public class SubjectRegistrationAction extends Action{
 			
 			if(cd.length() !=3) {
 				request.setAttribute("length_error", "科目コードは3文字で入力してください");
+				request.setAttribute("entered_cd", cd);
+				request.setAttribute("entered_name", name);
 				return "subjectregistration.jsp";
 			}
 			
@@ -31,6 +33,8 @@ public class SubjectRegistrationAction extends Action{
 			List<Subject>s=dao.searchcd(cd);
 			if (s.size() != 0) {
 				request.setAttribute("no_duplication_error", "科目コードが重複しています");
+				request.setAttribute("entered_cd", cd);
+				request.setAttribute("entered_name", name);
 				return "subjectregistration.jsp";
 			}
 			

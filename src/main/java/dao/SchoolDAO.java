@@ -46,26 +46,49 @@ public class SchoolDAO extends DAO {
 	}
 	
 	public List<School> searchsch(String cd)
-			throws Exception {
-					List<School> school=new ArrayList<>();
+	throws Exception {
+		List<School> school=new ArrayList<>();
 
-					Connection con=getConnection();
-					
-					PreparedStatement st;
-					st=con.prepareStatement(
-							"select * from school where cd = ?");
-					st.setString(1, cd);
-					ResultSet rs=st.executeQuery();
-					
-					while (rs.next()) {
-						School s = new School();
-						s.setSchool_cd(rs.getString("cd"));
-						s.setName(rs.getString("name"));
-						school.add(s);
-					}
-					
-					st.close();
-					con.close();
-					return school;
+		Connection con=getConnection();
+		
+		PreparedStatement st;
+		st=con.prepareStatement(
+				"select * from school where cd = ?");
+		st.setString(1, cd);
+		ResultSet rs=st.executeQuery();
+		
+		while (rs.next()) {
+			School s = new School();
+			s.setSchool_cd(rs.getString("cd"));
+			s.setName(rs.getString("name"));
+			school.add(s);
+		}
+		
+		st.close();
+		con.close();
+		return school;
+	}
+	
+	public List<School> schoollist()
+			throws Exception {
+				List<School> school=new ArrayList<>();
+
+				Connection con=getConnection();
+				
+				PreparedStatement st;
+				st=con.prepareStatement(
+						"select * from school");
+				ResultSet rs=st.executeQuery();
+				
+				while (rs.next()) {
+					School s = new School();
+					s.setSchool_cd(rs.getString("cd"));
+					s.setName(rs.getString("name"));
+					school.add(s);
 				}
+				
+				st.close();
+				con.close();
+				return school;
+			}
 }

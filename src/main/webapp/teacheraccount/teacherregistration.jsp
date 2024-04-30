@@ -20,9 +20,19 @@
 			名前
 			<input class="select_ent_year" type="text" name="name" maxlength="30" required="required"placeholder="名前を入力してください">
 			
+			<br><br>
+			学校コード
+			<select name="school_cd"class="select_label_line">
+			<option value="">---------</option>
+			<c:forEach items="${schoollist}" var="schoollist">
 			
-			<br><br><br>
-			<input type="hidden" name="school_cd" value="${account.school_cd}">
+				<option value="${schoollist.school_cd}">${schoollist.name} (${schoollist.school_cd })</option>
+				
+			</c:forEach></select>
+			<p class="exception_message">${none_select}</p>
+			
+			
+			<br><br>
 			
 			
 			<input type="submit" value="登録" class="narrowdown_buttom">

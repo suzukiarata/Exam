@@ -29,7 +29,6 @@
 			<p class="mypage_function_explanation">新規学生クラス追加機能</p>
 			<p class="handling_explanation">ログインユーザの学校コードに対応する、学生のクラスを追加することができます。</p>
 			<p class="function_urls">新規追加はこのリンクから<a href="../studentinfomation/Class_numInsert.action?scd=${account.school_cd}">新規学生クラス追加</a></p>
-			<p class="exception_function">※新規の学校コードを利用する場合は先に「新規学校登録」をしてください</p> 
 		</div>
 		<hr>
 		<div class="mypage_function_contests">

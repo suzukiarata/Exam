@@ -1,10 +1,15 @@
 <%@page contentType="text/html; charset=UTF-8" %>
 <%@include file="../header.jsp"  %>
 <%@include file="menu.jsp" %>
+
 <style>
 	body{
-		background-image:url(../images/背景.jpg);
-		background-size: cover;
+		background-image:url(../images/あああああ.jpg);
+		background-repeat:  no-repeat;                                      
+   	 	background-position:center center;                     
+        background-size:cover;                             
+        width:100%;                                       
+        height:666px;
 		}
 </style>
 

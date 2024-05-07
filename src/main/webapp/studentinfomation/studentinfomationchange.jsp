@@ -18,7 +18,7 @@
 			<input class="student-change-line" type="text" name="no" value="${changelist.no}" readonly><br>
 			
 			氏名
-			<input class="student-change-wk" type="text" name="name" maxlength="30" required="required"><br>
+			<input class="student-change-wk" type="text" name="name" maxlength="10" required="required"><br>
 			
 			<!-- ログインユーザの学校コードに対応するクラスを表示 -->
 			クラス<select class="student-change-label"name="class_num">

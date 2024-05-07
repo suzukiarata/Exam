@@ -20,7 +20,7 @@
 			<div class="studentform_elements">
 				<label>入学年度</label><br>
 				<select name="f1">
-				<option value="" selected disabled>---------</option>
+				<option value="0" selected>---------</option>
 				<c:forEach items="${ent}" var="ent">
 					<option value="${ent.ent_year}">${ent.ent_year}</option>
 				</c:forEach></select>
@@ -30,7 +30,7 @@
 			<div class="studentform_elements">
 				<label>クラス</label><br>
 				<select name="f2">
-				<option value="" selected disabled>---------</option>
+				<option value="no" selected>---------</option>
 				<c:forEach items="${classnumber}" var="classnumber">
 					<option value="${classnumber.class_num}">${classnumber.class_num}</option>
 				</c:forEach></select>
@@ -38,13 +38,15 @@
 			
 			<!-- 真偽値の送り方知らないので文字送るようにしました -->
 			<div class="studentform_elements1">
-				<input type="checkbox" name="f3" value="enrollment" checked>
+				<input type="checkbox" name="f3" value="on">
 				<label>在学中</label>
 			</div>
 			
 			<div class="studentform_elements1">
 				<input type="submit" value="絞込み" class="narrowdown_buttom">
 			</div>
+			
+			<p class="exception_message">${error_mes}</p>
 			
 		</form>	
 	</div>

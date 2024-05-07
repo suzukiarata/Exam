@@ -2,20 +2,9 @@
 <%@include file="../header.jsp"  %>
 <%@include file="menu.jsp" %>
 
-<style>
-	body{
-		background-image:url(../images/あああああ.jpg);
-		background-repeat:  no-repeat;                                      
-   	 	background-position:center center;                     
-        background-size:cover;                             
-        width:100%;                                       
-        height:666px;
-		}
-</style>
-
 
 <div id="contents">
-	<div class = "box">
+
 	
 	<div id="element">
 		<h1>サンプル</h1>
@@ -35,7 +24,7 @@
 		<p>複数配置可能</p>
 	</section>
 	</aside>
-	</div>
+
 </div>
 
 

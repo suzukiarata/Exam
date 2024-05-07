@@ -11,58 +11,171 @@ import bean.Test;
 
 public class StudentDAO extends DAO {
 
-	public List<Student> listsearch(int ent_year, String class_num, boolean is_attend, String scd) throws Exception {
+	//初回のDAO
+	public List<Student> firstsearch(String scd) throws Exception {
 		List<Student> student=new ArrayList<>();
 
 		Connection con=getConnection();
-		
-		if(class_num == "" || ent_year == 0) {
-			PreparedStatement st=con.prepareStatement(
-				"select * from student where school_cd = ?");
-			st.setString(1, scd);
-			ResultSet rs=st.executeQuery();
-			while (rs.next()) {
-				Student p=new Student();
-				p.setNo(rs.getString("no"));
-				p.setName(rs.getString("name"));
-				p.setEnt_year(rs.getInt("ent_year"));
-				p.setClass_num(rs.getString("class_num"));
-				p.setIs_attend(rs.getBoolean("is_attend"));
-				p.setSchool_cd(rs.getString("school_cd"));
-				student.add(p);
-			}
-			
-			st.close();
-			con.close();
-
-			return student;
-			
-		} else {
-			PreparedStatement st=con.prepareStatement(
-				"select * from student where ent_year like ? and class_num like ? and is_attend = ? and school_cd = ?");
-			st.setInt(1, ent_year);
-			st.setString(2, class_num);
-			st.setBoolean(3, is_attend);
-			st.setString(4, scd);
-			ResultSet rs=st.executeQuery();
-			while (rs.next()) {
-				Student p=new Student();
-				p.setNo(rs.getString("no"));
-				p.setName(rs.getString("name"));
-				p.setEnt_year(rs.getInt("ent_year"));
-				p.setClass_num(rs.getString("class_num"));
-				p.setIs_attend(rs.getBoolean("is_attend"));
-				p.setSchool_cd(rs.getString("school_cd"));
-				student.add(p);
-			}
-			st.close();
-			con.close();
-
-			return student;
+		PreparedStatement st=con.prepareStatement(
+			"select * from student where school_cd = ?");
+		st.setString(1, scd);
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			Student p=new Student();
+			p.setNo(rs.getString("no"));
+			p.setName(rs.getString("name"));
+			p.setEnt_year(rs.getInt("ent_year"));
+			p.setClass_num(rs.getString("class_num"));
+			p.setIs_attend(rs.getBoolean("is_attend"));
+			p.setSchool_cd(rs.getString("school_cd"));
+			student.add(p);
 		}
 		
+		st.close();
+		con.close();
+
+		return student;
+	}
+	
+	//入学年度のみ
+	public List<Student> yearsearch(int ent_year,String scd) throws Exception {
+		List<Student> student=new ArrayList<>();
+
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+			"select * from student where school_cd = ? and ent_year = ?");
+		st.setString(1, scd);
+		st.setInt(2, ent_year);
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			Student p=new Student();
+			p.setNo(rs.getString("no"));
+			p.setName(rs.getString("name"));
+			p.setEnt_year(rs.getInt("ent_year"));
+			p.setClass_num(rs.getString("class_num"));
+			p.setIs_attend(rs.getBoolean("is_attend"));
+			p.setSchool_cd(rs.getString("school_cd"));
+			student.add(p);
+		}
 		
-	}	
+		st.close();
+		con.close();
+
+		return student;
+	}
+	
+	//在学中のみ
+	public List<Student> attendsearch(boolean is_attend,String scd) throws Exception {
+		List<Student> student=new ArrayList<>();
+
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+			"select * from student where school_cd = ? and is_attend = ?");
+		st.setString(1, scd);
+		st.setBoolean(2, is_attend);
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			Student p=new Student();
+			p.setNo(rs.getString("no"));
+			p.setName(rs.getString("name"));
+			p.setEnt_year(rs.getInt("ent_year"));
+			p.setClass_num(rs.getString("class_num"));
+			p.setIs_attend(rs.getBoolean("is_attend"));
+			p.setSchool_cd(rs.getString("school_cd"));
+			student.add(p);
+		}
+		
+		st.close();
+		con.close();
+
+		return student;
+	}
+	
+	//入学年度とクラス
+	public List<Student> yearclasssearch(int ent_year,String class_num,String scd) throws Exception {
+		List<Student> student=new ArrayList<>();
+
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+			"select * from student where school_cd = ? and ent_year = ? and class_num = ?");
+		st.setString(1, scd);
+		st.setInt(2, ent_year);
+		st.setString(3,class_num);
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			Student p=new Student();
+			p.setNo(rs.getString("no"));
+			p.setName(rs.getString("name"));
+			p.setEnt_year(rs.getInt("ent_year"));
+			p.setClass_num(rs.getString("class_num"));
+			p.setIs_attend(rs.getBoolean("is_attend"));
+			p.setSchool_cd(rs.getString("school_cd"));
+			student.add(p);
+		}
+		
+		st.close();
+		con.close();
+
+		return student;
+	}
+	
+	//入学年度と在学中
+	public List<Student> yearattendsearch(int ent_year,boolean is_attend,String scd) throws Exception {
+		List<Student> student=new ArrayList<>();
+
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+			"select * from student where school_cd = ? and ent_year = ? and is_attend = ?");
+		st.setString(1, scd);
+		st.setInt(2, ent_year);
+		st.setBoolean(3,is_attend);
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			Student p=new Student();
+			p.setNo(rs.getString("no"));
+			p.setName(rs.getString("name"));
+			p.setEnt_year(rs.getInt("ent_year"));
+			p.setClass_num(rs.getString("class_num"));
+			p.setIs_attend(rs.getBoolean("is_attend"));
+			p.setSchool_cd(rs.getString("school_cd"));
+			student.add(p);
+		}
+		
+		st.close();
+		con.close();
+
+		return student;
+	}
+	
+	//全部
+	public List<Student> allsearch(int ent_year,String class_num,boolean is_attend,String scd) throws Exception {
+		List<Student> student=new ArrayList<>();
+
+		Connection con=getConnection();
+		PreparedStatement st=con.prepareStatement(
+			"select * from student where school_cd = ? and ent_year = ? and class_num = ? and is_attend = ?");
+		st.setString(1, scd);
+		st.setInt(2, ent_year);
+		st.setString(3, class_num);
+		st.setBoolean(4,is_attend);
+		ResultSet rs=st.executeQuery();
+		while (rs.next()) {
+			Student p=new Student();
+			p.setNo(rs.getString("no"));
+			p.setName(rs.getString("name"));
+			p.setEnt_year(rs.getInt("ent_year"));
+			p.setClass_num(rs.getString("class_num"));
+			p.setIs_attend(rs.getBoolean("is_attend"));
+			p.setSchool_cd(rs.getString("school_cd"));
+			student.add(p);
+		}
+		
+		st.close();
+		con.close();
+
+		return student;
+	}
+	
 	
 	
 	public Student changesearch(String no) throws Exception {

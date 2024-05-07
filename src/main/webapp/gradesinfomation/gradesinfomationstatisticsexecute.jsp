@@ -108,7 +108,7 @@
 	<!-- ここからが統計の表示(CSSは若干遊んでいます) -->
 	<div>
 		<c:choose>
-			<c:when test="${test == null}">
+			<c:when test="${fn:length(tmax) == 0 || fn:length(tmin) == 0}">
 				<p class="number_of_data">成績情報が存在しません</p>
 			</c:when>
 			<c:when test="${test != null}">	

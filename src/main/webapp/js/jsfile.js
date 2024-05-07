@@ -27,12 +27,13 @@ $("#splash-logo").delay(1500).fadeOut('slow');//ロゴをフェードアウト�
 	setInterval(showMessage_1, 300);
 
 //=====ここからローディングエリア（splashエリア）をフェードアウトした後に動かしたいJSをまとめる
-$("#splash").delay(1700).fadeOut('slow',function(){//ローディングエリア（splashエリア）をフェードアウトする記述
-
-$('body').addClass('appear');//フェードアウト後bodyにappearクラス付与
-
+$("#splash").delay(1200).fadeOut('slow',function(){//ローディングエリア（splashエリア）をフェードアウトする記述
+	$('body').addClass('appear');//フェードアウト後bodyにappearクラス付与
 });
+
+
 //=====ここまでローディングエリア（splashエリア）をフェードアウトした後に動かしたいJSをまとめる
+
 
 //=====ここから背景が伸びた後に動かしたいJSをまとめたい場合は
 $('.splashbg').on('animationend', function() { 

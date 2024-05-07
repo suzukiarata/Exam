@@ -22,6 +22,11 @@ public class TeacherRegistrationAction extends Action{
 		String name=request.getParameter("name");
 		String school_cd=request.getParameter("school_cd");
 		
+		if (school_cd == "") {
+			request.setAttribute("none_select", "学校コードを選択してください");
+			return "teacherregistration.jsp";
+		}
+		
 		
 		Teacher teacher=new Teacher();
 		teacher.setId(id);

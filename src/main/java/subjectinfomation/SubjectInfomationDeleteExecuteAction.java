@@ -1,6 +1,7 @@
 package subjectinfomation;
 
 import dao.SubjectDAO;
+import dao.TestDAO;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -19,9 +20,8 @@ public class SubjectInfomationDeleteExecuteAction extends Action{
 			SubjectDAO subjectdao=new SubjectDAO();
 			int line=subjectdao.delete(cd);
 
-			if(line>0) {
-				return "subjectdeletesuccess.jsp";
-			}
+			TestDAO testdao=new TestDAO();
+			line=testdao.delete(cd);
 			
 			return "subjectdeletesuccess.jsp";
 		}

@@ -77,7 +77,6 @@
 .mypage_main {
 	width:350px;
 	float:left;
-	border-right: solid 1px #333;
 }
 
 .mypage_main_contents {
@@ -114,7 +113,8 @@
 .mypage_function {
 	width: 610px;
 	float: right;
-	margin: 0 0 0 10px;
+	padding-left: 10px;
+	border-left: solid 1px #333;
 }
 
 .mypage_function_contests_title {
@@ -173,6 +173,10 @@
 	margin: 0 0 0 10px;
 	font-size: 19px;
 }
+.exception_function {
+	font-size: 9px;
+	color: aqua;
+}
 
 /*ホーム画面のCSS*/
 .box {
@@ -214,7 +218,7 @@
 	font-size: 80px;
 }
 
-/*========= 画面遷移のためのCSS ===============*/
+/*========= 画面遷移のためのCSS(右から左用) ===============*/
 
 /*画面遷移アニメーション*/
 .splashbg{
@@ -257,6 +261,8 @@ body.appear .splashbg{
 		transform:scaleX(0);
 	}
 }
+
+
 
 /*画面遷移の後現れるコンテンツ設定*/
 

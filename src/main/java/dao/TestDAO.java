@@ -219,4 +219,17 @@ public class TestDAO extends DAO {
 				con.close();
 				return test;
 	}
+	
+	public int delete(String subject_cd) throws Exception {
+		Connection con=getConnection();
+
+		PreparedStatement st=con.prepareStatement(
+			"delete from test where subject_cd=?");
+		st.setString(1, subject_cd);
+		int line=st.executeUpdate();
+
+		st.close();
+		con.close();
+		return line;
+	}
 }

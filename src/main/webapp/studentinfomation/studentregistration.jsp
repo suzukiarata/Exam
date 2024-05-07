@@ -15,7 +15,9 @@
 			<select name="ent_year"class="select_label_line">
 			<option value="0">---------</option>
 			<c:forEach begin="${year - 10}" end="${year + 10}" step="1" var="foryear">
-			<option value="${foryear}">${foryear}</option>
+			
+				<option value="${foryear}">${foryear}</option>
+				
 			</c:forEach></select>
 			<p class="exception_message">${ent_year_none_error}</p>
 			
@@ -26,10 +28,10 @@
 			<p class="exception_message">${no_duplication_error}</p>
 		
 			
-			<!-- 入力済みの場合初期値アリ -->
+			<!-- 入力済みの場合初期値アリ。変更が面倒なので、テーブル設計書の10文字制限に変更 -->
 			<br>
 			氏名
-			<input class="select_ent_year" type="text" name="name" maxlength="30" required="required"placeholder="氏名を入力してください" value="${entered_name}">
+			<input class="select_ent_year" type="text" name="name" maxlength="10" required="required"placeholder="氏名を入力してください" value="${entered_name}">
 			
 			<!-- 入力済みの処理のためにこんなことしている -->
 			<br><br>

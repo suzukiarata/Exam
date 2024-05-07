@@ -49,6 +49,9 @@ public class StudentRegistrationAction extends Action{
 			
 			if (s.size() != 0) {
 				request.setAttribute("no_duplication_error", "学生番号が重複しています");
+				request.setAttribute("entered_name", name);
+				request.setAttribute("entered_no", no);
+				request.setAttribute("entered_class_num", class_num);
 				return "studentregistration.jsp";
 			}
 			

@@ -10,7 +10,7 @@
 		<p class="error_explanation">上記の機能でエラーが発生しました。</p>
 		
 		<div class="fun_area">
-			<p class="complaint_text">エラーに対して文句ある？</p>
+			<p class="complaint_text">何について調べますか？</p>
 			<input type="text" class="complaint_area">
 		</div>
 	</div>

@@ -41,7 +41,7 @@ public class StudentInfomationChangeAction extends Action{
 		if (line>0) {
 			return "studentinfomationchangesuccess.jsp";
 		}
-		
-		return "studentinfomationchangeerror.jsp";
+		request.setAttribute("error_text", "学生変更機能");
+		return "../home/Error.action";
 	}
 }

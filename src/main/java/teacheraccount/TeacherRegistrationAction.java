@@ -49,7 +49,7 @@ public class TeacherRegistrationAction extends Action{
 			return "teacherregistrationsuccess.jsp";
 		}
 		
-
-		return "registrationerror.jsp";
+		request.setAttribute("error_text", "教員登録機能");
+		return "../home/Error.action";
 	}
 }

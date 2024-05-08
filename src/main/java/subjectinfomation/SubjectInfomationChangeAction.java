@@ -31,7 +31,7 @@ public class SubjectInfomationChangeAction extends Action{
 		}
 
 
-		
-		return "subjectinfomationchange.jsp";
+		request.setAttribute("error_text", "科目変更機能");
+		return "../home/Error.action";
 	}
 }

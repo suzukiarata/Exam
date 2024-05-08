@@ -46,7 +46,8 @@ public class SchoolRegistrationAction extends Action{
 			return "schoolregistrationsuccess.jsp";
 		}
 		
-
-		return "registrationerror.jsp";
+		
+		request.setAttribute("error_text", "学校登録機能");
+		return "../home/Error.action";
 	}
 }

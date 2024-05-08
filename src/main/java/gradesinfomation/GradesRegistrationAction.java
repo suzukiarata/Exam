@@ -72,7 +72,8 @@ public class GradesRegistrationAction extends Action{
 					line=testdao.registrationpoint(i, point);
 				}
 			}
-			
 			return "gradesinfomationexecutesuccess.jsp";
+			
+			
 		}
 	}	

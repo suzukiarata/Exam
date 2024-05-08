@@ -52,8 +52,10 @@ public class SubjectRegistrationAction extends Action{
 			
 			
 		}catch (Exception e) {
-			return "registrationerror.jsp";
+			request.setAttribute("error_text", "科目登録機能");
+			return "../home/Error.action";
 		}
-		return "registrationerror.jsp";
+		request.setAttribute("error_text", "科目登録機能");
+		return "../home/Error.action";
 	}
 }

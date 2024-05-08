@@ -606,3 +606,223 @@ button[type="submit"] {
 }
 
 
+
+/*変更完了メッセージ用*/
+.succsess_mes{
+	text-align: center;
+	margin:0 auto;
+	background-color: #3cb371;
+	color: #333;
+}
+
+/*統計情報のぺ―ジのCSS*/
+.statistics_subject {
+	font-size: 35px;
+	text-align: center;
+	margin:20px auto 30px auto;
+	font-family: serif;
+}
+
+.statistics_area{
+	margin:10px auto;
+	width: 930px;
+}
+
+.statistics_area .excellent_grades_list {
+	text-align: center;
+	font-size: 50px;
+	margin:30px 0 0 0;
+	font-family: serif;
+}
+
+.point_contests {
+	display: inline-block;
+	width:306px;
+}
+
+.point_contests h1 {
+	width:150px;
+	text-align: center;
+	margin:10px auto 0 auto;
+	font-family: serif;
+	border-bottom:solid 1px #000;
+}
+
+.point_contests .statistics_points {
+	text-align: center;
+	font-size: 80px;
+	margin:0 5px;
+}
+
+.excellent_grades {
+	display: inline-block;
+	width:305px;
+	border:solid 1px #333;
+	border-radius: 5px;
+}
+
+.excellent_grades .excellent_grades_tags {
+	width: 80px;
+	margin:10px auto;
+	text-align: center;
+	font-size: 15px;
+	border-bottom:solid 1px #000;
+}
+
+.excellent_grades .excellent_grades_data {
+	text-align: center;
+	font-size: 20px;
+}
+
+/*マイぺ―ジのCSS*/
+.mypage_main {
+	width:350px;
+	float:left;
+}
+
+.mypage_main_contents {
+	text-align: left;
+	width:350px;
+}
+
+.mypage_main_contents .mypage_tags {
+	width:120px;
+	margin:0 0 0 5px;
+	border-bottom:solid 1px #000;
+}
+
+.mypage_main_contents .mypage_name {
+	font-size: 30px;
+	margin: 10px auto 10px 20px;
+}
+.mypage_main_contents .school_name {
+	font-size: 30px;
+	margin: 10px auto 10px 20px;
+}
+
+.mypage_main_contents .account_id {
+	font-size: 15px;
+	margin: 15px auto 10px 20px;
+}
+
+.mypage_main_contents .account_pass {
+	font-size: 15px;
+	margin: 5px auto 10px 20px;
+}
+
+
+.mypage_function {
+	width: 610px;
+	float: right;
+	padding-left: 10px;
+	border-left: solid 1px #333;
+}
+
+.mypage_function_contests_title {
+	width:148px;
+	padding-left: 5px;
+	border-bottom:solid 1px #000;
+}
+
+.mypage_function_contests_top {
+	margin:10px 0 0 10px;
+}
+.mypage_function_contests_top .mypage_function_explanation {
+	margin:5px auto 5px 10px;
+	font-size: 20px;
+}
+
+.mypage_function_contests_top .handling_explanation {
+	margin:5px auto 5px 20px;
+	font-size: 12px;
+}
+
+.mypage_function_contests_top .function_urls{
+	text-align: right;
+	font-size: 14px;
+	color: #dc143c;
+	margin: 5px 20px 5px 0;
+}
+.mypage_function_contests_top .function_urls a {
+	margin: 0 0 0 10px;
+	font-size: 19px;
+}
+
+.mypage_function_contests {
+	width: 590px;
+	margin:30px auto;
+}
+
+
+.mypage_function_contests .mypage_function_explanation {
+	margin:5px auto 5px 10px;
+	font-size: 20px;
+}
+
+.mypage_function_contests .handling_explanation {
+	margin:5px auto 5px 20px;
+	font-size: 12px;
+}
+
+.mypage_function_contests .function_urls{
+	text-align: right;
+	font-size: 14px;
+	color: #dc143c;
+	margin: 5px 20px 5px 0;
+}
+.mypage_function_contests .function_urls a {
+	margin: 0 0 0 10px;
+	font-size: 19px;
+}
+.exception_function {
+	font-size: 9px;
+	color: aqua;
+}
+
+/*エラーページのCSS*/
+.error_title{
+	width: 400px;
+	float: left;
+	text-align: center;
+	margin-left:10px;
+}
+
+.error_log{
+	margin-top: 150px;
+	font-size: 30px;
+	background-color: #3cb371;
+}
+
+.error_explanation{
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+.fun_area{
+	margin-top:50px;
+	border:solid 1px #000;
+	background-color: #fffaf0;
+	border-radius: 5px;
+}
+
+.complaint_text{
+	margin: 20px auto 10px auto;
+	font-size: 20px;
+}
+
+.complaint_area{
+	margin: 10px auto 20px auto;
+	width: 200px;
+	height: 50px;
+}
+
+.error_hateful{
+	width: 500px;
+	float: right;
+	margin:auto 10px;
+	border: solid 1px #333;
+}
+
+.kairu_png{
+	width: 500px;
+}

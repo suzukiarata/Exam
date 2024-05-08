@@ -62,10 +62,11 @@ public class StudentRegistrationAction extends Action{
 			}
 			
 		} catch (Exception e) {
-			return "registrationerror.jsp";
+			request.setAttribute("error_text", "学生登録機能");
+			return "../home/Error.action";
 		}
-		
-		return "registrationerror.jsp";
+		request.setAttribute("error_text", "学生登録機能");
+		return "../home/Error.action";
 		
 	}	
 }

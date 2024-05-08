@@ -15,7 +15,7 @@
 	<aside id="side">
 	<section>
 		<h4>サイドバー</h4>
-		<p>サイドバーのサンプル</p>
+		<p><a href="../home/Error.action">エラーページのサンプル</a></p>
 	</section>
 	</aside>
 	<aside id="side">

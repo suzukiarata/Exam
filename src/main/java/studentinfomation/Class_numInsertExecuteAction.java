@@ -41,7 +41,7 @@ public class Class_numInsertExecuteAction extends Action{
 		
 		
 		
-		
-		return "class_numinsertexecute.jsp";
+		request.setAttribute("error_text", "クラス追加機能");
+		return "../home/Error.action";
 	}
 }

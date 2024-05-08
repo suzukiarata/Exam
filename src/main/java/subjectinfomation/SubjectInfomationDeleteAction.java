@@ -23,7 +23,7 @@ public class SubjectInfomationDeleteAction  extends Action{
 			List<Subject> subject=subjectdao.searchcd(subject_cd);
 
 
-			session.setAttribute("subject", subject);
+			session.setAttribute("subjectdelete", subject);
 			
 			return "subjectinfomationdelete.jsp";
 		}

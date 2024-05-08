@@ -6,8 +6,8 @@
 
 <div id="contents">
 	<h1 class="function_title">科目情報登録</h1>
-	<form action="SubjectInfomationDeleteExecute.action?subject_cd=${subject[0].cd}" method="post">
-		<p>「${subject[0].name}(${subject[0].cd})」を削除してもよろしいでしょうか</p>
+	<form action="SubjectInfomationDeleteExecute.action?subject_cd=${subjectdelete[0].cd}" method="post">
+		<p>「${subjectdelete[0].name}(${subjectdelete[0].cd})」を削除してもよろしいでしょうか</p>
 		
 		<input type="submit" value="削除" class="narrowdown_buttom">
 	</form>

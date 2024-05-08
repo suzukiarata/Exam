@@ -4,6 +4,8 @@
 
 
 <div id="contents">
+
+	
 	<div id="element">
 		<h1>サンプル</h1>
 		<p>テンプレ―トとして作成中</p>
@@ -22,6 +24,7 @@
 		<p>複数配置可能</p>
 	</section>
 	</aside>
+
 </div>
 
 

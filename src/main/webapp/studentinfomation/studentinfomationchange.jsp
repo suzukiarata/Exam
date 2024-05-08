@@ -18,12 +18,19 @@
 			<input class="student-change-line" type="text" name="no" value="${changelist.no}" readonly><br>
 			
 			氏名
-			<input class="student-change-wk" type="text" name="name" maxlength="30" required="required"><br>
+			<input class="student-change-wk" type="text" name="name" maxlength="10" required="required" value="${changelist.name}"><br>
 			
 			<!-- ログインユーザの学校コードに対応するクラスを表示 -->
 			クラス<select class="student-change-label"name="class_num">
 			<c:forEach items="${classnumber}" var="classnumber">
-				<option value="${classnumber.class_num}">${classnumber.class_num}</option>
+				<c:choose>
+					<c:when test="${changelist.class_num == classnumber.class_num}">
+						<option value="${classnumber.class_num}" selected>${classnumber.class_num}</option>
+					</c:when>
+					<c:otherwise>
+			       		<option value="${classnumber.class_num}">${classnumber.class_num}</option>
+			    	</c:otherwise>	
+				</c:choose>
 			</c:forEach></select><br><br>
 			
 			<!-- 真偽値の送り方知らないので文字送るようにしました -->

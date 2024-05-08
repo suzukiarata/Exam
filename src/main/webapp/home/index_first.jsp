@@ -3,7 +3,10 @@
 <%@include file="menu.jsp" %>
 
 
+
 <div id="contents">
+	
+	
 	<div id="element">
 		<h1>サンプル</h1>
 		<p>テンプレ―トとして作成中</p>

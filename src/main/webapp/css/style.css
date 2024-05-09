@@ -827,3 +827,180 @@ button[type="submit"] {
 .kairu_png{
 	width: 500px;
 }
+
+
+.home_title{
+	width: 970px;
+	margin:5px auto 10px auto;
+	text-align: center;
+	font-family: serif;
+	font-size: 30px;
+	color: #fff;
+	background-color: #333;
+	border-radius: 5px;
+	border: solid 1px #333;
+}
+
+.home_title p{
+	margin:10px;
+}
+
+
+/*ホーム画面のCSS遊び*/
+
+.home_image{
+	display: inline-block;
+	width: 250px;
+	background-color: #fffacd;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-right: solid 1px #333;
+}
+.home_image_pasta{
+	display: inline-block;
+	width: 250px;
+	background-color: #fffacd;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-right: solid 1px #333;
+	height:225px
+}
+.home_image_itamae{
+	display: inline-block;
+	width: 250px;
+	background-color: #fffacd;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-right: solid 1px #333;
+	height:384px
+}
+
+.home_contents_image{
+	width: 150px;
+	margin: 20px 50px;
+}
+.home_contents_image_pasta{
+	width: 150px;
+	margin: 58px 50px;
+}
+.home_contents_image_itamae{
+	width: 150px;
+	margin: 84px 50px;
+}
+
+.home_body {
+	width:950px;
+	margin:10px auto 10px auto;
+	border: solid 1px #333;
+	border-radius: 5px;
+	padding: 10px 10px;
+	background-color: #fffafa;
+}
+
+.home_explanation{
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 20px;
+	width:660px;
+}
+
+.home_explanation_title{
+	background-color: #e6e6fa;
+	padding-left: 15px;
+	margin:5px auto 10px auto;
+}
+
+.home_explanation_elements_normal {
+	padding-left: 20px;
+	margin:2px auto;
+	font-size: 18px;
+}
+
+.home_explanation_elements{
+	padding-left: 30px;
+	margin:3px auto;
+	font-size: 15px;
+}
+
+.multi_home_explanation_elements_normal {
+	padding-left: 20px;
+	margin:2px auto;
+	font-size: 14px;
+}
+
+.multi_home_explanation_elements{
+	padding-left: 30px;
+	margin:3px auto;
+	font-size: 12px;
+}
+.home_multi{
+	width:650px;
+	margin-left:10px;
+}
+
+.home_multi_explanation{
+	width:640px;
+}
+
+.home_multi_image_body{
+	display: inline-block;
+	width:200px;
+	background-color: #f5deb3;
+	height:152px;
+}
+
+.home_multi_image{
+	width: 100px;
+	margin:37px 50px 0 50px;
+}
+
+.home_multi_explanation_text{
+	display: inline-block;
+	vertical-align: top;
+	width:430px;
+	
+}
+
+.home_multi_title{
+	width:430px;
+	background-color: #b0c4de;
+	font-size: 20px;
+	padding-left: 15px;
+}
+
+.home_mypage_image{
+	display: inline-block;
+	vertical-align: top;
+	width: 317px;
+	background-color: #f0fff0;
+	height: 204px;
+	border: solid 1px #e0ffff;
+	border-radius: 5px;
+}
+
+.home_mypage_text{
+	display: inline-block;
+	border: solid 1px #333;
+	width: 278px;
+	border-radius: 5px;
+	height: 206px;
+	margin:0 10px;
+}
+
+.home_mypage_image_in{
+	width:200px;
+	margin:10px 50px;
+}
+
+.home_mypage_title{
+	background-color:#afeeee;
+	color: #fff;
+	text-align: center;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+.home_mypage_inner_text {
+	text-align: center;
+	color: #000;
+}

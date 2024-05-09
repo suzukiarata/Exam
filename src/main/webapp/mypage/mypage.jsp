@@ -4,7 +4,7 @@
 
 
 <div id="contents">
-	<h1 class="function_title">マイページ</h1>
+	<h1 class="function_title">マイページ１</h1>
 	<div class="mypage_main">
 		<div class="mypage_main_contents">
 			<p class="mypage_tags">氏名</p>

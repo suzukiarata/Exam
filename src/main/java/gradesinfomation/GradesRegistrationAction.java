@@ -60,7 +60,14 @@ public class GradesRegistrationAction extends Action{
 					}
 				}
 				
-				return "gradesinfomationexecutesuccess.jsp";
+				if(line>0) {
+					return "gradesinfomationexecutesuccess.jsp";
+				}
+				
+				request.setAttribute("error_text", "成績登録/変更機能");
+				return "../home/Error.action";
+				
+				
 			}
 			
 			for(Test i:t) {
@@ -72,7 +79,13 @@ public class GradesRegistrationAction extends Action{
 					line=testdao.registrationpoint(i, point);
 				}
 			}
-			return "gradesinfomationexecutesuccess.jsp";
+			
+			if(line>0) {
+				return "gradesinfomationexecutesuccess.jsp";
+			}
+			
+			request.setAttribute("error_text", "成績登録/変更機能");
+			return "../home/Error.action";
 			
 			
 		}

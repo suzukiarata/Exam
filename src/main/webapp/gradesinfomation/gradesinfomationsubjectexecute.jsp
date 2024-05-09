@@ -60,7 +60,7 @@
 			</div>
 			<div class="gradesform_elements2">
 				<label>学生番号</label><br>
-				<input type="text"name="f4" required="required" class="reference_no">
+				<input type="text"name="f4" required="required" class="reference_no" placeholder="学生番号を入力してください">
 			</div>	
 			<div class="gradesform_elements1">
 				<input type="submit" value="検索" class="narrowdown_buttom">

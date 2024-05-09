@@ -10,16 +10,16 @@ body {
 
 /* リンクの基本色 */
 a {
-    color: #4169e1;
+    color: #66cdaa;
     text-decoration: none;
 }
 
 /* 一度訪問住みリンクの色 */
-a:visited {color: #4b0082; }
+a:visited {color: #008080; }
 
 /* カーソルを合わせたときの装飾色　:hoverという疑似クラス*/
 a:hover {
-    color: #191970;
+    color: #228b22;
     font-weight: bold;
     text-decoration: none;
 }
@@ -213,11 +213,19 @@ header h1 {
 	margin: 0 5px;
 }
 
-.narrowdown_buttom{
-    background: #4169e1;
+.narrowdown_buttom_delete{
+    background: red;
     color:#ffffff;
     padding: 10px;
-    border:solid #4169e1;
+    border:solid 1px red;
+    border-radius: 5px;
+}
+
+.narrowdown_buttom{
+	background: #4169e1;
+    color:#ffffff;
+    padding: 10px;
+    border:solid 1px #4169e1;
     border-radius: 5px;
 }
 
@@ -427,14 +435,7 @@ button[type="submit"] {
 	height:38px;
 }
 
-/*.select_button_gtj
-  width: 10%;
-  padding: 10px;
-  background-color: rgb(206, 206, 206);
-  color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 3px;
-}*/
+
 .select_label_line{
 	width:960px;
 	height:43px;

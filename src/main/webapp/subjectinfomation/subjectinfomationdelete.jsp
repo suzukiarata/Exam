@@ -9,7 +9,7 @@
 	<form action="SubjectInfomationDeleteExecute.action?subject_cd=${subjectdelete[0].cd}" method="post">
 		<p>「${subjectdelete[0].name}(${subjectdelete[0].cd})」を削除してもよろしいでしょうか</p>
 		
-		<input type="submit" value="削除" class="narrowdown_buttom">
+		<input type="submit" value="削除" class="narrowdown_buttom_delete">
 	</form>
 	
 	

@@ -43,6 +43,12 @@
 			<p class="handling_explanation">新規の学校を登録できます。</p>
 			<p class="function_urls">新規学校の登録はこちらから<a href="../schoolinfomation/schoolregistration.jsp">新規学校登録</a></p> 
 		</div>
+		<hr>
+		<div class="mypage_function_contests">
+			<p class="mypage_function_explanation">エラー機能確認用</p>
+			<p class="handling_explanation">エラー機能の動作確認用</p>
+			<p class="function_urls">エラーページのURL<a href="../home/Error.action">エラーページ</a></p> 
+		</div>
 	</div>
 </div>
 

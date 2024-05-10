@@ -60,9 +60,6 @@ public class GradesRegistrationAction extends Action{
 					}
 				}
 				
-				if(line>0) {
-					return "gradesinfomationexecutesuccess.jsp";
-				}
 				
 				return "gradesinfomationexecutesuccess.jsp";
 				

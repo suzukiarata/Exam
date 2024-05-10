@@ -933,6 +933,13 @@ button[type="submit"] {
 	margin:3px auto;
 	font-size: 12px;
 }
+
+.home_explanation_elements_links{
+	margin-left: 100px;
+	font-size: 20px;
+	border-bottom:3px double #008080;
+}
+
 .home_multi{
 	width:650px;
 	margin-left:10px;
@@ -1004,4 +1011,8 @@ button[type="submit"] {
 .home_mypage_inner_text {
 	text-align: center;
 	color: #000;
+}
+
+.home_mypage_links{
+	margin:0 0 0 90px;
 }

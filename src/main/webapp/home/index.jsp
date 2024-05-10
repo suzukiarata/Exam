@@ -20,7 +20,7 @@
 				<p class="home_explanation_elements">・一覧検索</p>
 				<p class="home_explanation_elements">・新規登録</p>
 				<p class="home_explanation_elements">・変更</p>
-				<p class="home_explanation_elements_normal">これらの機能を利用できます。</p>
+				<p class="home_explanation_elements_normal">これらの機能を利用できます。<span class="home_explanation_elements_links"><a href="../studentinfomation/StudentInfomation.action?scd=${account.school_cd}">学生管理へ</span></a></p>
 				
 			</div>
 		</div>
@@ -38,7 +38,7 @@
 				<p class="home_explanation_elements">・新規登録</p>
 				<p class="home_explanation_elements">・変更</p>
 				<p class="home_explanation_elements">・削除</p>
-				<p class="home_explanation_elements_normal">これらの機能を利用できます。</p>
+				<p class="home_explanation_elements_normal">これらの機能を利用できます。<span class="home_explanation_elements_links"><a href="../subjectinfomation/SubjectInfomation.action?scd=${account.school_cd}">科目管理へ</span></a></p>
 			</div>
 		</div>
 		
@@ -60,7 +60,7 @@
 							<p class="multi_home_explanation_elements_normal">ログインユーザの学校コードに対応する<br>学生のテスト情報について</p>
 							<p class="multi_home_explanation_elements">・新規登録</p>
 							<p class="multi_home_explanation_elements">・変更</p>
-							<p class="multi_home_explanation_elements_normal">これらの機能を利用できます。</p>
+							<p class="multi_home_explanation_elements_normal">これらの機能を利用できます。<span class="home_explanation_elements_links"><a href="../gradesinfomation/GradesInfomation.action?scd=${account.school_cd}">成績登録へ</span></a></p>
 						</div>
 					</div>
 					<hr>
@@ -73,7 +73,7 @@
 							<p class="multi_home_explanation_elements_normal">ログインユーザの学校コードに対応する<br>学生のテスト情報について</p>
 							<p class="multi_home_explanation_elements">・一覧検索(科目毎／学生毎)</p>
 							<p class="multi_home_explanation_elements">・統計出力</p>
-							<p class="multi_home_explanation_elements_normal">これらの機能を利用できます。</p>
+							<p class="multi_home_explanation_elements_normal">これらの機能を利用できます。<span class="home_explanation_elements_links"><a href="../gradesinfomation/GradesReference.action?scd=${account.school_cd}">成績参照へ</span></a></p>
 						</div>
 					</div>
 				</div>
@@ -87,9 +87,10 @@
 				<img src="../images/ハヤシライス.png" class="home_mypage_image_in">
 			</div></a>
 			<div class="home_mypage_text">
-				<h1 class="home_mypage_title">マイページへ</h1>
+				<h1 class="home_mypage_title">マイページ機能</h1>
 				<p class="home_mypage_inner_text">ログインユーザの情報の確認や</p>
 				<p class="home_mypage_inner_text">各種追加機能を利用できます。</p>
+				<a href="../mypage/Mypage.action?scd=${account.school_cd}" class="home_mypage_links">マイページへ</a>
 			</div>
 			<a href="../mypage/Mypage.action?scd=${account.school_cd}"><div class="home_mypage_image">
 				<img src="../images/赤飯.png" class="home_mypage_image_in">

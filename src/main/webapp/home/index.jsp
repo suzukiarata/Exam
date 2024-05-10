@@ -92,7 +92,7 @@
 				<p class="home_mypage_inner_text">各種追加機能を利用できます。</p>
 			</div>
 			<a href="../mypage/Mypage.action?scd=${account.school_cd}"><div class="home_mypage_image">
-				<img src="../images/八宝菜.png" class="home_mypage_image_in">
+				<img src="../images/赤飯.png" class="home_mypage_image_in">
 			</div></a>
 		</div>
 	</div>

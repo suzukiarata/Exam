@@ -64,8 +64,7 @@ public class GradesRegistrationAction extends Action{
 					return "gradesinfomationexecutesuccess.jsp";
 				}
 				
-				request.setAttribute("error_text", "成績登録/変更機能");
-				return "../home/Error.action";
+				return "gradesinfomationexecutesuccess.jsp";
 				
 				
 			}

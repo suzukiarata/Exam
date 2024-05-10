@@ -5,6 +5,7 @@
 <%@include file="../home/menu.jsp"%>
 
 <div id="contents">
+	<h1 class="function_title">科目情報削除</h1>
 	<h2 class="succsess_mes">削除が完了しました</h2>
 	<p><%@include file="../home/subjectinfomation.jsp"%></p>
 </div>

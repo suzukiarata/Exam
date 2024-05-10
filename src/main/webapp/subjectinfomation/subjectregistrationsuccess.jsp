@@ -5,6 +5,7 @@
 <%@include file="../home/menu.jsp"%>
 
 <div id="contents">
+	<h1 class="function_title">科目情報登録</h1>
 	<h2 class="succsess_mes">登録が完了しました</h2>
 	<p><a href="subjectregistration.jsp">戻る</a></p>
 	<p><%@include file="../home/subjectinfomation.jsp"%></p>

@@ -5,8 +5,10 @@
 <%@include file="../home/menu.jsp"%>
 
 <div id="contents">
-	<h2 class="succsess_mes">変更が完了しました</h2>
+	<h1 class="function_title">学生管理</h1>
+	<h2 class="succsess_mes">登録が完了しました</h2>
 	<p><%@include file="../home/gradesinfomation.jsp"%></p>
+	<p><a href="../gradesinfomation/GradesReference.action">学生参照</a></p>
 </div>
 
 

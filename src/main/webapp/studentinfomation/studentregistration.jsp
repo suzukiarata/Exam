@@ -23,19 +23,20 @@
 			
 			<!-- 学生番号は重複時にリクエストパラメータでメッセージを表示(入力済みは初期値アリ) -->
 			<br>
-			学生番号
+			<label>学生番号</label>
 			<input class="select_ent_year" type="text" name="no" maxlength="10" required="required" placeholder="学生番号を入力してください" value="${entered_no}">
 			<p class="exception_message">${no_duplication_error}</p>
 		
 			
 			<!-- 入力済みの場合初期値アリ。変更が面倒なので、テーブル設計書の10文字制限に変更 -->
 			<br>
-			氏名
+			<label>氏名</label>
 			<input class="select_ent_year" type="text" name="name" maxlength="10" required="required"placeholder="氏名を入力してください" value="${entered_name}">
 			
 			<!-- 入力済みの処理のためにこんなことしている -->
 			<br><br>
-			クラス<select name="class_num" class="select_label_line">
+			<label>クラス</label>
+			<select name="class_num" class="select_label_line">
 			<c:forEach items="${classnumber}" var="classnumber">
 				<c:choose>
 					<c:when test="${entered_class_num == classnumber.class_num}">

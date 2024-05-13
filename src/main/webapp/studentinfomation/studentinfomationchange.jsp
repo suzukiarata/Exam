@@ -10,18 +10,19 @@
 		<form action="StudentInfomationChange.action" method="post">
 			
 			<!-- 変更対象の学生の学生番号に一致する入学年度を初期値にしている -->
-			入学年度
+			<label>入学年度</label>
 			<input class="student-change-line" type="text" name="ent_year" value="${changelist.ent_year}" readonly><br>
 			
 			<!-- 変更対象の学生の学生番号に一致する学生番号を初期値にしている -->
-			学生番号
+			<label>学生番号</label>
 			<input class="student-change-line" type="text" name="no" value="${changelist.no}" readonly><br>
 			
-			氏名
+			<label>氏名</label>
 			<input class="student-change-wk" type="text" name="name" maxlength="10" required="required" value="${changelist.name}"><br>
 			
 			<!-- ログインユーザの学校コードに対応するクラスを表示 -->
-			クラス<select class="student-change-label"name="class_num">
+			<label>クラス</label>
+			<select class="student-change-label"name="class_num">
 			<c:forEach items="${classnumber}" var="classnumber">
 				<c:choose>
 					<c:when test="${changelist.class_num == classnumber.class_num}">
@@ -34,7 +35,8 @@
 			</c:forEach></select><br><br>
 			
 			<!-- 真偽値の送り方知らないので文字送るようにしました -->
-			在学中<input type="checkbox" name="is_attend" value="enrollment" checked><br>
+			<label>在学中</label>
+			<input type="checkbox" name="is_attend" value="enrollment" checked><br>
 			
 			<input type="hidden" name="school_cd" value="${changelist.school_cd}"><br>
 			

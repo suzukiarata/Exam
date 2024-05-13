@@ -5,6 +5,7 @@
 <%@include file="../home/menu.jsp"%>
 
 <div id="contents">
+	<h1 class="function_title">新規アカウント登録</h1>
 	<h2 class="succsess_mes">登録が完了しました</h2>
 	<p><a href="teacherregistration.jsp">戻る</a></p>
 	<p><a href="../mypage/Mypage.action?scd=${account.school_cd}">マイページへ</a></p>

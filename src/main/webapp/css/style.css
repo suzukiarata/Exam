@@ -647,12 +647,14 @@ button[type="submit"] {
 	margin:10px auto 0 auto;
 	font-family: serif;
 	border-bottom:solid 1px #000;
+	font-family: serif;
 }
 
 .point_contests .statistics_points {
 	text-align: center;
 	font-size: 80px;
 	margin:0 5px;
+	font-family: serif;
 }
 
 .excellent_grades {

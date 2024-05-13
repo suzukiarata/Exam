@@ -16,6 +16,11 @@ public class SubjectInfomationAction extends Action{
 		
 		HttpSession session=request.getSession();
 		
+		if (session.getAttribute("account")==null) {
+			request.setAttribute("required_login", "科目管理");		
+			return "../home/Required_login.action";
+		}
+		
 		//scdはurlで渡している(分からなかったら聞いて)
 		String scd=request.getParameter("scd");
 		

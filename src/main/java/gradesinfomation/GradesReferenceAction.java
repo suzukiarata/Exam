@@ -20,6 +20,11 @@ public class GradesReferenceAction extends Action{
 		
 		HttpSession session=request.getSession();
 		
+		if (session.getAttribute("account")==null) {
+			request.setAttribute("required_login", "成績参照");		
+			return "../home/Required_login.action";
+		}
+		
 		
 		
 		

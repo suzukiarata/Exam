@@ -19,6 +19,11 @@ public class StudentInfomationAction extends Action{
 		
 		HttpSession session=request.getSession();
 		
+		if (session.getAttribute("account")==null) {
+			request.setAttribute("required_login", "学生管理");		
+			return "../home/Required_login.action";
+		}
+		
 		String num=request.getParameter("f1");
 		int ent_year=0;
 		if(num != null) {

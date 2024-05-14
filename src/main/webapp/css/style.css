@@ -172,6 +172,13 @@ header h1 {
 	 color:#ffa500;
 }
 
+.exception_grades_message{
+	 color:#ffa500;
+	 margin-top:3px;
+	 margin-bottom: 2px;
+	 font-size: 12px;
+}
+
 /*学生一覧用のCSS*/
 /*学生一覧テーブル用(studentinfomation.jsp)*/
 .registration_link {

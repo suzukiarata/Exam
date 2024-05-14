@@ -50,6 +50,21 @@ public class GradesRegistrationAction extends Action{
 					}
 				}
 				
+				//これ入力値が範囲内かどうかのテスト
+				for(Test i:tas) {
+					String num = request.getParameter("int_" + i.getStudent_no());
+					if (num == "") {
+						continue;
+					} else {
+						int point=Integer.parseInt(num);
+						if(point < 0 || point >= 101) {
+							request.setAttribute("length_zeroone_error", "0～100の範囲で入力してください");
+							request.setAttribute("error_student", i.getStudent_no());
+							return "gradesinfomationexecute.jsp";
+						}
+					}
+				}
+				
 				for(Test i:tas) {
 					String num = request.getParameter("int_" + i.getStudent_no());
 					if (num == "") {

@@ -91,12 +91,27 @@
 								<!-- testテーブルに存在する場合は、初期値アリ。ない場合は初期値無し、(flagで判断している) -->
 								<c:choose>
 									<c:when test="${test.flag == false}">
-										<td><input type="number" name="int_${test.student_no}" min="0" max="100" class="point_text"></td>
+										<td>
+											<input type="number" name="int_${test.student_no}" class="point_text">
+											<c:choose>
+												<c:when test="${error_student == test.student_no}">
+													<p class="exception_grades_message">${length_zeroone_error}</p>
+												</c:when>
+											</c:choose>
+										</td>
 									</c:when>
 									<c:when test="${test.flag == true}">
-										<td><input type="number" name="int_${test.student_no}" value="${test.point}" min="0" max="100" class="point_text"></td>
+										<td>
+											<input type="number" name="int_${test.student_no}" value="${test.point}" class="point_text">
+											<c:choose>
+												<c:when test="${error_student == test.student_no}">
+													<p class="exception_grades_message">${length_zeroone_error}</p>
+												</c:when>
+											</c:choose>
+										</td>
 									</c:when>	
 								</c:choose>
+								
 							</tr>
 						</c:forEach>
 					</table>
